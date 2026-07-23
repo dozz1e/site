@@ -1,0 +1,153 @@
+{
+  "slug": "masaje-relajante-descontracturante-drenaje-linfatico",
+  "groupId": "masajes",
+  "listing": {
+    "image": {
+      "src": "/images/curso-masaje-relajante-drenaje-linfatico-1200.webp",
+      "srcset": "/images/curso-masaje-relajante-drenaje-linfatico-640.webp 640w, /images/curso-masaje-relajante-drenaje-linfatico-1200.webp 1200w, /images/curso-masaje-relajante-drenaje-linfatico-1600.webp 1600w, /images/curso-masaje-relajante-drenaje-linfatico.webp 2048w",
+      "sizes": "(max-width: 700px) 100vw, (max-width: 1100px) 36vw, 230px"
+    },
+    "badges": [
+      "♙ Curso certificado",
+      "◷ 40 horas",
+      "◉ Semipresencial"
+    ],
+    "modality": "Semipresencial",
+    "longTitle": false
+  },
+  "diploma": false,
+  "hero": {
+    "image": "/images/curso-masaje-relajante-drenaje-linfatico.webp",
+    "breadcrumbLabel": "Cursos de Masajes",
+    "badges": [
+      "CURSO CERTIFICADO",
+      "SEMIPRESENCIAL"
+    ],
+    "title": "Masaje Relajante, Descontracturante y Drenaje Linfático Manual",
+    "subtitle": "Aprende tres técnicas complementarias para ofrecer un servicio de masaje más completo.",
+    "pdfHref": "https://cenakin.cl/pdfs/5530.pdf"
+  },
+  "facts": {
+    "duration": "40 horas",
+    "modality": "Semipresencial",
+    "location": "Viña del Mar",
+    "nextStart": "11 de agosto de 2026"
+  },
+  "intro": {
+    "eyebrow": "SOBRE ESTA FORMACIÓN",
+    "title": "Curso intensivo en masaje relajante, descontracturante y drenaje linfático manual",
+    "lead": "Amplía las necesidades que puedes abordar y el valor de tus servicios.",
+    "body": "Combina relajación muscular profunda con estimulación del sistema linfático para liberar tensiones, favorecer la circulación de líquidos y ofrecer una experiencia de bienestar integral.",
+    "calloutLabel": "FORMACIÓN PRÁCTICA",
+    "calloutText": "Aprende desde la primera sesión con acompañamiento docente."
+  },
+  "schedule": [
+    {
+      "eyebrow": "AGENDA 2026",
+      "title": "Fechas y horarios",
+      "body": "El programa comienza con una bienvenida online y continúa con prácticas presenciales. Al matricularte debes seleccionar una sola opción de horario.",
+      "options": [
+        {
+          "availability": "CUPOS DISPONIBLES",
+          "title": "Miércoles vespertino y jueves AM",
+          "items": [
+            "Bienvenida: martes 11 de agosto, 18:30 a 19:30 hrs.",
+            "Prácticas: 12 de agosto de 2026 al 10 de septiembre de 2026.",
+            "Horario: Miércoles 18:15 a 22:30 y jueves 09:15 a 13:30 hrs.",
+            "Duración: 5 semanas."
+          ]
+        },
+        {
+          "availability": "CUPOS DISPONIBLES",
+          "title": "Jueves AM y sábados PM",
+          "items": [
+            "Bienvenida: martes 11 de agosto, 18:30 a 19:30 hrs.",
+            "Prácticas: 13 de agosto de 2026 al 12 de septiembre de 2026.",
+            "Horario: Jueves 09:15 a 13:30 y sábados 14:30 a 19:30 hrs.",
+            "Duración: 5 semanas."
+          ]
+        },
+        {
+          "availability": "CUPOS DISPONIBLES",
+          "title": "Miércoles vespertino y sábados PM",
+          "items": [
+            "Bienvenida: martes 11 de agosto, 18:30 a 19:30 hrs.",
+            "Prácticas: 12 de agosto de 2026 al 12 de septiembre de 2026.",
+            "Horario: Miércoles 18:15 a 22:30 y sábados 14:30 a 19:30 hrs.",
+            "Duración: 5 semanas."
+          ]
+        }
+      ]
+    },
+    {
+      "eyebrow": "CONTENIDOS",
+      "title": "Plan de estudios",
+      "body": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 40 horas y las actividades programadas.",
+      "options": []
+    }
+  ],
+  "teachers": [
+    {
+      "name": "Jorge Patricio Rojas Sánchez",
+      "photo": "/images/docente-jorge.jpg",
+      "summary": "Licenciado en Kinesiología por la Pontificia Universidad Católica de Valparaíso, ranking N.º 2 de su generación. Director académico y docente de OTEC Cenakin.",
+      "credentials": [
+        "Certificado en Masaje Tailandés.",
+        "Formación y certificación en Ventosa Terapia por Global OTEC, Santiago de Chile.",
+        "Certificado en Reflexología.",
+        "Formación y certificación en Masaje Deportivo por EUESPA, Barcelona, España.",
+        "Certificado en Drenaje Linfático Manual Estético.",
+        "Certificado en Drenaje Linfático Manual Postoperatorio.",
+        "Formación y certificación en Drenaje Linfático Manual por MedAcademy, Santiago de Chile.",
+        "Docente en Masoterapia y Aparatología.",
+        "Director del Diplomado en Masoterapia de OTEC Cenakin.",
+        "Formación y certificación en Punción Seca y Electropunción, Técnicas Invasivas, por Fisioterapia en Movimiento, Bogotá, Colombia.",
+        "Actualización y certificación en Punción Seca y Electropunción por Academia Internacional Nasara.",
+        "Magíster en Marketing por la Universidad de Santiago de Chile.",
+        "Diplomado en Marketing Digital por la Pontificia Universidad Católica de Chile.",
+        "Diplomado en Pedagogía por la Universidad Mayor.",
+        "Diplomado en Gerontología Educativa por la Universidad Mayor."
+      ],
+      "tags": [
+        "Kinesiólogo",
+        "Docente en masoterapia",
+        "Formación práctica"
+      ]
+    },
+    {
+      "name": "Guillermo Leiva",
+      "photo": "/images/docente-guillermo.jpg",
+      "summary": "Licenciado en Kinesiología por la Universidad Andrés Bello. Docente de OTEC Cenakin.",
+      "credentials": [
+        "Certificación teórico-práctica presencial en la técnica de Drenaje Linfático Manual, año 2023.",
+        "Diplomado en Masoterapia por OTEC Cenakin.",
+        "Certificado en Punción Seca.",
+        "Certificado en Ventosa Terapia.",
+        "Certificado en Técnica de Tape Muscular."
+      ],
+      "tags": [
+        "Kinesiólogo",
+        "Masoterapia",
+        "Técnicas complementarias"
+      ]
+    }
+  ],
+  "includes": [
+    "Acceso a aula virtual",
+    "Material de estudio digital",
+    "Certificado digital de aprobación",
+    "Certificado impreso de aprobación"
+  ],
+  "requirements": [
+    "Enseñanza media aprobada",
+    "Ser mayor de 18 años",
+    "R.U.N. definitivo o provisorio para extranjeros"
+  ],
+  "price": {
+    "label": "ARANCEL TOTAL",
+    "original": null,
+    "current": "$340.000",
+    "discountText": null,
+    "reserveText": "Reserva tu cupo para Masaje Relajante, Descontracturante y Drenaje Linfático Manual."
+  }
+}

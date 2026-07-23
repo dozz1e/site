@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HomeCarousel from '../components/HomeCarousel.astro';
+---
+<BaseLayout title="Cenakin | Formación que transforma vidas" description="Formación profesional práctica en masoterapia, salud, emprendimiento y cursos online." headerVariant="home">
+  <main class="home-page">
+    <section class="home-hero">
+      <div class="home-hero-copy">
+        <p class="eyebrow">FORMACIÓN QUE TRANSFORMA VIDAS</p>
+        <h1>Aprende una profesión.<br /><span>Construye tu futuro.</span></h1>
+        <p class="home-lead">Formación práctica, docentes del área de la salud y una ruta clara para convertir tus conocimientos en oportunidades reales.</p>
+        <div class="home-actions">
+          <a href="/categorias/" class="home-primary">Explorar formaciones <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"></path></svg></a>
+          <a class="home-secondary" href="#orientacion">Recibir orientación</a>
+        </div>
+        <div class="home-proof">
+          <div><strong>+1.400</strong><span>estudiantes formados</span></div>
+          <div><strong>19.000</strong><span>horas de formación</span></div>
+          <div><strong>8 años</strong><span>formando profesionales</span></div>
+        </div>
+      </div>
+      <HomeCarousel />
+    </section>
+
+    <section class="home-accreditations" aria-label="Acreditaciones de Cenakin">
+      <div><p class="eyebrow">FORMACIÓN RESPALDADA</p><h2>Aprende con una institución acreditada</h2></div>
+      <article><img src="/images/logo-otec-cenakin-hq-780.webp" alt="OTEC Cenakin" loading="lazy" decoding="async" width="780" height="473" /><strong>OTEC Cenakin</strong><span>N.º 19606</span></article>
+      <article><img src="/images/icontec-nch-2728-180.webp" alt="NCh 2728" loading="lazy" decoding="async" width="180" height="210" /><strong>OTEC certificada</strong><span>OC–CER726261</span></article>
+      <article><img src="/images/wmf-official-member-180.webp" alt="World Massage Federation" loading="lazy" decoding="async" width="180" height="180" /><strong>Miembro oficial</strong><span>World Massage Federation</span></article>
+    </section>
+
+    <section class="home-areas" id="formaciones">
+      <div class="home-section-head">
+        <div><p class="eyebrow">ELIGE TU CAMINO</p><h2>Formaciones para cada etapa profesional</h2></div>
+        <p>Puedes comenzar desde cero, profundizar una técnica o ampliar tu campo laboral con nuevas herramientas.</p>
+      </div>
+      <div class="home-area-grid">
+        <a class="home-area-card" href="/categorias#masajes">
+          <div class="area-image"><img loading="lazy" decoding="async" alt="" src="/images/masoterapia-1200.webp" srcset="/images/masoterapia-640.webp 640w, /images/masoterapia-1200.webp 1200w, /images/masoterapia-1600.webp 1600w, /images/masoterapia.webp 2048w" sizes="(max-width: 430px) 100vw, 205px" /><span>01</span></div>
+          <div><h3>Masoterapia</h3><p>Comienza, especialízate y desarrolla una práctica profesional.</p><span class="area-link">Ver formaciones <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"></path></svg></span></div>
+        </a>
+        <a class="home-area-card" href="/categorias#salud">
+          <div class="area-image"><img loading="lazy" decoding="async" alt="" src="/images/salud-1200.webp" srcset="/images/salud-640.webp 640w, /images/salud-1200.webp 1200w, /images/salud-1600.webp 1600w, /images/salud.webp 2048w" sizes="(max-width: 430px) 100vw, 205px" /><span>02</span></div>
+          <div><h3>Salud</h3><p>Actualización aplicada para profesionales y equipos de salud.</p><span class="area-link">Ver formaciones <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"></path></svg></span></div>
+        </a>
+        <a class="home-area-card" href="/categorias#marketing">
+          <div class="area-image"><img loading="lazy" decoding="async" alt="" src="/images/marketing-1200.webp" srcset="/images/marketing-640.webp 640w, /images/marketing-1200.webp 1200w, /images/marketing-1600.webp 1600w, /images/marketing.webp 2048w" sizes="(max-width: 430px) 100vw, 205px" /><span>03</span></div>
+          <div><h3>Emprendimiento</h3><p>Convierte tus conocimientos en servicios y oportunidades.</p><span class="area-link">Ver formaciones <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"></path></svg></span></div>
+        </a>
+        <a class="home-area-card" href="/categorias#online">
+          <div class="area-image"><img loading="lazy" decoding="async" alt="" src="/images/online-1200.webp" srcset="/images/online-640.webp 640w, /images/online-1200.webp 1200w, /images/online-1600.webp 1600w, /images/online.webp 2048w" sizes="(max-width: 430px) 100vw, 205px" /><span>04</span></div>
+          <div><h3>Formaciones online</h3><p>Aprende desde cualquier lugar con acceso a aula virtual.</p><span class="area-link">Ver formaciones <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"></path></svg></span></div>
+        </a>
+      </div>
+      <a class="home-all-courses" href="/categorias/">Ver todas las áreas y cursos <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"></path></svg></a>
+    </section>
+
+    <section class="home-feature" id="diplomado">
+      <div class="feature-image">
+        <img loading="lazy" decoding="async" alt="Estudiantes certificados del Diplomado Intensivo en Masoterapia 2026" src="/images/diplomado-intensivo-2026.webp" />
+        <span>ADMISIÓN 2026</span>
+      </div>
+      <div class="feature-copy">
+        <p class="eyebrow">PROGRAMA DESTACADO</p>
+        <h2>Diplomado Intensivo en Masoterapia 2026</h2>
+        <p>Una formación integral de 150 horas para aprender las técnicas más solicitadas, desarrollar una atención profesional y construir tu propio camino laboral.</p>
+        <ul>
+          <li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"></path></svg>Práctica presencial guiada</li>
+          <li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"></path></svg>Docentes del área de la salud</li>
+          <li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"></path></svg>Aula virtual y material digital</li>
+          <li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"></path></svg>Formación en emprendimiento</li>
+        </ul>
+        <a class="home-primary" href="/curso/diplomado-intensivo-masoterapia-2026/">Conocer el diplomado <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"></path></svg></a>
+      </div>
+    </section>
+
+    <section class="home-method">
+      <div class="home-section-head">
+        <div><p class="eyebrow">EXPERIENCIA CENAKIN</p><h2>Más que un curso: una ruta de desarrollo</h2></div>
+        <p>Integramos formación técnica, acompañamiento y herramientas para que puedas aplicar lo aprendido con seguridad.</p>
+      </div>
+      <div class="method-grid">
+        <article><span>01</span><h3>Credenciales profesionales</h3><p>Cursos, diplomados y especializaciones con una estructura clara de aprendizaje.</p></article>
+        <article><span>02</span><h3>Experiencia formativa</h3><p>Práctica guiada, evaluación, docentes profesionales y acceso a aula virtual.</p></article>
+        <article><span>03</span><h3>Desarrollo profesional</h3><p>Emprendimiento, marketing y herramientas para proyectar tus servicios.</p></article>
+      </div>
+    </section>
+
+    <section class="home-orientation" id="orientacion">
+      <div>
+        <p class="eyebrow">ORIENTACIÓN PERSONALIZADA</p>
+        <h2>Encuentra la formación adecuada para ti</h2>
+        <p>Cuéntanos qué quieres lograr. Te ayudaremos a elegir el programa que mejor se adapta a tu experiencia, tiempo y objetivos.</p>
+      </div>
+      <button type="button" onclick="window.dispatchEvent(new Event('cenakin:advisor'))">Solicitar orientación <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"></path></svg></button>
+    </section>
+
+    <section class="home-faq" id="preguntas">
+      <div><p class="eyebrow">PREGUNTAS FRECUENTES</p><h2>Resolvemos tus dudas antes de comenzar</h2></div>
+      <div class="faq-list">
+        <details open><summary>Me gustaría saber si sus cursos de masajes están reconocidos por el Ministerio de Salud.</summary><p>Hasta la fecha, el Ministerio de Salud no exige una prueba de conocimientos para masoterapia.</p></details>
+        <details><summary>Me gustaría saber si sus cursos están reconocidos o acreditados por alguna institución.</summary><p>OTEC Cenakin está reconocida por SENCE mediante la Resolución N.º 19606.</p></details>
+        <details><summary>¿Cuál es el campo laboral para los egresados de sus cursos y capacitaciones?</summary><p>El campo laboral abarca empresas, emprendimientos, instituciones y organismos. También se puede ejercer la profesión de manera independiente.</p></details>
+        <details><summary>¿Estos cursos me sirven para emprender?</summary><p>Totalmente. El contenido y los conocimientos de nuestros diferentes cursos sirven para construir un emprendimiento y trabajar de forma independiente.</p></details>
+        <details><summary>¿Piden algún requisito mínimo para realizar los cursos y diplomados?</summary><p>Sí. Se requiere ser egresado de enseñanza media y mayor de 18 años. Algunos cursos y diplomados incluyen requisitos adicionales, los que aparecerán en la programación correspondiente.</p></details>
+        <details><summary>¿Cuál es la duración de los cursos y diplomados?</summary><p>En general, nuestros cursos y diplomados tienen duraciones de 8, 20, 32, 100, 150 y 200 horas. La duración específica se indica en la programación de cada formación.</p></details>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

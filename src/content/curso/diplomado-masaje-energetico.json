@@ -1,0 +1,152 @@
+{
+  "slug": "diplomado-masaje-energetico",
+  "groupId": "especializaciones",
+  "listing": {
+    "image": {
+      "src": "/images/diplomado-masaje-energetico-1200.webp",
+      "srcset": "/images/diplomado-masaje-energetico-640.webp 640w, /images/diplomado-masaje-energetico-1200.webp 1200w, /images/diplomado-masaje-energetico-1600.webp 1600w, /images/diplomado-masaje-energetico.webp 2048w",
+      "sizes": "(max-width: 700px) 100vw, (max-width: 1100px) 36vw, 230px"
+    },
+    "badges": [
+      "♙ Curso certificado",
+      "◷ 150 horas",
+      "◉ Semipresencial"
+    ],
+    "modality": "Semipresencial",
+    "longTitle": false
+  },
+  "diploma": true,
+  "hero": {
+    "image": "/images/diplomado-masaje-energetico.webp",
+    "breadcrumbLabel": "Educación continua o especializaciones",
+    "badges": [
+      "DIPLOMADO CERTIFICADO",
+      "SEMIPRESENCIAL"
+    ],
+    "title": "Diplomado en Masaje Energético",
+    "subtitle": "Integra técnicas tradicionales de masaje para promover el equilibrio corporal y energético.",
+    "pdfHref": "https://cenakin.cl/pdfs/5666.pdf"
+  },
+  "facts": {
+    "duration": "150 horas | 5 meses",
+    "modality": "Semipresencial",
+    "location": "Viña del Mar y aula virtual",
+    "nextStart": "11 de agosto de 2026"
+  },
+  "intro": {
+    "eyebrow": "SOBRE ESTA FORMACIÓN",
+    "title": "Diplomado intensivo en masaje energético",
+    "lead": "Amplía tu práctica con técnicas tradicionales orientadas al bienestar integral.",
+    "body": "Formación integral en masaje ayurvédico, Shiro Champi, reflexología, masaje tailandés y otras técnicas. Combina fundamentos anatómicos corporales y energéticos, práctica guiada y aspectos normativos.",
+    "calloutLabel": "FORMACIÓN FLEXIBLE",
+    "calloutText": "Teoría online, práctica presencial y acompañamiento durante todo el proceso."
+  },
+  "schedule": [
+    {
+      "eyebrow": "ADMISIÓN 2026",
+      "title": "Fechas y horarios",
+      "body": "Inscripciones hasta el viernes 7 de agosto de 2026.",
+      "options": [
+        {
+          "availability": "CUPOS DISPONIBLES",
+          "title": "Opción 1",
+          "items": [
+            "Inicio: 12 de agosto de 2026",
+            "Término: 17 de diciembre de 2026",
+            "Horario: Miércoles 19:30 a 22:30 y jueves 10:30 a 13:30 hrs."
+          ]
+        },
+        {
+          "availability": "CUPOS DISPONIBLES",
+          "title": "Opción 2",
+          "items": [
+            "Inicio: 13 de agosto de 2026",
+            "Término: 19 de diciembre de 2026",
+            "Horario: Jueves 10:30 a 13:30 y sábados 15:30 a 19:30 hrs."
+          ]
+        },
+        {
+          "availability": "CUPOS DISPONIBLES",
+          "title": "Opción 3",
+          "items": [
+            "Inicio: 12 de agosto de 2026",
+            "Término: 19 de diciembre de 2026",
+            "Horario: Miércoles 19:30 a 22:30 y sábados 15:30 a 19:30 hrs."
+          ]
+        }
+      ]
+    },
+    {
+      "eyebrow": "CONTENIDOS",
+      "title": "Plan de estudios",
+      "body": "El aprendizaje combina contenido teórico asincrónico en aula virtual con jornadas prácticas presenciales. Para aprobar debes completar las actividades y evaluaciones programadas.",
+      "options": []
+    }
+  ],
+  "teachers": [
+    {
+      "name": "Jorge Patricio Rojas Sánchez",
+      "photo": "/images/docente-jorge.jpg",
+      "summary": "Licenciado en Kinesiología por la Pontificia Universidad Católica de Valparaíso, ranking N.º 2 de su generación. Director académico y docente de OTEC Cenakin.",
+      "credentials": [
+        "Certificado en Masaje Tailandés.",
+        "Formación y certificación en Ventosa Terapia por Global OTEC, Santiago de Chile.",
+        "Certificado en Reflexología.",
+        "Formación y certificación en Masaje Deportivo por EUESPA, Barcelona, España.",
+        "Certificado en Drenaje Linfático Manual Estético.",
+        "Certificado en Drenaje Linfático Manual Postoperatorio.",
+        "Formación y certificación en Drenaje Linfático Manual por MedAcademy, Santiago de Chile.",
+        "Docente en Masoterapia y Aparatología.",
+        "Director del Diplomado en Masoterapia de OTEC Cenakin.",
+        "Formación y certificación en Punción Seca y Electropunción, Técnicas Invasivas, por Fisioterapia en Movimiento, Bogotá, Colombia.",
+        "Actualización y certificación en Punción Seca y Electropunción por Academia Internacional Nasara.",
+        "Magíster en Marketing por la Universidad de Santiago de Chile.",
+        "Diplomado en Marketing Digital por la Pontificia Universidad Católica de Chile.",
+        "Diplomado en Pedagogía por la Universidad Mayor.",
+        "Diplomado en Gerontología Educativa por la Universidad Mayor."
+      ],
+      "tags": [
+        "Kinesiólogo",
+        "Director académico",
+        "Masoterapia"
+      ]
+    },
+    {
+      "name": "Camila González",
+      "photo": "/images/docente-camila.jpg",
+      "summary": "Técnico en Educación Diferencial por el CFT Santo Tomás. Docente de OTEC Cenakin.",
+      "credentials": [
+        "Educadora diferencial con mención en Discapacidad Intelectual por el Instituto Helen Keller.",
+        "Certificada en Terapia Floral.",
+        "Diplomada en Masoterapia Integral por OTEC Cenakin.",
+        "Certificada en Reflexología Podal, Manual y Facial por OTEC Cenakin.",
+        "Certificada en Masaje Shiro Champi por OTEC Cenakin.",
+        "Certificada en Biomagnetismo.",
+        "Estudiante de Técnico en Enfermería en Duoc UC."
+      ],
+      "tags": [
+        "Técnico en enfermería",
+        "Reflexología",
+        "Masaje energético"
+      ]
+    }
+  ],
+  "includes": [
+    "Acceso a aula virtual",
+    "Material de estudio digital",
+    "Certificado digital de aprobación",
+    "Diploma impreso"
+  ],
+  "requirements": [
+    "Profesionales y técnicos",
+    "Masoterapeutas certificados con más de 150 horas",
+    "Profesionales y técnicos del área de la salud"
+  ],
+  "price": {
+    "label": "DESCUENTO VIGENTE",
+    "original": "$950.000",
+    "current": "$850.000 CLP",
+    "discountText": "Válido hasta el 31 de julio de 2026",
+    "reserveText": "Reserva tu cupo para la admisión de agosto de 2026."
+  }
+}

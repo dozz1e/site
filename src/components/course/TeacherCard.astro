@@ -1,0 +1,23 @@
+---
+interface Props {
+  teacher: { name: string; photo: string; summary: string; credentials: string[]; tags: string[] };
+}
+const { teacher } = Astro.props;
+---
+<section class="teacher-section diploma-teacher-card">
+  <div class="teacher-mark teacher-photo" role="img" aria-label={`Fotografía de ${teacher.name}`} style={`background-image:url('${teacher.photo}')`}></div>
+  <div>
+    <p class="eyebrow">DOCENTE</p>
+    <h2>{teacher.name}</h2>
+    <p class="teacher-summary">{teacher.summary}</p>
+    <h3 class="teacher-credentials-title">Formación y certificaciones</h3>
+    <ul class="check-list teacher-credentials">
+      {teacher.credentials.map((credential) => (
+        <li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"></path></svg>{credential}</li>
+      ))}
+    </ul>
+    <div class="teacher-tags">
+      {teacher.tags.map((tag) => <span>{tag}</span>)}
+    </div>
+  </div>
+</section>

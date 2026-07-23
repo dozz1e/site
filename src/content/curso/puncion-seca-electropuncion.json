@@ -1,0 +1,111 @@
+{
+  "slug": "puncion-seca-electropuncion",
+  "groupId": "salud",
+  "listing": {
+    "image": {
+      "src": "/images/puncion-seca-electropuncion-1200.webp",
+      "srcset": "/images/puncion-seca-electropuncion-640.webp 640w, /images/puncion-seca-electropuncion-1200.webp 1200w, /images/puncion-seca-electropuncion-1600.webp 1600w, /images/puncion-seca-electropuncion.webp 2048w",
+      "sizes": "(max-width: 700px) 100vw, (max-width: 1100px) 36vw, 230px"
+    },
+    "badges": [
+      "♙ Curso certificado",
+      "◷ 18 horas",
+      "◉ Semipresencial"
+    ],
+    "modality": "Semipresencial",
+    "longTitle": false
+  },
+  "diploma": false,
+  "hero": {
+    "image": "/images/puncion-seca-electropuncion.webp",
+    "breadcrumbLabel": "Cursos para Profesionales de la Salud",
+    "badges": [
+      "CURSO CERTIFICADO",
+      "SEMIPRESENCIAL"
+    ],
+    "title": "Punción Seca y Electropunción",
+    "subtitle": "Actualiza tus competencias en punción seca y electropunción con fundamentos científicos, protocolos de seguridad y práctica supervisada.",
+    "pdfHref": "https://cenakin.cl/pdfs/3353.pdf"
+  },
+  "facts": {
+    "duration": "18 horas",
+    "modality": "Semipresencial",
+    "location": "Viña del Mar",
+    "nextStart": "24 de octubre de 2026"
+  },
+  "intro": {
+    "eyebrow": "SOBRE ESTA FORMACIÓN",
+    "title": "Punción seca y electropunción aplicada a la práctica kinesiológica",
+    "lead": "Fortalece tu evaluación y aprende a seleccionar y aplicar técnicas invasivas de manera segura, ética y fundamentada.",
+    "body": "Formación semipresencial dirigida a kinesiólogos y estudiantes de quinto año de Kinesiología. Integra fundamentos neurofisiológicos, evaluación clínica, seguridad y práctica supervisada de punción seca y electropunción aplicada a diferentes zonas corporales.",
+    "calloutLabel": "FORMACIÓN PRÁCTICA",
+    "calloutText": "Aprende desde la primera sesión con acompañamiento docente."
+  },
+  "schedule": [
+    {
+      "eyebrow": "ADMISIÓN OCTUBRE 2026",
+      "title": "Fechas y horarios",
+      "body": "Completa el contenido del aula virtual y participa en dos jornadas prácticas presenciales en Viña del Mar.",
+      "options": [
+        {
+          "availability": "CUPOS DISPONIBLES",
+          "title": "Jornada semipresencial de octubre",
+          "items": [
+            "Modalidad: Semipresencial, con contenido en aula virtual, estudio personal y prácticas presenciales.",
+            "Prácticas presenciales: Sábado 24 y domingo 25 de octubre de 2026.",
+            "Horarios: Sábado de 09:00 a 18:00 horas y domingo de 09:00 a 16:00 horas.",
+            "Horas totales: 18 horas entre aula virtual, estudio personal y prácticas presenciales.",
+            "Sede: Viña del Mar."
+          ]
+        }
+      ]
+    },
+    {
+      "eyebrow": "CONTENIDOS",
+      "title": "Plan de estudios",
+      "body": "La formación integra fundamentos científicos, criterios de evaluación y seguridad con práctica supervisada de punción seca y electropunción en distintas regiones corporales.",
+      "options": []
+    }
+  ],
+  "teachers": [
+    {
+      "name": "Jorge Patricio Rojas Sánchez",
+      "photo": "/images/docente-jorge.jpg",
+      "summary": "Licenciado en Kinesiología por la Pontificia Universidad Católica de Valparaíso, ranking N.º 2 de su generación. Director académico y docente de OTEC Cenakin.",
+      "credentials": [
+        "Formación y certificación en Punción Seca y Electropunción, Técnicas Invasivas, por Fisioterapia en Movimiento, Bogotá, Colombia.",
+        "Actualización y certificación en Punción Seca y Electropunción por Academia Internacional Nasara.",
+        "Magíster en Marketing por la Universidad de Santiago de Chile.",
+        "Diplomado en Marketing Digital por la Pontificia Universidad Católica de Chile.",
+        "Formación y certificación en Ventosa Terapia por Global OTEC, Santiago de Chile.",
+        "Director del Diplomado en Masoterapia de OTEC Cenakin.",
+        "Formación y certificación en Masaje Deportivo por EUESPA, Barcelona, España.",
+        "Diplomado en Gerontología Educativa por la Universidad Mayor.",
+        "Formación y certificación en Drenaje Linfático Manual por MedAcademy, Santiago de Chile."
+      ],
+      "tags": [
+        "Kinesiólogo",
+        "Docente en masoterapia",
+        "Formación práctica"
+      ]
+    }
+  ],
+  "includes": [
+    "Acceso al aula virtual.",
+    "Material de estudio digital.",
+    "Certificado digital de aprobación.",
+    "Certificado impreso de aprobación."
+  ],
+  "requirements": [
+    "Licenciados en Kinesiología.",
+    "Kinesiólogos(as).",
+    "Estudiantes de quinto año de Kinesiología."
+  ],
+  "price": {
+    "label": "DESCUENTO VIGENTE",
+    "original": "$200.000",
+    "current": "$190.000 CLP",
+    "discountText": "Descuento válido hasta el 31 de julio de 2026",
+    "reserveText": "Reserva tu cupo para Punción Seca y Electropunción."
+  }
+}

@@ -1,0 +1,39 @@
+---
+const columns: [string, [string, string][]][] = [
+  ['Diplomados en Masoterapia', [['Diplomado Intensivo', '/categorias#diplomados'], ['Diplomado Semipresencial', '/categorias#diplomados'], ['Ver diplomados', '/categorias#diplomados']]],
+  ['Educación continua', [['Masoterapia Estético Corporal', '/categorias#especializaciones'], ['Masaje Energético', '/categorias#especializaciones'], ['Masoterapia Deportiva', '/categorias#especializaciones']]],
+  ['Cursos de Masajes', [['Relajante y Descontracturante', '/categorias#masajes'], ['Piedras Calientes', '/categorias#masajes'], ['Masaje en Silla', '/categorias#masajes']]],
+  ['Masajes Cabeza y Cuello', [['Cráneo Facial y Shiro Champi', '/categorias#cabeza-cuello'], ['Masaje Cráneo Facial', '/categorias#cabeza-cuello']]],
+  ['Masajes Deportivos', [['Masaje Deportivo', '/categorias#deportivos'], ['Ventosas y Tape', '/categorias#deportivos']]],
+  ['Masaje Estético', [['Masaje Reductivo', '/categorias#esteticos'], ['Maderoterapia', '/categorias#esteticos'], ['Drenaje Linfático', '/categorias#esteticos']]],
+  ['Masajes Holísticos', [['Masaje Tailandés', '/categorias#holisticos'], ['Reflexología', '/categorias#holisticos'], ['Masaje Champi', '/categorias#holisticos']]],
+  ['Profesionales de la Salud', [['Punción Seca y Electropunción', '/categorias#salud'], ['Drenaje Postoperatorio', '/categorias#salud'], ['RCP y DEA', '/categorias#salud']]],
+  ['Emprendimiento y Marketing', [['Redes Sociales', '/categorias#marketing'], ['Google Ads', '/categorias#marketing'], ['Marketing Digital', '/categorias#marketing']]],
+  ['Cursos y Formaciones Online', [['Anatomía Muscular', '/categorias#online'], ['Anatomía Linfática', '/categorias#online'], ['Drenaje Linfático Online', '/categorias#online']]],
+];
+---
+<footer class="site-footer" id="contacto">
+  <div class="footer-catalog">
+    <h2>Explora nuestras áreas de formación</h2>
+    <div class="footer-area-grid">
+      {columns.map(([title, links]) => (
+        <div>
+          <h3>{title}</h3>
+          {links.map(([label, href]) => <a href={href}>{label}</a>)}
+        </div>
+      ))}
+    </div>
+  </div>
+  <div class="footer-contact">
+    <div><h3>Dirección</h3><p>Calle Limache 1724, oficina 1102<br />Ed. Contemporáneo, Viña del Mar</p></div>
+    <div><h3>Horario</h3><p>Lunes a Viernes de 9:30 a 13:00<br />y 15:00 a 17:30 hrs.</p></div>
+    <div>
+      <h3>Contactos</h3>
+      <a href="tel:+56944871048">Teléfono: +56 9 4487 1048</a>
+      <a href="mailto:info@cenakin.cl">Email: info@cenakin.cl</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© {new Date().getFullYear()} Cenakin. Todos los derechos reservados.</span>
+  </div>
+</footer>

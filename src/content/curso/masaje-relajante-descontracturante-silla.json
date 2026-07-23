@@ -1,0 +1,153 @@
+{
+  "slug": "masaje-relajante-descontracturante-silla",
+  "groupId": "masajes",
+  "listing": {
+    "image": {
+      "src": "/images/masaje-relajante-silla-1200.webp",
+      "srcset": "/images/masaje-relajante-silla-640.webp 640w, /images/masaje-relajante-silla-1200.webp 1200w, /images/masaje-relajante-silla-1600.webp 1600w, /images/masaje-relajante-silla.webp 2048w",
+      "sizes": "(max-width: 700px) 100vw, (max-width: 1100px) 36vw, 230px"
+    },
+    "badges": [
+      "♙ Curso certificado",
+      "◷ 28 horas",
+      "◉ Semipresencial"
+    ],
+    "modality": "Semipresencial",
+    "longTitle": false
+  },
+  "diploma": false,
+  "hero": {
+    "image": "/images/masaje-relajante-silla.webp",
+    "breadcrumbLabel": "Cursos de Masajes",
+    "badges": [
+      "CURSO CERTIFICADO",
+      "SEMIPRESENCIAL"
+    ],
+    "title": "Masaje Relajante, Descontracturante y Silla",
+    "subtitle": "Tres técnicas complementarias para trabajar en camilla, empresas y eventos.",
+    "pdfHref": "https://cenakin.cl/pdfs/4852.pdf"
+  },
+  "facts": {
+    "duration": "28 horas",
+    "modality": "Semipresencial",
+    "location": "Viña del Mar",
+    "nextStart": "11 de agosto de 2026"
+  },
+  "intro": {
+    "eyebrow": "SOBRE ESTA FORMACIÓN",
+    "title": "Curso intensivo en masaje relajante, descontracturante y silla",
+    "lead": "Entrega servicios versátiles adaptados a distintos espacios y necesidades.",
+    "body": "Aprende bienestar general, trabajo de contracturas específicas y atención rápida con masaje en silla para ampliar tu campo de acción profesional.",
+    "calloutLabel": "FORMACIÓN PRÁCTICA",
+    "calloutText": "Aprende desde la primera sesión con acompañamiento docente."
+  },
+  "schedule": [
+    {
+      "eyebrow": "AGENDA 2026",
+      "title": "Fechas y horarios",
+      "body": "El programa comienza con una bienvenida online y continúa con prácticas presenciales. Al matricularte debes seleccionar una sola opción de horario.",
+      "options": [
+        {
+          "availability": "CUPOS DISPONIBLES",
+          "title": "Miércoles vespertino",
+          "items": [
+            "Bienvenida: martes 11 de agosto, 18:30 a 19:30 hrs.",
+            "Prácticas: 12 de agosto de 2026 al 9 de septiembre de 2026.",
+            "Horario: Miércoles 18:15 a 22:30 hrs., más sábados 22 y 29 de agosto.",
+            "Duración: 5 semanas."
+          ]
+        },
+        {
+          "availability": "CUPOS DISPONIBLES",
+          "title": "Jueves AM",
+          "items": [
+            "Bienvenida: martes 11 de agosto, 18:30 a 19:30 hrs.",
+            "Prácticas: 13 de agosto de 2026 al 10 de septiembre de 2026.",
+            "Horario: Jueves 09:15 a 13:30 hrs., más sábados 22 y 29 de agosto.",
+            "Duración: 5 semanas."
+          ]
+        },
+        {
+          "availability": "CUPOS DISPONIBLES",
+          "title": "Sábados PM",
+          "items": [
+            "Bienvenida: martes 18 de agosto, 18:30 a 19:30 hrs.",
+            "Prácticas: 22 de agosto de 2026 al 26 de septiembre de 2026.",
+            "Horario: Sábados 14:30 a 19:30 hrs., más lunes 24 y 31 de agosto.",
+            "Duración: 6 clases."
+          ]
+        }
+      ]
+    },
+    {
+      "eyebrow": "CONTENIDOS",
+      "title": "Plan de estudios",
+      "body": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 28 horas y las actividades programadas.",
+      "options": []
+    }
+  ],
+  "teachers": [
+    {
+      "name": "Jorge Patricio Rojas Sánchez",
+      "photo": "/images/docente-jorge.jpg",
+      "summary": "Licenciado en Kinesiología por la Pontificia Universidad Católica de Valparaíso, ranking N.º 2 de su generación. Director académico y docente de OTEC Cenakin.",
+      "credentials": [
+        "Certificado en Masaje Tailandés.",
+        "Formación y certificación en Ventosa Terapia por Global OTEC, Santiago de Chile.",
+        "Certificado en Reflexología.",
+        "Formación y certificación en Masaje Deportivo por EUESPA, Barcelona, España.",
+        "Certificado en Drenaje Linfático Manual Estético.",
+        "Certificado en Drenaje Linfático Manual Postoperatorio.",
+        "Formación y certificación en Drenaje Linfático Manual por MedAcademy, Santiago de Chile.",
+        "Docente en Masoterapia y Aparatología.",
+        "Director del Diplomado en Masoterapia de OTEC Cenakin.",
+        "Formación y certificación en Punción Seca y Electropunción, Técnicas Invasivas, por Fisioterapia en Movimiento, Bogotá, Colombia.",
+        "Actualización y certificación en Punción Seca y Electropunción por Academia Internacional Nasara.",
+        "Magíster en Marketing por la Universidad de Santiago de Chile.",
+        "Diplomado en Marketing Digital por la Pontificia Universidad Católica de Chile.",
+        "Diplomado en Pedagogía por la Universidad Mayor.",
+        "Diplomado en Gerontología Educativa por la Universidad Mayor."
+      ],
+      "tags": [
+        "Kinesiólogo",
+        "Docente en masoterapia",
+        "Formación práctica"
+      ]
+    },
+    {
+      "name": "Guillermo Leiva",
+      "photo": "/images/docente-guillermo.jpg",
+      "summary": "Licenciado en Kinesiología por la Universidad Andrés Bello. Docente de OTEC Cenakin.",
+      "credentials": [
+        "Certificación teórico-práctica presencial en la técnica de Drenaje Linfático Manual, año 2023.",
+        "Diplomado en Masoterapia por OTEC Cenakin.",
+        "Certificado en Punción Seca.",
+        "Certificado en Ventosa Terapia.",
+        "Certificado en Técnica de Tape Muscular."
+      ],
+      "tags": [
+        "Kinesiólogo",
+        "Masoterapia",
+        "Técnicas complementarias"
+      ]
+    }
+  ],
+  "includes": [
+    "Acceso a aula virtual",
+    "Material de estudio digital",
+    "Certificado digital de aprobación",
+    "Certificado impreso de aprobación"
+  ],
+  "requirements": [
+    "Enseñanza media aprobada",
+    "Ser mayor de 18 años",
+    "R.U.N. definitivo o provisorio para extranjeros"
+  ],
+  "price": {
+    "label": "DESCUENTO VIGENTE",
+    "original": "$280.000",
+    "current": "$260.000 CLP",
+    "discountText": "Descuento válido hasta el 31 de julio de 2026",
+    "reserveText": "Reserva tu cupo para Masaje Relajante, Descontracturante y Silla."
+  }
+}

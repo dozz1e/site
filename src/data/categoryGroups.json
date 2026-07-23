@@ -1,0 +1,52 @@
+[
+  {
+    "id": "diplomados",
+    "title": "Diplomados en Masoterapia",
+    "description": "Formaciones integrales para desarrollar una base profesional sólida."
+  },
+  {
+    "id": "especializaciones",
+    "title": "Educación continua o especializaciones",
+    "description": "Profundiza tus conocimientos y amplía los servicios que puedes entregar."
+  },
+  {
+    "id": "masajes",
+    "title": "Cursos de Masajes",
+    "description": "Cursos prácticos para comenzar o sumar nuevas técnicas a tu trabajo."
+  },
+  {
+    "id": "cabeza-cuello",
+    "title": "Cursos de Masajes Cabeza y Cuello",
+    "description": "Técnicas específicas para el trabajo de cráneo, rostro, cuello y relajación."
+  },
+  {
+    "id": "deportivos",
+    "title": "Cursos de Masajes Deportivos",
+    "description": "Formaciones orientadas a masaje deportivo, recuperación y técnicas complementarias."
+  },
+  {
+    "id": "esteticos",
+    "title": "Cursos de Masaje Estético",
+    "description": "Técnicas manuales y complementarias aplicadas al masaje estético corporal."
+  },
+  {
+    "id": "holisticos",
+    "title": "Cursos de Masajes Holísticos",
+    "description": "Formaciones que integran bienestar, relajación y técnicas tradicionales."
+  },
+  {
+    "id": "salud",
+    "title": "Cursos para Profesionales de la Salud",
+    "description": "Actualización técnica con enfoque seguro, aplicado y basado en conocimientos profesionales."
+  },
+  {
+    "id": "marketing",
+    "title": "Cursos de Emprendimiento y Marketing",
+    "description": "Herramientas para comunicar, vender servicios y desarrollar un emprendimiento."
+  },
+  {
+    "id": "online",
+    "title": "Cursos y Formaciones Online",
+    "description": "Aprende desde cualquier lugar con contenidos organizados y acceso a aula virtual."
+  }
+]

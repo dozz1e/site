@@ -1,0 +1,23 @@
+---
+interface Props {
+  includes: string[];
+  requirements: string[];
+}
+const { includes, requirements } = Astro.props;
+---
+<section class="detail-section include-section">
+  <div>
+    <p class="eyebrow">TODO LO NECESARIO</p>
+    <h2>Tu curso incluye</h2>
+    <ul class="check-list">
+      {includes.map((item) => <li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"></path></svg>{item}</li>)}
+    </ul>
+  </div>
+  <div>
+    <p class="eyebrow">ANTES DE INSCRIBIRTE</p>
+    <h2>Requisitos</h2>
+    <ul class="check-list">
+      {requirements.map((item) => <li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"></path></svg>{item}</li>)}
+    </ul>
+  </div>
+</section>

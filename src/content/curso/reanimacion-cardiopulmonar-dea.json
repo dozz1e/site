@@ -1,0 +1,136 @@
+{
+  "slug": "reanimacion-cardiopulmonar-dea",
+  "groupId": "salud",
+  "listing": {
+    "image": {
+      "src": "/images/rcp-desfibrilador-externo-1200.webp",
+      "srcset": "/images/rcp-desfibrilador-externo-640.webp 640w, /images/rcp-desfibrilador-externo-1200.webp 1200w, /images/rcp-desfibrilador-externo-1600.webp 1600w, /images/rcp-desfibrilador-externo.webp 2048w",
+      "sizes": "(max-width: 700px) 100vw, (max-width: 1100px) 36vw, 230px"
+    },
+    "badges": [
+      "♙ Curso certificado",
+      "◷ 8 horas",
+      "◉ Semipresencial"
+    ],
+    "modality": "Semipresencial",
+    "longTitle": false
+  },
+  "diploma": false,
+  "hero": {
+    "image": "/images/rcp-desfibrilador-externo.webp",
+    "breadcrumbLabel": "Cursos para Profesionales de la Salud",
+    "badges": [
+      "CURSO CERTIFICADO",
+      "PRESENCIAL"
+    ],
+    "title": "Reanimación Cardiopulmonar (RCP) y Desfibrilador Externo",
+    "subtitle": "Prepara a tu equipo para responder de manera organizada y segura frente a una emergencia cardiorrespiratoria.",
+    "pdfHref": "https://cenakin.cl/pdfs/5490.pdf"
+  },
+  "facts": {
+    "duration": "8 horas",
+    "modality": "Presencial",
+    "location": "En la empresa o institución",
+    "nextStart": "Fecha a convenir"
+  },
+  "intro": {
+    "eyebrow": "SOBRE ESTA FORMACIÓN",
+    "title": "Capacitación práctica en RCP y uso del DEA",
+    "lead": "Entrena a tu equipo en protocolos de emergencia mediante demostración, simulación y práctica supervisada.",
+    "body": "Capacitación práctica para reconocer emergencias cardiorrespiratorias, aplicar maniobras de RCP y utilizar correctamente el desfibrilador externo automático.",
+    "calloutLabel": "FORMACIÓN PRÁCTICA",
+    "calloutText": "Aprende desde la primera sesión con acompañamiento docente."
+  },
+  "schedule": [
+    {
+      "eyebrow": "CAPACITACIÓN PARA EMPRESAS",
+      "title": "Fechas y horarios",
+      "body": "Programa dirigido a empresas e instituciones. La fecha, el horario y el lugar se coordinan de acuerdo con las necesidades de cada organización.",
+      "options": [
+        {
+          "availability": "CONTRATACIONES ABIERTAS",
+          "title": "Capacitación para empresas e instituciones",
+          "items": [
+            "Fecha: A convenir con la organización.",
+            "Horario: A convenir con la organización.",
+            "Duración: Jornada presencial de 8 horas.",
+            "Contratación: Contáctanos por teléfono o correo para coordinar la capacitación."
+          ]
+        }
+      ]
+    },
+    {
+      "eyebrow": "CONTENIDOS",
+      "title": "Plan de estudios",
+      "body": "La capacitación combina fundamentos, demostración docente y práctica supervisada para responder correctamente ante emergencias cardiorrespiratorias.",
+      "options": []
+    }
+  ],
+  "teachers": [
+    {
+      "name": "Jorge Rojas Sánchez",
+      "photo": "/images/docente-jorge.jpg",
+      "summary": "Licenciado en Kinesiología PUCV y docente encargado del área pedagógica.",
+      "credentials": [
+        "Jornada de actualización en RCP y DEA, OTEC Cenakin, 2024.",
+        "Magíster en Marketing por la Universidad de Santiago de Chile.",
+        "Diplomado en Gerontología Educativa por la Universidad Mayor."
+      ],
+      "tags": [
+        "Kinesiólogo",
+        "Docente en masoterapia",
+        "Formación práctica"
+      ]
+    },
+    {
+      "name": "Guillermo Leiva",
+      "photo": "/images/docente-guillermo.jpg",
+      "summary": "Licenciado en Kinesiología por la Universidad Andrés Bello. Docente de OTEC Cenakin.",
+      "credentials": [
+        "Certificación teórico-práctica presencial en la técnica de Drenaje Linfático Manual, año 2023.",
+        "Diplomado en Masoterapia por OTEC Cenakin.",
+        "Certificado en Punción Seca.",
+        "Certificado en Ventosa Terapia.",
+        "Certificado en Técnica de Tape Muscular."
+      ],
+      "tags": [
+        "Kinesiólogo",
+        "Masoterapia",
+        "Técnicas complementarias"
+      ]
+    },
+    {
+      "name": "Camila González",
+      "photo": "/images/docente-camila.jpg",
+      "summary": "Técnico de nivel superior en Enfermería y técnico en Educación Diferencial.",
+      "credentials": [
+        "Jornada de actualización en RCP y DEA, OTEC Cenakin, 2024.",
+        "Educadora diferencial con mención en discapacidad intelectual.",
+        "Diplomada en Masoterapia Integral por OTEC Cenakin."
+      ],
+      "tags": [
+        "Técnico en enfermería",
+        "Reflexología",
+        "Shiro Champi"
+      ]
+    }
+  ],
+  "includes": [
+    "Certificado impreso.",
+    "Certificado digital.",
+    "Acceso al aula virtual durante el tiempo de formación.",
+    "Material de estudio digital."
+  ],
+  "requirements": [
+    "Ser mayor de 18 años.",
+    "Enseñanza media completa o niveles similares para extranjeros.",
+    "Personas extranjeras con cédula de identidad nacional chilena."
+  ],
+  "price": {
+    "label": "ARANCEL TOTAL",
+    "original": null,
+    "current": "$100.000 CLP",
+    "discountText": null,
+    "reserveText": "Reserva tu cupo para Reanimación Cardiopulmonar (RCP) y Desfibrilador Externo."
+  }
+}

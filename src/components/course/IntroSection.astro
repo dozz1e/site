@@ -1,0 +1,13 @@
+---
+interface Props {
+  intro: { eyebrow: string; title: string; lead: string; body: string; calloutLabel: string; calloutText: string };
+}
+const { intro } = Astro.props;
+---
+<section class="detail-section intro-section">
+  <p class="eyebrow">{intro.eyebrow}</p>
+  <h2>{intro.title}</h2>
+  <p class="lead">{intro.lead}</p>
+  <p>{intro.body}</p>
+  <div class="detail-callout"><span>{intro.calloutLabel}</span><strong>{intro.calloutText}</strong></div>
+</section>

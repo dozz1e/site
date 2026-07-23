@@ -1,0 +1,41 @@
+---
+const slides = [
+  { src: '/images/diplomado-intensivo-2026.webp', alt: 'Estudiantes certificados del Diplomado Intensivo en Masoterapia' },
+  { src: '/images/diplomado-semipresencial-2026.webp', alt: 'Estudiantes certificados del Diplomado Semipresencial en Masoterapia' },
+  { src: '/images/carrusel-cenakin-1.webp', alt: 'Estudiantes de Cenakin en una jornada de formación' },
+  { src: '/images/carrusel-cenakin-2.webp', alt: 'Práctica de acupuntura en una formación Cenakin' },
+  { src: '/images/carrusel-cenakin-3.webp', alt: 'Comunidad de estudiantes Cenakin en una actividad al aire libre' },
+  { src: '/images/carrusel-cenakin-4.webp', alt: 'Grupo de estudiantes de Cenakin' },
+  { src: '/images/carrusel-cenakin-5.webp', alt: 'Estudiantes celebrando durante una formación Cenakin' },
+];
+
+function sized(src: string, size: number) {
+  return src.replace(/\.webp$/i, `-${size}.webp`);
+}
+function srcset(src: string) {
+  return `${sized(src, 640)} 640w, ${sized(src, 1200)} 1200w, ${sized(src, 1600)} 1600w, ${src} 2048w`;
+}
+---
+<div class="home-hero-visual">
+  {slides.map((slide, index) => (
+    <img
+      class={index === 0 ? 'hero-slide active' : 'hero-slide'}
+      src={sized(slide.src, 1200)}
+      srcset={srcset(slide.src)}
+      sizes="(max-width: 780px) calc(100vw - 36px), (max-width: 1100px) 50vw, 700px"
+      alt={slide.alt}
+      aria-hidden={index !== 0}
+      loading={index === 0 ? 'eager' : 'lazy'}
+      fetchpriority={index === 0 ? 'high' : 'low'}
+      decoding="async"
+    />
+  ))}
+  <button class="hero-carousel-arrow previous" type="button" aria-label="Imagen anterior">‹</button>
+  <button class="hero-carousel-arrow next" type="button" aria-label="Imagen siguiente">›</button>
+  <div class="hero-carousel-dots" aria-label="Seleccionar imagen">
+    {slides.map((_, index) => <button class={index === 0 ? 'active' : ''} type="button" aria-label={`Ver imagen ${index + 1}`}></button>)}
+  </div>
+  <div class="hero-note"><span>PRÁCTICA GUIADA</span><strong>Aprende haciendo, con acompañamiento profesional.</strong></div>
+  <div class="hero-orbit">C</div>
+</div>
+<script src="../scripts/homeCarousel.js"></script>

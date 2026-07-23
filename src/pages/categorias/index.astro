@@ -1,0 +1,63 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CourseCard from '../../components/CourseCard.astro';
+import groups from '../../data/categoryGroups.json';
+
+const allCourses = await getCollection('curso');
+const totalCourses = allCourses.length;
+---
+<BaseLayout title="Cenakin | Nuestros Cursos" description="Encuentra la formación que necesitas para comenzar, especializarte o ampliar tus oportunidades profesionales." headerVariant="detail">
+  <main class="categorias-page">
+    <section class="catalog-hero">
+      <div>
+        <p class="crumb">Inicio <span>›</span> Nuestros cursos</p>
+        <p class="eyebrow">FORMACIÓN CONTINUA CENAKIN</p>
+        <h1>Nuestros Cursos</h1>
+        <p class="intro">Encuentra la formación que necesitas para comenzar, especializarte o ampliar tus oportunidades profesionales.</p>
+      </div>
+      <div class="catalog-stat"><strong>{groups.length}</strong><span>áreas de<br />formación</span></div>
+    </section>
+
+    <section class="filterbar" id="catalogo">
+      <div class="filters">
+        <button class="active">Todas</button>
+        <button>Presenciales</button>
+        <button>Semipresenciales</button>
+        <button>Online</button>
+      </div>
+      <span>{totalCourses} formaciones disponibles</span>
+    </section>
+
+    <section class="help help-top" aria-label="Orientación para elegir un curso">
+      <div><p class="eyebrow">ORIENTACIÓN PERSONALIZADA</p><h2>¿No sabes qué curso elegir?</h2><span>Cuéntanos qué quieres lograr y te ayudaremos a encontrar la formación más adecuada.</span></div>
+      <button type="button" onclick="window.dispatchEvent(new Event('cenakin:advisor'))">Solicitar orientación <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"></path></svg></button>
+    </section>
+
+    <div class="catalog">
+      {groups.map((group) => {
+        const coursesInGroup = allCourses.filter((course) => course.data.groupId === group.id);
+        return (
+          <section class="course-group" id={group.id}>
+            <div class="group-head">
+              <div>
+                <p>ÁREA DE FORMACIÓN</p>
+                <h2>{group.title}</h2>
+                <span>{group.description}</span>
+              </div>
+              <a href="#contacto">Ver orientación <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"></path></svg></a>
+            </div>
+            <div class="course-grid">
+              {coursesInGroup.map((course) => <CourseCard course={course} />)}
+            </div>
+          </section>
+        );
+      })}
+    </div>
+
+    <section class="help" id="contacto">
+      <div><p class="eyebrow">ORIENTACIÓN PERSONALIZADA</p><h2>¿No sabes qué curso elegir?</h2><span>Cuéntanos qué quieres lograr y te ayudaremos a encontrar la formación más adecuada.</span></div>
+      <button type="button" onclick="window.dispatchEvent(new Event('cenakin:advisor'))">Solicitar orientación <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"></path></svg></button>
+    </section>
+  </main>
+</BaseLayout>

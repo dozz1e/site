@@ -1,0 +1,108 @@
+{
+  "slug": "rotulacion-etiquetado-nutricional",
+  "groupId": "salud",
+  "listing": {
+    "image": {
+      "src": "/images/rotulacion-etiquetado-nutricional-1200.webp",
+      "srcset": "/images/rotulacion-etiquetado-nutricional-640.webp 640w, /images/rotulacion-etiquetado-nutricional-1200.webp 1200w, /images/rotulacion-etiquetado-nutricional-1600.webp 1600w, /images/rotulacion-etiquetado-nutricional.webp 2048w",
+      "sizes": "(max-width: 700px) 100vw, (max-width: 1100px) 36vw, 230px"
+    },
+    "badges": [
+      "♙ Curso certificado",
+      "◷ 32 horas",
+      "◉ Online"
+    ],
+    "modality": "Online",
+    "longTitle": false
+  },
+  "diploma": false,
+  "hero": {
+    "image": "/images/rotulacion-etiquetado-nutricional.webp",
+    "breadcrumbLabel": "Cursos para Profesionales",
+    "badges": [
+      "CURSO CERTIFICADO",
+      "ONLINE"
+    ],
+    "title": "Rotulación y Etiquetado Nutricional",
+    "subtitle": "Aprende una técnica profesional con fundamentos anatómicos, práctica guiada y acompañamiento docente.",
+    "pdfHref": "https://cenakin.cl/cursos/curso-de-rotulacion-y-etiquetado-nutricional/"
+  },
+  "facts": {
+    "duration": "32 horas",
+    "modality": "Online",
+    "location": "Online",
+    "nextStart": "6 de octubre de 2026"
+  },
+  "intro": {
+    "eyebrow": "SOBRE ESTA FORMACIÓN",
+    "title": "Curso de Rotulación y Etiquetado Nutricional",
+    "lead": "Desarrolla técnicas precisas para favorecer el bienestar de las personas.",
+    "body": "Interpretación y elaboración de rotulación nutricional conforme a la normativa chilena.",
+    "calloutLabel": "FORMACIÓN PRÁCTICA",
+    "calloutText": "Aprende desde la primera sesión con acompañamiento docente."
+  },
+  "schedule": [
+    {
+      "eyebrow": "MATRÍCULAS ABIERTAS",
+      "title": "Fechas y horarios",
+      "body": "Participa en clases online en vivo, con acompañamiento docente y una programación definida para completar las actividades del curso.",
+      "options": [
+        {
+          "availability": "MATRÍCULAS ABIERTAS",
+          "title": "Clases online en vivo",
+          "items": [
+            "Horario: Martes y jueves de 18:30 a 21:30 horas",
+            "Inicio: Martes 6 de octubre de 2026.",
+            "Finalización: Jueves 5 de noviembre de 2026.",
+            "Observación: La entrega presencial del certificado se realizará el sábado 7 de noviembre en Viña del Mar."
+          ]
+        }
+      ]
+    },
+    {
+      "eyebrow": "CONTENIDOS",
+      "title": "Plan de estudios",
+      "body": "Las clases online en vivo combinan fundamentos normativos, aplicación de la legislación y ejercicios prácticos. Para obtener el certificado debes completar las 32 horas y las actividades programadas.",
+      "options": []
+    }
+  ],
+  "teachers": [
+    {
+      "name": "Tamara Bahamondes",
+      "photo": "/images/docente-tamara.jpg",
+      "summary": "Nutricionista especializada en etiquetado nutricional, conducta alimentaria y nutrición aplicada.",
+      "credentials": [
+        "Licenciada en Nutrición y Dietética por la Universidad de Valparaíso.",
+        "Certificada en Uso e Implementación del Etiquetado Nutricional en Chile por la Universidad de Chile.",
+        "Diplomada en Herramientas de Intervención para la Conducta Alimentaria, con enfoque integral y psiconutricional, por la Escuela Chilena de Psiconutrición.",
+        "Certificada en Nutrición Vegetariana, Nutrición Deportiva y Psicología de la Alimentación por el Instituto Vive Sano Brasil.",
+        "Capacitada como antropometrista ISAK Nivel 1 por la Universidad de Playa Ancha.",
+        "Certificada en masaje reductivo y anticelulítico, y en drenaje linfático manual por OTEC Cenakin."
+      ],
+      "tags": [
+        "Nutricionista",
+        "Etiquetado nutricional",
+        "Antropometría ISAK"
+      ]
+    }
+  ],
+  "includes": [
+    "Clases en vivo",
+    "Aula virtual",
+    "Material digital",
+    "Certificado"
+  ],
+  "requirements": [
+    "Emprendedores y dueños de pequeñas o medianas empresas del rubro alimentario que busquen formalizar sus productos conforme a la legislación vigente.",
+    "Encargados de rotulación y etiquetado nutricional en empresas del rubro alimentario.",
+    "Nutricionistas que busquen especializarse en rotulación y etiquetado nutricional.",
+    "Conexión a internet."
+  ],
+  "price": {
+    "label": "ARANCEL TOTAL",
+    "original": null,
+    "current": "$290.000",
+    "discountText": null,
+    "reserveText": "Reserva tu cupo para Rotulación y Etiquetado Nutricional."
+  }
+}

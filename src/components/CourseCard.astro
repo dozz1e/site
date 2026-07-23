@@ -1,0 +1,29 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  course: CollectionEntry<'curso'>;
+}
+const { course } = Astro.props;
+const { slug, listing } = course.data;
+---
+<a class={`course-card${listing.longTitle ? ' long-title' : ''}`} href={`/curso/${slug}/`}>
+  <div class="course-image">
+    <img
+      loading="lazy"
+      decoding="async"
+      alt=""
+      src={listing.image.src}
+      srcset={listing.image.srcset || undefined}
+      sizes={listing.image.sizes || undefined}
+    />
+  </div>
+  <div class="course-body">
+    <div class="badges">
+      {listing.badges.map((badge) => <span>{badge}</span>)}
+    </div>
+    <h3>{course.data.hero.title}</h3>
+    <p>{listing.modality}</p>
+    <div class="course-link">Ver formación <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"></path></svg></div>
+  </div>
+</a>

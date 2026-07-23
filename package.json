@@ -1,0 +1,21 @@
+{
+  "name": "cenakin-astro",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "extract:courses": "node scripts/extract-courses.mjs",
+    "test": "node --test scripts/"
+  },
+  "dependencies": {
+    "astro": "^5.0.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.9",
+    "cheerio": "^1.0.0",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,16 @@
+---
+import { getCollection } from 'astro:content';
+import CourseLayout from '../../layouts/CourseLayout.astro';
+
+export async function getStaticPaths() {
+  const courses = await getCollection('curso');
+  return courses.map((course) => ({
+    params: { slug: course.data.slug },
+    props: { course },
+  }));
+}
+
+const { course } = Astro.props;
+const categoryTitle = course.data.hero.breadcrumbLabel;
+---
+<CourseLayout course={course} categoryTitle={categoryTitle} />

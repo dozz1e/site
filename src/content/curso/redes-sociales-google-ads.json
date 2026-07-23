@@ -1,0 +1,98 @@
+{
+  "slug": "redes-sociales-google-ads",
+  "groupId": "marketing",
+  "listing": {
+    "image": {
+      "src": "/images/redes-sociales-google-ads-1200.webp",
+      "srcset": "/images/redes-sociales-google-ads-640.webp 640w, /images/redes-sociales-google-ads-1200.webp 1200w, /images/redes-sociales-google-ads-1600.webp 1600w, /images/redes-sociales-google-ads.webp 2048w",
+      "sizes": "(max-width: 700px) 100vw, (max-width: 1100px) 36vw, 230px"
+    },
+    "badges": [
+      "♙ Curso certificado",
+      "◉ Online"
+    ],
+    "modality": "Online",
+    "longTitle": false
+  },
+  "diploma": false,
+  "hero": {
+    "image": "/images/redes-sociales-google-ads.webp",
+    "breadcrumbLabel": "Emprendimiento y Marketing",
+    "badges": [
+      "CURSO CERTIFICADO",
+      "ONLINE"
+    ],
+    "title": "Redes Sociales y Google Ads",
+    "subtitle": "Integra contenido, publicidad digital y estrategia para potenciar una marca.",
+    "pdfHref": "https://cenakin.cl/pdfs/3461.pdf"
+  },
+  "facts": {
+    "duration": "40 horas",
+    "modality": "Online",
+    "location": "Online",
+    "nextStart": "Acceso inmediato"
+  },
+  "intro": {
+    "eyebrow": "SOBRE ESTA FORMACIÓN",
+    "title": "Curso de Redes Sociales y Google Ads",
+    "lead": "Desarrolla técnicas precisas para favorecer el bienestar de las personas.",
+    "body": "Aprende a posicionar una marca, conectar con mejores clientes potenciales y gestionar campañas en redes sociales y Google Ads.",
+    "calloutLabel": "FORMACIÓN PRÁCTICA",
+    "calloutText": "Aprende desde la primera sesión con acompañamiento docente."
+  },
+  "schedule": [
+    {
+      "eyebrow": "ACCESO ONLINE",
+      "title": "Inicio y acceso",
+      "body": "El acceso comienza con la activación del aula virtual. Podrás avanzar a tu propio ritmo mediante cápsulas de video, material de lectura y recursos descargables.",
+      "options": [
+        {
+          "availability": "ACCESO DISPONIBLE",
+          "title": "Aula virtual asincrónica",
+          "items": [
+            "Inicio: Activación después del pago.",
+            "Modalidad: Avanza a tu propio ritmo, con acceso durante 12 meses.",
+            "Plazo: 1 mes para certificarte."
+          ]
+        }
+      ]
+    },
+    {
+      "eyebrow": "CONTENIDOS",
+      "title": "Plan de estudios",
+      "body": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 40 horas y las actividades programadas.",
+      "options": []
+    }
+  ],
+  "teachers": [
+    {
+      "name": "Jorge Rojas Sánchez",
+      "photo": "/images/docente-jorge.jpg",
+      "summary": "Magíster en Marketing USACH, Diplomado en Marketing Digital PUC y más de 10 años de experiencia en Meta Ads y Google Ads. Certificado en branding, Google Ads, marketing digital y ventas digitales.",
+      "credentials": [],
+      "tags": [
+        "Kinesiólogo",
+        "Docente en masoterapia",
+        "Formación práctica"
+      ]
+    }
+  ],
+  "includes": [
+    "Aula virtual",
+    "Material digital",
+    "Certificado digital",
+    "Orientación por WhatsApp"
+  ],
+  "requirements": [
+    "Administradores de páginas y negocios",
+    "Emprendedores mayores de 18 años",
+    "Estudiantes y profesionales interesados"
+  ],
+  "price": {
+    "label": "DESCUENTO VIGENTE",
+    "original": "$500.000",
+    "current": "$500.000 CLP",
+    "discountText": "Descuento válido hasta el hasta agotar cupos",
+    "reserveText": "Reserva tu cupo para Redes Sociales y Google Ads."
+  }
+}

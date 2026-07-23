@@ -1,0 +1,12 @@
+---
+interface Props {
+  facts: { duration: string; modality: string; location: string; nextStart: string };
+}
+const { facts } = Astro.props;
+---
+<section class="detail-facts">
+  <div><small>DURACIÓN</small><strong>{facts.duration}</strong></div>
+  <div><small>MODALIDAD</small><strong>{facts.modality}</strong></div>
+  <div><small>UBICACIÓN</small><strong>{facts.location}</strong></div>
+  <div><small>PRÓXIMO INICIO</small><strong>{facts.nextStart}</strong></div>
+</section>

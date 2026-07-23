@@ -1,0 +1,28 @@
+---
+interface Props {
+  variant: 'home' | 'detail';
+}
+const { variant } = Astro.props;
+const diplomaHref = variant === 'home' ? '#diplomado' : '/categorias#diplomados';
+---
+<header class={`header ${variant}-header`}>
+  <a href="/" class="logo-lockup" aria-label="Cenakin inicio">
+    <span class="header-logo otec">
+      <img src="/images/logo-otec-cenakin-hq-780.webp" alt="OTEC Cenakin" width="780" height="473" decoding="async" fetchpriority="high" />
+    </span>
+    <span class="logo-divider" aria-hidden="true"></span>
+    <span class="header-logo cenakin">
+      <img src="/images/logo-cenakin.png" alt="Cenakin" width="325" height="198" decoding="async" fetchpriority="high" />
+    </span>
+  </a>
+  {variant === 'home' && <div class="home-tagline">Formación práctica para transformar vidas</div>}
+  {variant === 'detail' && <div class="header-spacer"></div>}
+  <nav>
+    <a href="/">INICIO</a>
+    <a href="/categorias/">CURSOS</a>
+    <a href={diplomaHref}>DIPLOMADO 2026</a>
+    <a href="#contacto">CONTACTO</a>
+    <a class="aula" href="https://aulavirtualcenakin.com/">AULA VIRTUAL</a>
+  </nav>
+  <slot name="mobile-menu" />
+</header>

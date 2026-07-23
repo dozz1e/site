@@ -1,0 +1,55 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from './BaseLayout.astro';
+import FactsBar from '../components/course/FactsBar.astro';
+import IntroSection from '../components/course/IntroSection.astro';
+import ScheduleGrid from '../components/course/ScheduleGrid.astro';
+import TeacherCard from '../components/course/TeacherCard.astro';
+import IncludeSection from '../components/course/IncludeSection.astro';
+import Accreditation from '../components/course/Accreditation.astro';
+import Testimonial from '../components/course/Testimonial.astro';
+import PriceSection from '../components/course/PriceSection.astro';
+import EnrollForm from '../components/course/EnrollForm.astro';
+
+interface Props {
+  course: CollectionEntry<'curso'>;
+  categoryTitle: string;
+}
+const { course, categoryTitle } = Astro.props;
+const { hero, facts, intro, schedule, teachers, includes, requirements, price, diploma } = course.data;
+---
+<BaseLayout title={`Cenakin | ${hero.title}`} description={hero.subtitle} headerVariant="detail">
+  <main class={diploma ? 'detail-page diploma-detail' : 'detail-page'}>
+    <section class="detail-hero">
+      <img src={hero.image} alt={hero.title} />
+      <div class="detail-hero-shade"></div>
+      <div class="detail-hero-content">
+        <p class="detail-crumb"><a href="/categorias/">Cursos</a><span>›</span>{categoryTitle}</p>
+        <div class="detail-badges">
+          {hero.badges.map((badge) => <span>{badge}</span>)}
+        </div>
+        <h1>{hero.title}</h1>
+        <p>{hero.subtitle}</p>
+        <div class="hero-actions">
+          <a class="primary-detail-btn" href="#inscripcion">Quiero inscribirme <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"></path></svg></a>
+          {hero.pdfHref && <a class="secondary-detail-btn" href={hero.pdfHref} target="_blank" rel="noreferrer">Descargar programa</a>}
+        </div>
+      </div>
+    </section>
+
+    <FactsBar facts={facts} />
+
+    <div class="detail-layout">
+      <div class="detail-content">
+        <IntroSection intro={intro} />
+        <ScheduleGrid schedule={schedule} />
+        {teachers.map((teacher) => <TeacherCard teacher={teacher} />)}
+        <IncludeSection includes={includes} requirements={requirements} />
+        <Accreditation />
+        <Testimonial />
+      </div>
+      <EnrollForm />
+    </div>
+    <PriceSection price={price} />
+  </main>
+</BaseLayout>

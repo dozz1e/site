@@ -1,0 +1,31 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import MobileMenu from '../components/MobileMenu.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppAdvisor from '../components/WhatsAppAdvisor.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  headerVariant: 'home' | 'detail';
+}
+const { title, description, headerVariant } = Astro.props;
+---
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href="/favicon.svg" />
+  </head>
+  <body>
+    <Header variant={headerVariant}>
+      <MobileMenu slot="mobile-menu" />
+    </Header>
+    <slot />
+    <Footer />
+    <WhatsAppAdvisor />
+  </body>
+</html>

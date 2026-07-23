@@ -1,0 +1,26 @@
+---
+interface Props {
+  price: { label: string; original: string | null; current: string; discountText: string | null; reserveText: string };
+}
+const { price } = Astro.props;
+---
+<section class="price-section">
+  <div class="price-intro">
+    <p class="eyebrow">VALORES Y FORMAS DE PAGO</p>
+    <h2>Invierte en tu formación profesional</h2>
+    <p>{price.reserveText}</p>
+  </div>
+  <div class="price-panel">
+    <span class="enroll-label">{price.label}</span>
+    <p>Arancel total {price.original && <del>{price.original}</del>}</p>
+    <strong class="price">{price.current}</strong>
+    {price.discountText && <span class="discount">{price.discountText}</span>}
+    <button class="primary-detail-btn" type="button">Inscríbete aquí <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"></path></svg></button>
+  </div>
+  <div class="payment-panel">
+    <p class="eyebrow">MEDIOS DE PAGO</p>
+    <h3>Pago con tarjeta de débito o crédito</h3>
+    <strong>Webpay</strong>
+    <p>Consulta por otras formas de pago y facilidades de inscripción.</p>
+  </div>
+</section>
