@@ -1,7 +1,29 @@
 import { defineCollection, z } from 'astro:content';
+import overridesJson from '../data/courseOverrides.json';
+import teachersJson from '../data/teachers.json';
+import categoryGroups from '../data/categoryGroups.json';
+import { fetchProduct } from '../lib/woocommerce/client.ts';
+import { transformProduct } from '../lib/woocommerce/transform.ts';
+import type { CourseOverride } from '../lib/woocommerce/transform.ts';
+
+const overrides = overridesJson as Record<string, CourseOverride>;
+const groupTitleById = Object.fromEntries(categoryGroups.map((group) => [group.id, group.title]));
 
 const curso = defineCollection({
-  type: 'data',
+  loader: async () => {
+    const entries = await Promise.all(
+      Object.entries(overrides).map(async ([wcId, override]) => {
+        const product = await fetchProduct(wcId);
+        const groupTitle = groupTitleById[override.groupId];
+        if (!groupTitle) {
+          throw new Error(`courseOverrides.json entry ${wcId} has unknown groupId "${override.groupId}"`);
+        }
+        const data = transformProduct(product, wcId, override, teachersJson, groupTitle);
+        return { id: wcId, ...data };
+      }),
+    );
+    return entries;
+  },
   schema: z.object({
     slug: z.string(),
     groupId: z.string(),
@@ -45,7 +67,6 @@ const curso = defineCollection({
         body: z.string(),
         options: z.array(
           z.object({
-            availability: z.string(),
             title: z.string(),
             items: z.array(z.string()),
           }),
