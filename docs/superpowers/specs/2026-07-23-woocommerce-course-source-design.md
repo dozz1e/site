@@ -157,3 +157,44 @@ Se mantiene sin cambios:
   WooCommerce — simplemente no se listan en `courseOverrides.json`.
 - No se implementa revalidación en runtime (el sitio sigue siendo `output: 'static'`,
   el contenido se actualiza solo en cada rebuild).
+
+## Addendum (2026-07-26): hallazgos de la API real de WooCommerce
+
+Al inspeccionar `GET /wp-json/wc/v3/products` con los 37 productos reales (no solo
+la muestra inicial), aparecieron brechas que este addendum resuelve sin cambiar la
+arquitectura general:
+
+- **Imágenes no vienen de WooCommerce.** 12 de 37 productos no tienen ningún elemento
+  en `images[]`, y el nombre de archivo local (`/images/{slug}...`) no se deriva
+  limpio del slug en 15 de 37 casos. `courseOverrides.json` gana los campos
+  `heroImage` (string) y `listingImage` (`{ src, srcset, sizes }`), copiados 1:1 desde
+  los assets locales ya existentes en `public/images/`. Se elimina la fila `images`
+  de la tabla de mapeo original — WooCommerce nunca es fuente de imágenes.
+- **`schedule[0]` (fechas/inscripción) y `schedule[1]` (plan de estudios) son texto
+  curado, no derivable.** `acf.fecha_inicio`/`fecha_termino` vienen vacíos en
+  productos reales; `acf.plan_estudios` es contenido HTML extenso (malla curricular
+  completa) que no calza con el resumen corto de una frase que muestra hoy el sitio.
+  `courseOverrides.json` gana 4 campos requeridos: `scheduleEyebrow`, `scheduleTitle`,
+  `scheduleBody`, `planEstudiosBody` — copiados 1:1 desde los JSON locales actuales.
+- **`price.reserveText`** sigue la plantilla `Reserva tu cupo para ${hero.title}.` en
+  31 de 37 casos; los 5 diplomados y 1 excepción (`masaje-relajante-descontracturante`)
+  tienen texto propio. `courseOverrides.json` gana el campo opcional `reserveText`
+  (si se omite, se usa la plantilla).
+- **`price.label`** no es la constante única `"DESCUENTO VIGENTE"` — se deriva
+  `on_sale ? 'DESCUENTO VIGENTE' : 'ARANCEL TOTAL'`.
+- **`price.discountText`** se deriva de `on_sale` + `date_on_sale_to` +
+  `diploma`: `(diploma ? 'Válido hasta el ' : 'Descuento válido hasta el ') +
+  fecha`, sin fila de "hasta agotar cupos" (no ocurre en datos reales actuales).
+- **Slugs de WooCommerce no coinciden con las URLs actuales** en 27 de 37 casos
+  (ej. WC `masoterapia-deportiva` vs URL actual `/curso/diplomado-masoterapia-deportiva/`).
+  Se decidió mantener las URLs actuales: `courseOverrides.json` gana el campo
+  requerido `slug`, que gana sobre el slug nativo de WooCommerce.
+- **Mapeo slug actual → ID de producto WooCommerce** se resolvió con alta confianza
+  extrayendo el ID numérico ya presente en `hero.pdfHref` de los JSON locales
+  (`https://cenakin.cl/pdfs/{id}.pdf`) y cruzándolo contra el nombre del producto en
+  WooCommerce; 3 casos sin ese patrón se resolvieron por coincidencia exacta de slug
+  o de URL de página. Ver `scripts/generate-overrides.mjs` para la tabla completa.
+- **Nombres de docentes en ACF tienen variantes de ortografía** para la misma
+  persona (`"Jorge Rojas"`, `"Jorge Rojas S"`, `"Jorge Patricio Rojas Sánchez"` son
+  el mismo director académico). `teachers.json` incluye las 3 variantes como claves
+  separadas apuntando a los mismos datos, en vez de intentar normalizar en código.

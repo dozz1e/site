@@ -7,7 +7,7 @@ interface Props {
 const { course } = Astro.props;
 const { slug, listing } = course.data;
 ---
-<a class={`course-card${listing.longTitle ? ' long-title' : ''}`} href={`/curso/${slug}/`}>
+<a class={`course-card${listing.longTitle ? ' long-title' : ''}`} data-modality={listing.modality.toLowerCase()} href={`/curso/${slug}/`}>
   <div class="course-image">
     <img
       loading="lazy"

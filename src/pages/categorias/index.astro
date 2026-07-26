@@ -21,12 +21,12 @@ const totalCourses = allCourses.length;
 
     <section class="filterbar" id="catalogo">
       <div class="filters">
-        <button class="active">Todas</button>
-        <button>Presenciales</button>
-        <button>Semipresenciales</button>
-        <button>Online</button>
+        <button class="active" data-filter="todas">Todas</button>
+        <button data-filter="presencial">Presenciales</button>
+        <button data-filter="semipresencial">Semipresenciales</button>
+        <button data-filter="online">Online</button>
       </div>
-      <span>{totalCourses} formaciones disponibles</span>
+      <span id="filter-count">{totalCourses} formaciones disponibles</span>
     </section>
 
     <section class="help help-top" aria-label="Orientación para elegir un curso">
@@ -61,3 +61,41 @@ const totalCourses = allCourses.length;
     </section>
   </main>
 </BaseLayout>
+
+<script>
+  const filterButtons = document.querySelectorAll<HTMLButtonElement>('.filters button[data-filter]');
+  const groups = document.querySelectorAll<HTMLElement>('.course-group');
+  const countLabel = document.getElementById('filter-count');
+
+  function applyFilter(filter: string) {
+    let visibleCount = 0;
+
+    groups.forEach((group) => {
+      const cards = group.querySelectorAll<HTMLElement>('.course-card');
+      let groupHasVisible = false;
+
+      cards.forEach((card) => {
+        const matches = filter === 'todas' || card.dataset.modality === filter;
+        card.style.display = matches ? '' : 'none';
+        if (matches) {
+          groupHasVisible = true;
+          visibleCount += 1;
+        }
+      });
+
+      group.style.display = groupHasVisible ? '' : 'none';
+    });
+
+    if (countLabel) {
+      countLabel.textContent = `${visibleCount} formaciones disponibles`;
+    }
+  }
+
+  filterButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      filterButtons.forEach((btn) => btn.classList.remove('active'));
+      button.classList.add('active');
+      applyFilter(button.dataset.filter ?? 'todas');
+    });
+  });
+</script>
