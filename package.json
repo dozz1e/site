@@ -7,16 +7,15 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "extract:courses": "node scripts/extract-courses.mjs",
-    "test": "node --test scripts/"
+    "test": "node --test"
   },
   "dependencies": {
-    "astro": "^5.0.0"
+    "astro": "^5.0.0",
+    "cheerio": "^1.0.0"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
     "@types/node": "^26.1.1",
-    "cheerio": "^1.0.0",
     "typescript": "^5.9.3"
   }
 }
