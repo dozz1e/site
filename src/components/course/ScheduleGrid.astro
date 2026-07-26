@@ -4,7 +4,7 @@ interface Props {
     eyebrow: string;
     title: string;
     body: string;
-    options: Array<{ availability: string; title: string; items: string[] }>;
+    options: Array<{ title: string; items: string[] }>;
   }>;
 }
 const { schedule } = Astro.props;
@@ -17,7 +17,6 @@ const { schedule } = Astro.props;
     <div class="schedule-grid">
       {block.options.map((option) => (
         <article>
-          <span class="availability">{option.availability}</span>
           <h3>{option.title}</h3>
           <ul>
             {option.items.map((item) => <li>{item}</li>)}
