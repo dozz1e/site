@@ -1,6 +1,8 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import teachers from '../../data/teachers.json' with { type: 'json' };
+import teachersJson from '../../data/teachers.json' with { type: 'json' };
+
+const teachers = teachersJson as Record<string, { photo: string; summary: string; tags: string[] }>;
 
 const EXPECTED_NAMES = [
   'Camila González',
