@@ -109,3 +109,20 @@ test('transformProduct falls back to formula defaults when optional overrides ar
   assert.deepEqual(data.listing.badges, ['♙ Curso certificado', '◷ 150 horas', '◉ Semipresencial']);
   assert.equal(data.hero.pdfHref, 'https://cenakin.cl/pdfs/5571.pdf');
 });
+
+test('transformProduct handles off-sale (not discounted) product pricing', () => {
+  const OFF_SALE_PRODUCT = {
+    ...PRODUCT,
+    id: 3461,
+    regular_price: '500000',
+    sale_price: '',
+    on_sale: false,
+    date_on_sale_to: null,
+  };
+  const data = transformProduct(OFF_SALE_PRODUCT, '3461', OVERRIDE, TEACHERS, 'Educación continua o especializaciones');
+
+  assert.equal(data.price.label, 'ARANCEL TOTAL');
+  assert.equal(data.price.original, null);
+  assert.equal(data.price.current, '$500.000');
+  assert.equal(data.price.discountText, null);
+});
