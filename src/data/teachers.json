@@ -1,0 +1,32 @@
+{
+  "Jorge Patricio Rojas Sánchez": {
+    "photo": "/images/docente-jorge.jpg",
+    "summary": "Licenciado en Kinesiología por la Pontificia Universidad Católica de Valparaíso, ranking N.º 2 de su generación. Director académico y docente de OTEC Cenakin.",
+    "tags": ["Kinesiólogo", "Director académico", "Masoterapia"]
+  },
+  "Jorge Rojas": {
+    "photo": "/images/docente-jorge.jpg",
+    "summary": "Licenciado en Kinesiología por la Pontificia Universidad Católica de Valparaíso, ranking N.º 2 de su generación. Director académico y docente de OTEC Cenakin.",
+    "tags": ["Kinesiólogo", "Director académico", "Masoterapia"]
+  },
+  "Jorge Rojas S": {
+    "photo": "/images/docente-jorge.jpg",
+    "summary": "Licenciado en Kinesiología por la Pontificia Universidad Católica de Valparaíso, ranking N.º 2 de su generación. Director académico y docente de OTEC Cenakin.",
+    "tags": ["Kinesiólogo", "Director académico", "Masoterapia"]
+  },
+  "Guillermo Leiva": {
+    "photo": "/images/docente-guillermo.jpg",
+    "summary": "Licenciado en Kinesiología por la Universidad Andrés Bello. Docente de OTEC Cenakin.",
+    "tags": ["Kinesiólogo", "Masoterapeuta", "Punción seca y ventosas"]
+  },
+  "Tamara Bahamondes": {
+    "photo": "/images/docente-tamara.jpg",
+    "summary": "Licenciada en Nutrición por la Universidad de Valparaíso. Docente de OTEC Cenakin.",
+    "tags": ["Nutricionista", "Estética corporal", "Drenaje linfático"]
+  },
+  "Camila González": {
+    "photo": "/images/docente-camila.jpg",
+    "summary": "Técnico en Educación Diferencial por el CFT Santo Tomás. Docente de OTEC Cenakin.",
+    "tags": ["Educación diferencial", "Masoterapia integral", "Reflexología"]
+  }
+}
