@@ -49,6 +49,25 @@ const PROFESORES_BLOCKS = [
   '<div><h4>Guillermo Leiva</h4><ul><li>Licenciado en Kinesiología UNAB.</li><li>Diplomado en masoterapia OTEC Cenakin.</li></ul></div>',
 ];
 
+const FORMATO_NESTED_LI_HTML = `<h4>Opción 1</h4>
+<ul>
+<li>Lunes 18:15 a 22:30 horas.</li>
+<li>Inicio prácticas presenciales Lunes 09 marzo 2026</li>
+</ul>
+<h4>Opción 2</h4>
+<ul>
+<li style="list-style-type: none;">
+<ul>
+<li>Miércoles de 9:15 a 13:30 horas.</li>
+<li>Inicio prácticas presenciales Miércoles 11 marzo 2026</li>
+<li>Finalización Miércoles 16 de diciembre 2026</li>
+<li>Clases 1 vez por semana</li>
+<li>Inscripciones fuera de plazo hasta el 20 de marzo 2026. Las clases faltantes las recuperas en abril 2026</li>
+</ul>
+</li>
+</ul>
+`;
+
 test('parseIncludes returns trimmed leaf list items in order', () => {
   assert.deepEqual(parseIncludes(INCLUYE_HTML), [
     'Acceso a aula virtual.',
@@ -81,6 +100,28 @@ test('parseFormatoOptions ignores the leading h2/p and groups by h4', () => {
     'Horario: Miércoles de 19:30 a 22:30 horas y Jueves de 10:30 a 13:30 horas.',
   );
   assert.equal(options[2].items[1], 'Inicio prácticas presenciales: Miércoles 12 de agosto 2026');
+});
+
+test('parseFormatoOptions handles nested ul inside li (real WooCommerce product id 4149)', () => {
+  const options = parseFormatoOptions(FORMATO_NESTED_LI_HTML);
+  assert.equal(options.length, 2);
+  assert.equal(options[0].title, 'Opción 1');
+  assert.equal(options[1].title, 'Opción 2');
+  // Opción 1: normal list items
+  assert.equal(options[0].items.length, 2);
+  assert.deepEqual(options[0].items, [
+    'Lunes 18:15 a 22:30 horas.',
+    'Inicio prácticas presenciales Lunes 09 marzo 2026',
+  ]);
+  // Opción 2: nested ul extracted from wrapper li, yielding 5 leaf items
+  assert.equal(options[1].items.length, 5);
+  assert.deepEqual(options[1].items, [
+    'Miércoles de 9:15 a 13:30 horas.',
+    'Inicio prácticas presenciales Miércoles 11 marzo 2026',
+    'Finalización Miércoles 16 de diciembre 2026',
+    'Clases 1 vez por semana',
+    'Inscripciones fuera de plazo hasta el 20 de marzo 2026. Las clases faltantes las recuperas en abril 2026',
+  ]);
 });
 
 test('parseProfesores extracts name and credentials per teacher block', () => {
