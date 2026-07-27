@@ -8,6 +8,7 @@ import type { CourseOverride } from './transform.ts';
 const PRODUCT: WooCommerceProduct = {
   id: 5571,
   name: 'Diplomado en masoterapia deportiva',
+  slug: 'masoterapia-deportiva',
   regular_price: '950000',
   sale_price: '850000',
   on_sale: true,
@@ -63,7 +64,7 @@ test('transformProduct maps native, ACF, and override fields into the schema sha
   assert.equal(data.groupId, 'especializaciones');
   assert.equal(data.diploma, true);
   assert.equal(data.hero.title, 'Diplomado en Masoterapia Deportiva');
-  assert.equal(data.hero.image, 'https://cenakin.cl/images/cursos/diplomado-masoterapia-deportiva/1@3x.webp');
+  assert.equal(data.hero.image, 'https://cenakin.cl/images/cursos/masoterapia-deportiva/1@3x.webp');
   assert.deepEqual(data.hero.badges, ['DIPLOMADO CERTIFICADO', 'SEMIPRESENCIAL']);
   assert.equal(data.hero.pdfHref, 'https://cenakin.cl/pdfs/5571.pdf');
   assert.equal(data.facts.duration, '150 horas | 5 meses');

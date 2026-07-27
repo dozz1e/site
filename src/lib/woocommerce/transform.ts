@@ -85,7 +85,7 @@ export function transformProduct(
       longTitle: override.title.length > 70,
     },
     hero: {
-      image: `https://cenakin.cl/images/cursos/${override.slug}/1@3x.webp`,
+      image: `https://cenakin.cl/images/cursos/${product.slug}/1@3x.webp`,
       breadcrumbLabel: groupTitle,
       badges: [override.diploma ? 'DIPLOMADO CERTIFICADO' : 'CURSO CERTIFICADO', modality.toUpperCase()],
       title: override.title,
