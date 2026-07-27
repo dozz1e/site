@@ -27,7 +27,8 @@ function splitLabel(item: string): { label: string | null; value: string } {
     {block.bodyHtml && <div class="rich-content" set:html={block.bodyHtml} />}
     {block.pdfHref && (
       <a class="plan-download-link" href={block.pdfHref} target="_blank" rel="noreferrer">
-        Descargar programa completo <span aria-hidden="true">→</span>
+        Descargar programa completo
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"></path></svg>
       </a>
     )}
     {block.options.length > 0 && (
