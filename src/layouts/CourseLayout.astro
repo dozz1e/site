@@ -50,6 +50,6 @@ const { hero, facts, intro, schedule, teachers, includes, requirements, price, d
       </div>
       <EnrollForm course={hero.title} />
     </div>
-    <PriceSection price={price} />
+    <PriceSection wcId={course.id} price={price} />
   </main>
 </BaseLayout>
