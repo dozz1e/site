@@ -19,7 +19,6 @@ export interface CourseOverride {
   scheduleBody: string;
   planEstudiosBody: string;
   duration: string;
-  heroImage: string;
   listingImage: { src: string; srcset: string | null; sizes: string | null };
   reserveText?: string;
   pdfHref?: string;
@@ -86,7 +85,7 @@ export function transformProduct(
       longTitle: override.title.length > 70,
     },
     hero: {
-      image: override.heroImage,
+      image: `https://cenakin.cl/images/cursos/${override.slug}/1@3x.webp`,
       breadcrumbLabel: groupTitle,
       badges: [override.diploma ? 'DIPLOMADO CERTIFICADO' : 'CURSO CERTIFICADO', modality.toUpperCase()],
       title: override.title,
