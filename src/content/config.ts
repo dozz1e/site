@@ -66,6 +66,7 @@ const curso = defineCollection({
         title: z.string(),
         body: z.string(),
         bodyHtml: z.string().optional(),
+        pdfHref: z.string().optional(),
         options: z.array(
           z.object({
             title: z.string(),

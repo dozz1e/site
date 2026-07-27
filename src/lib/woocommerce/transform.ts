@@ -119,6 +119,7 @@ export function transformProduct(
         title: 'Plan de estudios',
         body: override.planEstudiosBody,
         bodyHtml: product.acf.plan_estudios,
+        pdfHref,
         options: [],
       },
     ],

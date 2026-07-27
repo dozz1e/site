@@ -78,6 +78,7 @@ test('transformProduct maps native, ACF, and override fields into the schema sha
   assert.equal(data.schedule[1].title, 'Plan de estudios');
   assert.equal(data.schedule[1].body, OVERRIDE.planEstudiosBody);
   assert.equal(data.schedule[1].bodyHtml, PRODUCT.acf.plan_estudios);
+  assert.equal(data.schedule[1].pdfHref, 'https://cenakin.cl/pdfs/5571.pdf');
   assert.equal(data.teachers.length, 2);
   assert.equal(data.teachers[0].name, 'Jorge Rojas');
   assert.deepEqual(data.teachers[0].credentials, ['Licenciado en Kinesiología.']);

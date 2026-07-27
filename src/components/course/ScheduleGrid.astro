@@ -5,6 +5,7 @@ interface Props {
     title: string;
     body: string;
     bodyHtml?: string;
+    pdfHref?: string;
     options: Array<{ title: string; items: string[] }>;
   }>;
 }
@@ -24,6 +25,11 @@ function splitLabel(item: string): { label: string | null; value: string } {
     <h2>{block.title}</h2>
     <p>{block.body}</p>
     {block.bodyHtml && <div class="rich-content" set:html={block.bodyHtml} />}
+    {block.pdfHref && (
+      <a class="plan-download-link" href={block.pdfHref} target="_blank" rel="noreferrer">
+        Descargar programa completo <span aria-hidden="true">→</span>
+      </a>
+    )}
     {block.options.length > 0 && (
       <div class="schedule-grid">
         {block.options.map((option) => (
