@@ -22,6 +22,8 @@ const PRODUCT: WooCommerceProduct = {
       '<div><h4>Guillermo Leiva</h4><ul><li>Licenciado en Kinesiología UNAB.</li></ul></div>',
     ],
     objetivo: 'Potenciar las habilidades profesionales de los alumnos y alumnas en masofilaxia y masoterapia.',
+    plan_estudios:
+      '<h3>Campo Ocupacional</h3><br /><br /> Los estudiantes podrán desempeñarse en spa, hoteles y centros deportivos.<br /><br /><ul><li>Aplicar técnicas de masaje deportivo.</li></ul>',
   },
 };
 
@@ -75,6 +77,7 @@ test('transformProduct maps native, ACF, and override fields into the schema sha
   assert.equal(data.schedule[0].options[0].title, 'Opción 1');
   assert.equal(data.schedule[1].title, 'Plan de estudios');
   assert.equal(data.schedule[1].body, OVERRIDE.planEstudiosBody);
+  assert.equal(data.schedule[1].bodyHtml, PRODUCT.acf.plan_estudios);
   assert.equal(data.teachers.length, 2);
   assert.equal(data.teachers[0].name, 'Jorge Rojas');
   assert.deepEqual(data.teachers[0].credentials, ['Licenciado en Kinesiología.']);

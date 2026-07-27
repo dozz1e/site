@@ -118,6 +118,7 @@ export function transformProduct(
         eyebrow: 'CONTENIDOS',
         title: 'Plan de estudios',
         body: override.planEstudiosBody,
+        bodyHtml: product.acf.plan_estudios,
         options: [],
       },
     ],

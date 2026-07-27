@@ -12,6 +12,7 @@ export interface WooCommerceProduct {
     formato: string;
     profesores: string[];
     objetivo: string;
+    plan_estudios: string;
   };
 }
 

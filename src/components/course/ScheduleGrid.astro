@@ -4,6 +4,7 @@ interface Props {
     eyebrow: string;
     title: string;
     body: string;
+    bodyHtml?: string;
     options: Array<{ title: string; items: string[] }>;
   }>;
 }
@@ -22,21 +23,24 @@ function splitLabel(item: string): { label: string | null; value: string } {
     <p class="eyebrow">{block.eyebrow}</p>
     <h2>{block.title}</h2>
     <p>{block.body}</p>
-    <div class="schedule-grid">
-      {block.options.map((option) => (
-        <article>
-          <h3>
-            <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg>
-            {option.title}
-          </h3>
-          <ul>
-            {option.items.map((item) => {
-              const { label, value } = splitLabel(item);
-              return label ? <li><b>{label}:</b>{' '}{value}</li> : <li>{value}</li>;
-            })}
-          </ul>
-        </article>
-      ))}
-    </div>
+    {block.bodyHtml && <div class="rich-content" set:html={block.bodyHtml} />}
+    {block.options.length > 0 && (
+      <div class="schedule-grid">
+        {block.options.map((option) => (
+          <article>
+            <h3>
+              <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg>
+              {option.title}
+            </h3>
+            <ul>
+              {option.items.map((item) => {
+                const { label, value } = splitLabel(item);
+                return label ? <li><b>{label}:</b>{' '}{value}</li> : <li>{value}</li>;
+              })}
+            </ul>
+          </article>
+        ))}
+      </div>
+    )}
   </section>
 ))}

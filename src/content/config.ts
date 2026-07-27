@@ -65,6 +65,7 @@ const curso = defineCollection({
         eyebrow: z.string(),
         title: z.string(),
         body: z.string(),
+        bodyHtml: z.string().optional(),
         options: z.array(
           z.object({
             title: z.string(),
