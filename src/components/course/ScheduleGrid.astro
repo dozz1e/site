@@ -8,6 +8,14 @@ interface Props {
   }>;
 }
 const { schedule } = Astro.props;
+
+function splitLabel(item: string): { label: string | null; value: string } {
+  const colonIndex = item.indexOf(':');
+  if (colonIndex > 0 && colonIndex <= 40) {
+    return { label: item.slice(0, colonIndex), value: item.slice(colonIndex + 1).trim() };
+  }
+  return { label: null, value: item };
+}
 ---
 {schedule.map((block) => (
   <section class="detail-section">
@@ -17,9 +25,15 @@ const { schedule } = Astro.props;
     <div class="schedule-grid">
       {block.options.map((option) => (
         <article>
-          <h3>{option.title}</h3>
+          <h3>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg>
+            {option.title}
+          </h3>
           <ul>
-            {option.items.map((item) => <li>{item}</li>)}
+            {option.items.map((item) => {
+              const { label, value } = splitLabel(item);
+              return label ? <li><b>{label}:</b>{' '}{value}</li> : <li>{value}</li>;
+            })}
           </ul>
         </article>
       ))}
