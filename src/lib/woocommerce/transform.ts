@@ -19,7 +19,6 @@ export interface CourseOverride {
   scheduleBody: string;
   planEstudiosBody: string;
   duration: string;
-  listingImage: { src: string; srcset: string | null; sizes: string | null };
   reserveText?: string;
   pdfHref?: string;
   calloutLabel?: string;
@@ -79,7 +78,7 @@ export function transformProduct(
     groupId: override.groupId,
     diploma: override.diploma,
     listing: {
-      image: override.listingImage,
+      image: `https://cenakin.cl/images/cursos/${product.slug}/mini.webp`,
       badges: listingBadges,
       modality,
       longTitle: override.title.length > 70,

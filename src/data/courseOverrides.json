@@ -15,11 +15,6 @@
     "scheduleBody": "El acceso comienza con la activación del aula virtual. Podrás avanzar a tu propio ritmo mediante cápsulas de video, material de lectura y recursos descargables.",
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las Plazo de 6 meses y las actividades programadas.",
     "duration": "Plazo de 6 meses",
-    "listingImage": {
-      "src": "/images/marketing-digital-1200.webp",
-      "srcset": "/images/marketing-digital-640.webp 640w, /images/marketing-digital-1200.webp 1200w, /images/marketing-digital-1600.webp 1600w, /images/marketing-digital.webp 2048w",
-      "sizes": "(max-width: 700px) 100vw, (max-width: 1100px) 36vw, 230px"
-    },
     "pdfHref": "https://cenakin.cl/cursos/diplomado-marketing-digital/",
     "listingBadges": [
       "♙ Curso certificado",
@@ -41,12 +36,7 @@
     "scheduleTitle": "Fechas y horarios",
     "scheduleBody": "Completa el contenido del aula virtual y participa en dos jornadas prácticas presenciales en Viña del Mar.",
     "planEstudiosBody": "La formación integra fundamentos científicos, criterios de evaluación y seguridad con práctica supervisada de punción seca y electropunción en distintas regiones corporales.",
-    "duration": "18 horas",
-    "listingImage": {
-      "src": "/images/puncion-seca-electropuncion-1200.webp",
-      "srcset": "/images/puncion-seca-electropuncion-640.webp 640w, /images/puncion-seca-electropuncion-1200.webp 1200w, /images/puncion-seca-electropuncion-1600.webp 1600w, /images/puncion-seca-electropuncion.webp 2048w",
-      "sizes": "(max-width: 700px) 100vw, (max-width: 1100px) 36vw, 230px"
-    }
+    "duration": "18 horas"
   },
   "3438": {
     "slug": "redes-sociales",
@@ -64,11 +54,6 @@
     "scheduleBody": "El acceso comienza con la activación del aula virtual. Podrás avanzar a tu propio ritmo mediante cápsulas de video, material de lectura y recursos descargables.",
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 20 horas y las actividades programadas.",
     "duration": "20 horas",
-    "listingImage": {
-      "src": "/images/redes-sociales-1200.webp",
-      "srcset": "/images/redes-sociales-640.webp 640w, /images/redes-sociales-1200.webp 1200w, /images/redes-sociales-1600.webp 1600w, /images/redes-sociales.webp 2048w",
-      "sizes": "(max-width: 700px) 100vw, (max-width: 1100px) 36vw, 230px"
-    },
     "listingBadges": [
       "♙ Curso certificado",
       "◉ Online"
@@ -90,11 +75,6 @@
     "scheduleBody": "El acceso comienza con la activación del aula virtual. Podrás avanzar a tu propio ritmo mediante cápsulas de video, material de lectura y recursos descargables.",
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 40 horas y las actividades programadas.",
     "duration": "40 horas",
-    "listingImage": {
-      "src": "/images/redes-sociales-google-ads-1200.webp",
-      "srcset": "/images/redes-sociales-google-ads-640.webp 640w, /images/redes-sociales-google-ads-1200.webp 1200w, /images/redes-sociales-google-ads-1600.webp 1600w, /images/redes-sociales-google-ads.webp 2048w",
-      "sizes": "(max-width: 700px) 100vw, (max-width: 1100px) 36vw, 230px"
-    },
     "listingBadges": [
       "♙ Curso certificado",
       "◉ Online"
@@ -115,12 +95,7 @@
     "scheduleTitle": "Fechas y horarios",
     "scheduleBody": "El programa comienza con una bienvenida online y continúa con prácticas presenciales. Al matricularte debes seleccionar una sola opción de horario.",
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 20 horas y las actividades programadas.",
-    "duration": "20 horas",
-    "listingImage": {
-      "src": "/images/masaje-deportivo-1200.webp",
-      "srcset": "/images/masaje-deportivo-640.webp 640w, /images/masaje-deportivo-1200.webp 1200w, /images/masaje-deportivo-1600.webp 1600w, /images/masaje-deportivo.webp 2048w",
-      "sizes": "(max-width: 700px) 100vw, (max-width: 1100px) 36vw, 230px"
-    }
+    "duration": "20 horas"
   },
   "4004": {
     "slug": "drenaje-linfatico-manual",
@@ -137,12 +112,7 @@
     "scheduleTitle": "Fechas y horarios",
     "scheduleBody": "El programa comienza con una bienvenida online y continúa con prácticas presenciales. Al matricularte debes seleccionar una sola opción de horario.",
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 20 horas y las actividades programadas.",
-    "duration": "20 horas",
-    "listingImage": {
-      "src": "/images/drenaje-linfatico-manual-1200.webp",
-      "srcset": "/images/drenaje-linfatico-manual-640.webp 640w, /images/drenaje-linfatico-manual-1200.webp 1200w, /images/drenaje-linfatico-manual-1600.webp 1600w, /images/drenaje-linfatico-manual.webp 2048w",
-      "sizes": "(max-width: 700px) 100vw, (max-width: 1100px) 36vw, 230px"
-    }
+    "duration": "20 horas"
   },
   "4148": {
     "slug": "masaje-relajante-descontracturante",
@@ -160,11 +130,6 @@
     "scheduleBody": "El inicio contempla una clase online de bienvenida vía Zoom, donde conocerás el reglamento y la metodología. Las clases prácticas presenciales comienzan durante la misma semana o la siguiente.",
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 20 horas y las actividades programadas.",
     "duration": "20 horas",
-    "listingImage": {
-      "src": "/images/masaje-relajante-descontracturante-1200.webp",
-      "srcset": "/images/masaje-relajante-descontracturante-640.webp 640w, /images/masaje-relajante-descontracturante-1200.webp 1200w, /images/masaje-relajante-descontracturante-1600.webp 1600w, /images/masaje-relajante-descontracturante.webp 2048w",
-      "sizes": "(max-width: 700px) 100vw, (max-width: 1100px) 36vw, 230px"
-    },
     "reserveText": "Reserva tu cupo y comienza tu camino en la masoterapia.",
     "pdfHref": "#programa",
     "calloutLabel": "Da el primer paso"
@@ -184,12 +149,7 @@
     "scheduleTitle": "Fechas y horarios",
     "scheduleBody": "El programa comienza con una bienvenida online y continúa con prácticas presenciales. Al matricularte debes seleccionar una sola opción de horario.",
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 20 horas y las actividades programadas.",
-    "duration": "20 horas",
-    "listingImage": {
-      "src": "/images/skin-care-1200.webp",
-      "srcset": "/images/skin-care-640.webp 640w, /images/skin-care-1200.webp 1200w, /images/skin-care-1600.webp 1600w, /images/skin-care.webp 2048w",
-      "sizes": "(max-width: 700px) 100vw, (max-width: 1100px) 36vw, 230px"
-    }
+    "duration": "20 horas"
   },
   "4286": {
     "slug": "masaje-craneal-champi",
@@ -206,12 +166,7 @@
     "scheduleTitle": "Fechas y horarios",
     "scheduleBody": "El programa comienza con una bienvenida online y continúa con prácticas presenciales. Al matricularte debes seleccionar una sola opción de horario.",
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 5 horas y las actividades programadas.",
-    "duration": "5 horas",
-    "listingImage": {
-      "src": "/images/masaje-craneal-champi-1200.webp",
-      "srcset": "/images/masaje-craneal-champi-640.webp 640w, /images/masaje-craneal-champi-1200.webp 1200w, /images/masaje-craneal-champi-1600.webp 1600w, /images/masaje-craneal-champi.webp 2048w",
-      "sizes": "(max-width: 700px) 100vw, (max-width: 1100px) 36vw, 230px"
-    }
+    "duration": "5 horas"
   },
   "4478": {
     "slug": "masaje-reductivo-anticelulitico",
@@ -228,12 +183,7 @@
     "scheduleTitle": "Fechas y horarios",
     "scheduleBody": "El programa comienza con una bienvenida online y continúa con prácticas presenciales. Al matricularte debes seleccionar una sola opción de horario.",
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 20 horas y las actividades programadas.",
-    "duration": "20 horas",
-    "listingImage": {
-      "src": "/images/masaje-reductivo-anticelulitico-1200.webp",
-      "srcset": "/images/masaje-reductivo-anticelulitico-640.webp 640w, /images/masaje-reductivo-anticelulitico-1200.webp 1200w, /images/masaje-reductivo-anticelulitico-1600.webp 1600w, /images/masaje-reductivo-anticelulitico.webp 2048w",
-      "sizes": "(max-width: 700px) 100vw, (max-width: 1100px) 36vw, 230px"
-    }
+    "duration": "20 horas"
   },
   "4479": {
     "slug": "diplomado-online-masoterapia",
@@ -250,12 +200,7 @@
     "scheduleTitle": "Inicio y acceso",
     "scheduleBody": "El acceso comienza con la activación del aula virtual. Podrás avanzar a tu propio ritmo mediante cápsulas de video, material de lectura y recursos descargables.",
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 150 horas y las actividades programadas.",
-    "duration": "150 horas",
-    "listingImage": {
-      "src": "/images/diplomado-online-masoterapia-1200.webp",
-      "srcset": "/images/diplomado-online-masoterapia-640.webp 640w, /images/diplomado-online-masoterapia-1200.webp 1200w, /images/diplomado-online-masoterapia-1600.webp 1600w, /images/diplomado-online-masoterapia.webp 2048w",
-      "sizes": "(max-width: 700px) 100vw, (max-width: 1100px) 36vw, 230px"
-    }
+    "duration": "150 horas"
   },
   "4480": {
     "slug": "diplomado-semipresencial",
@@ -273,11 +218,6 @@
     "scheduleBody": "Inscripciones hasta el viernes 31 de julio de 2026.",
     "planEstudiosBody": "El aprendizaje combina contenido teórico asincrónico en aula virtual con jornadas prácticas presenciales. Para aprobar debes completar las actividades y evaluaciones programadas.",
     "duration": "150 horas",
-    "listingImage": {
-      "src": "/images/diplomado-semipresencial-2026.webp",
-      "srcset": null,
-      "sizes": null
-    },
     "reserveText": "Reserva tu cupo para la admisión de agosto de 2026."
   },
   "4642": {
@@ -295,12 +235,7 @@
     "scheduleTitle": "Fechas y horarios",
     "scheduleBody": "El programa comienza con una bienvenida online y continúa con prácticas presenciales. Al matricularte debes seleccionar una sola opción de horario.",
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 20 horas y las actividades programadas.",
-    "duration": "20 horas",
-    "listingImage": {
-      "src": "/images/reflexologia-1200.webp",
-      "srcset": "/images/reflexologia-640.webp 640w, /images/reflexologia-1200.webp 1200w, /images/reflexologia-1600.webp 1600w, /images/reflexologia.webp 2048w",
-      "sizes": "(max-width: 700px) 100vw, (max-width: 1100px) 36vw, 230px"
-    }
+    "duration": "20 horas"
   },
   "4647": {
     "slug": "masaje-reductivo-anticelulitico-drenaje-linfatico",
@@ -317,12 +252,7 @@
     "scheduleTitle": "Fechas y horarios",
     "scheduleBody": "El programa comienza con una bienvenida online y continúa con prácticas presenciales. Al matricularte debes seleccionar una sola opción de horario.",
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 40 horas y las actividades programadas.",
-    "duration": "40 horas",
-    "listingImage": {
-      "src": "/images/masaje-reductivo-anticelulitico-drenaje-linfatico-1200.webp",
-      "srcset": "/images/masaje-reductivo-anticelulitico-drenaje-linfatico-640.webp 640w, /images/masaje-reductivo-anticelulitico-drenaje-linfatico-1200.webp 1200w, /images/masaje-reductivo-anticelulitico-drenaje-linfatico-1600.webp 1600w, /images/masaje-reductivo-anticelulitico-drenaje-linfatico.webp 2048w",
-      "sizes": "(max-width: 700px) 100vw, (max-width: 1100px) 36vw, 230px"
-    }
+    "duration": "40 horas"
   },
   "4649": {
     "slug": "masaje-relajante-descontracturante-piedras-calientes",
@@ -339,12 +269,7 @@
     "scheduleTitle": "Fechas y horarios",
     "scheduleBody": "El programa comienza con una bienvenida online y continúa con prácticas presenciales. Al matricularte debes seleccionar una sola opción de horario.",
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 28 horas y las actividades programadas.",
-    "duration": "28 horas",
-    "listingImage": {
-      "src": "/images/masaje-relajante-piedras-calientes-1200.webp",
-      "srcset": "/images/masaje-relajante-piedras-calientes-640.webp 640w, /images/masaje-relajante-piedras-calientes-1200.webp 1200w, /images/masaje-relajante-piedras-calientes-1600.webp 1600w, /images/masaje-relajante-piedras-calientes.webp 2048w",
-      "sizes": "(max-width: 700px) 100vw, (max-width: 1100px) 36vw, 230px"
-    }
+    "duration": "28 horas"
   },
   "4691": {
     "slug": "diplomado-intensivo-masoterapia-2026",
@@ -362,11 +287,6 @@
     "scheduleBody": "Inscripciones hasta el 31 de julio de 2026.",
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 150 horas y las actividades programadas.",
     "duration": "150 horas",
-    "listingImage": {
-      "src": "/images/diplomado-intensivo-2026.webp",
-      "srcset": null,
-      "sizes": null
-    },
     "reserveText": "Reserva tu cupo para la admisión 2026.",
     "calloutLabel": "Formación práctica"
   },
@@ -385,12 +305,7 @@
     "scheduleTitle": "Fechas y horarios",
     "scheduleBody": "El programa comienza con una bienvenida online y continúa con prácticas presenciales. Al matricularte debes seleccionar una sola opción de horario.",
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 20 horas y las actividades programadas.",
-    "duration": "20 horas",
-    "listingImage": {
-      "src": "/images/masaje-craneo-facial-1200.webp",
-      "srcset": "/images/masaje-craneo-facial-640.webp 640w, /images/masaje-craneo-facial-1200.webp 1200w, /images/masaje-craneo-facial-1600.webp 1600w, /images/masaje-craneo-facial.webp 2048w",
-      "sizes": "(max-width: 700px) 100vw, (max-width: 1100px) 36vw, 230px"
-    }
+    "duration": "20 horas"
   },
   "4851": {
     "slug": "masaje-tailandes",
@@ -408,11 +323,6 @@
     "scheduleBody": "El programa comienza con una bienvenida online y continúa con prácticas presenciales. Al matricularte debes seleccionar una sola opción de horario.",
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 20 horas y las actividades programadas.",
     "duration": "20 horas",
-    "listingImage": {
-      "src": "/images/masaje-tailandes-1200.webp",
-      "srcset": "/images/masaje-tailandes-640.webp 640w, /images/masaje-tailandes-1200.webp 1200w, /images/masaje-tailandes-1600.webp 1600w, /images/masaje-tailandes.webp 2048w",
-      "sizes": "(max-width: 700px) 100vw, (max-width: 1100px) 36vw, 230px"
-    },
     "listingBadges": [
       "♙ Curso certificado",
       "◷ 10 horas",
@@ -434,12 +344,7 @@
     "scheduleTitle": "Fechas y horarios",
     "scheduleBody": "El programa comienza con una bienvenida online y continúa con prácticas presenciales. Al matricularte debes seleccionar una sola opción de horario.",
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 28 horas y las actividades programadas.",
-    "duration": "28 horas",
-    "listingImage": {
-      "src": "/images/masaje-relajante-silla-1200.webp",
-      "srcset": "/images/masaje-relajante-silla-640.webp 640w, /images/masaje-relajante-silla-1200.webp 1200w, /images/masaje-relajante-silla-1600.webp 1600w, /images/masaje-relajante-silla.webp 2048w",
-      "sizes": "(max-width: 700px) 100vw, (max-width: 1100px) 36vw, 230px"
-    }
+    "duration": "28 horas"
   },
   "5057": {
     "slug": "masaje-antiestres-descontracturante",
@@ -456,12 +361,7 @@
     "scheduleTitle": "Fechas y horarios",
     "scheduleBody": "El programa comienza con una bienvenida online y continúa con prácticas presenciales. Al matricularte debes seleccionar una sola opción de horario.",
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 40 horas y las actividades programadas.",
-    "duration": "40 horas",
-    "listingImage": {
-      "src": "/images/masaje-antiestres-descontracturante-1200.webp",
-      "srcset": "/images/masaje-antiestres-descontracturante-640.webp 640w, /images/masaje-antiestres-descontracturante-1200.webp 1200w, /images/masaje-antiestres-descontracturante-1600.webp 1600w, /images/masaje-antiestres-descontracturante.webp 2048w",
-      "sizes": "(max-width: 700px) 100vw, (max-width: 1100px) 36vw, 230px"
-    }
+    "duration": "40 horas"
   },
   "5114": {
     "slug": "masaje-deportivo-ventosas",
@@ -478,12 +378,7 @@
     "scheduleTitle": "Fechas y horarios",
     "scheduleBody": "El programa comienza con una bienvenida online y continúa con prácticas presenciales. Al matricularte debes seleccionar una sola opción de horario.",
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 28 horas y las actividades programadas.",
-    "duration": "28 horas",
-    "listingImage": {
-      "src": "/images/masaje-deportivo-ventosas-1200.webp",
-      "srcset": "/images/masaje-deportivo-ventosas-640.webp 640w, /images/masaje-deportivo-ventosas-1200.webp 1200w, /images/masaje-deportivo-ventosas-1600.webp 1600w, /images/masaje-deportivo-ventosas.webp 2048w",
-      "sizes": "(max-width: 700px) 100vw, (max-width: 1100px) 36vw, 230px"
-    }
+    "duration": "28 horas"
   },
   "5225": {
     "slug": "online-masaje-relajante-descontracturante",
@@ -500,12 +395,7 @@
     "scheduleTitle": "Inicio y acceso",
     "scheduleBody": "El acceso comienza con la activación del aula virtual. Podrás avanzar a tu propio ritmo mediante cápsulas de video, material de lectura y recursos descargables.",
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 20 horas y las actividades programadas.",
-    "duration": "20 horas",
-    "listingImage": {
-      "src": "/images/curso-online-masaje-relajante-descontracturante-1200.webp",
-      "srcset": "/images/curso-online-masaje-relajante-descontracturante-640.webp 640w, /images/curso-online-masaje-relajante-descontracturante-1200.webp 1200w, /images/curso-online-masaje-relajante-descontracturante-1600.webp 1600w, /images/curso-online-masaje-relajante-descontracturante.webp 2048w",
-      "sizes": "(max-width: 700px) 100vw, (max-width: 1100px) 36vw, 230px"
-    }
+    "duration": "20 horas"
   },
   "5242": {
     "slug": "maderoterapia",
@@ -522,12 +412,7 @@
     "scheduleTitle": "Fechas y horarios",
     "scheduleBody": "El programa comienza con una bienvenida online y continúa con prácticas presenciales. Al matricularte debes seleccionar una sola opción de horario.",
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 20 horas y las actividades programadas.",
-    "duration": "20 horas",
-    "listingImage": {
-      "src": "/images/curso-maderoterapia-1200.webp",
-      "srcset": "/images/curso-maderoterapia-640.webp 640w, /images/curso-maderoterapia-1200.webp 1200w, /images/curso-maderoterapia-1600.webp 1600w, /images/curso-maderoterapia.webp 2048w",
-      "sizes": "(max-width: 700px) 100vw, (max-width: 1100px) 36vw, 230px"
-    }
+    "duration": "20 horas"
   },
   "5324": {
     "slug": "drenaje-linfatico-postoperatorio",
@@ -544,12 +429,7 @@
     "scheduleTitle": "Fechas y horarios",
     "scheduleBody": "Revisa el contenido teórico mediante cápsulas grabadas en el aula virtual y participa en una jornada práctica presencial en Viña del Mar.",
     "planEstudiosBody": "La formación combina fundamentos anatómicos y fisiológicos, evaluación profesional y práctica supervisada de protocolos de drenaje linfático manual postoperatorio.",
-    "duration": "18 horas",
-    "listingImage": {
-      "src": "/images/drenaje-linfatico-postoperatorio-1200.webp",
-      "srcset": "/images/drenaje-linfatico-postoperatorio-640.webp 640w, /images/drenaje-linfatico-postoperatorio-1200.webp 1200w, /images/drenaje-linfatico-postoperatorio-1600.webp 1600w, /images/drenaje-linfatico-postoperatorio.webp 2048w",
-      "sizes": "(max-width: 700px) 100vw, (max-width: 1100px) 36vw, 230px"
-    }
+    "duration": "18 horas"
   },
   "5490": {
     "slug": "reanimacion-cardiopulmonar-dea",
@@ -567,11 +447,6 @@
     "scheduleBody": "Programa dirigido a empresas e instituciones. La fecha, el horario y el lugar se coordinan de acuerdo con las necesidades de cada organización.",
     "planEstudiosBody": "La capacitación combina fundamentos, demostración docente y práctica supervisada para responder correctamente ante emergencias cardiorrespiratorias.",
     "duration": "8 horas",
-    "listingImage": {
-      "src": "/images/rcp-desfibrilador-externo-1200.webp",
-      "srcset": "/images/rcp-desfibrilador-externo-640.webp 640w, /images/rcp-desfibrilador-externo-1200.webp 1200w, /images/rcp-desfibrilador-externo-1600.webp 1600w, /images/rcp-desfibrilador-externo.webp 2048w",
-      "sizes": "(max-width: 700px) 100vw, (max-width: 1100px) 36vw, 230px"
-    },
     "listingBadges": [
       "♙ Curso certificado",
       "◷ 8 horas",
@@ -593,12 +468,7 @@
     "scheduleTitle": "Fechas y horarios",
     "scheduleBody": "El programa comienza con una bienvenida online y continúa con prácticas presenciales. Al matricularte debes seleccionar una sola opción de horario.",
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 40 horas y las actividades programadas.",
-    "duration": "40 horas",
-    "listingImage": {
-      "src": "/images/curso-masaje-deportivo-ventosas-tape-1200.webp",
-      "srcset": "/images/curso-masaje-deportivo-ventosas-tape-640.webp 640w, /images/curso-masaje-deportivo-ventosas-tape-1200.webp 1200w, /images/curso-masaje-deportivo-ventosas-tape-1600.webp 1600w, /images/curso-masaje-deportivo-ventosas-tape.webp 2048w",
-      "sizes": "(max-width: 700px) 100vw, (max-width: 1100px) 36vw, 230px"
-    }
+    "duration": "40 horas"
   },
   "5530": {
     "slug": "masaje-relajante-descontracturante-drenaje-linfatico",
@@ -615,12 +485,7 @@
     "scheduleTitle": "Fechas y horarios",
     "scheduleBody": "El programa comienza con una bienvenida online y continúa con prácticas presenciales. Al matricularte debes seleccionar una sola opción de horario.",
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 40 horas y las actividades programadas.",
-    "duration": "40 horas",
-    "listingImage": {
-      "src": "/images/curso-masaje-relajante-drenaje-linfatico-1200.webp",
-      "srcset": "/images/curso-masaje-relajante-drenaje-linfatico-640.webp 640w, /images/curso-masaje-relajante-drenaje-linfatico-1200.webp 1200w, /images/curso-masaje-relajante-drenaje-linfatico-1600.webp 1600w, /images/curso-masaje-relajante-drenaje-linfatico.webp 2048w",
-      "sizes": "(max-width: 700px) 100vw, (max-width: 1100px) 36vw, 230px"
-    }
+    "duration": "40 horas"
   },
   "5534": {
     "slug": "masaje-relajante-descontracturante-craneo-facial",
@@ -637,12 +502,7 @@
     "scheduleTitle": "Fechas y horarios",
     "scheduleBody": "El programa comienza con una bienvenida online y continúa con prácticas presenciales. Al matricularte debes seleccionar una sola opción de horario.",
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 40 horas y las actividades programadas.",
-    "duration": "40 horas",
-    "listingImage": {
-      "src": "/images/curso-masaje-relajante-craneo-facial-1200.webp",
-      "srcset": "/images/curso-masaje-relajante-craneo-facial-640.webp 640w, /images/curso-masaje-relajante-craneo-facial-1200.webp 1200w, /images/curso-masaje-relajante-craneo-facial-1600.webp 1600w, /images/curso-masaje-relajante-craneo-facial.webp 2048w",
-      "sizes": "(max-width: 700px) 100vw, (max-width: 1100px) 36vw, 230px"
-    }
+    "duration": "40 horas"
   },
   "5535": {
     "slug": "masaje-estetico-integral",
@@ -659,12 +519,7 @@
     "scheduleTitle": "Fechas y horarios",
     "scheduleBody": "El programa comienza con una bienvenida online y continúa con prácticas presenciales. Al matricularte debes seleccionar una sola opción de horario.",
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 60 horas y las actividades programadas.",
-    "duration": "60 horas",
-    "listingImage": {
-      "src": "/images/masaje-corporal-60-horas-1200.webp",
-      "srcset": "/images/masaje-corporal-60-horas-640.webp 640w, /images/masaje-corporal-60-horas-1200.webp 1200w, /images/masaje-corporal-60-horas-1600.webp 1600w, /images/masaje-corporal-60-horas.webp 2048w",
-      "sizes": "(max-width: 700px) 100vw, (max-width: 1100px) 36vw, 230px"
-    }
+    "duration": "60 horas"
   },
   "5571": {
     "slug": "diplomado-masoterapia-deportiva",
@@ -682,11 +537,6 @@
     "scheduleBody": "Inscripciones hasta el viernes 7 de agosto de 2026.",
     "planEstudiosBody": "El aprendizaje combina contenido teórico asincrónico en aula virtual con jornadas prácticas presenciales. Para aprobar debes completar las actividades y evaluaciones programadas.",
     "duration": "150 horas | 5 meses",
-    "listingImage": {
-      "src": "/images/diplomado-masoterapia-deportiva-1200.webp",
-      "srcset": "/images/diplomado-masoterapia-deportiva-640.webp 640w, /images/diplomado-masoterapia-deportiva-1200.webp 1200w, /images/diplomado-masoterapia-deportiva-1600.webp 1600w, /images/diplomado-masoterapia-deportiva.webp 2048w",
-      "sizes": "(max-width: 700px) 100vw, (max-width: 1100px) 36vw, 230px"
-    },
     "reserveText": "Reserva tu cupo para la admisión de agosto de 2026."
   },
   "5666": {
@@ -705,11 +555,6 @@
     "scheduleBody": "Inscripciones hasta el viernes 7 de agosto de 2026.",
     "planEstudiosBody": "El aprendizaje combina contenido teórico asincrónico en aula virtual con jornadas prácticas presenciales. Para aprobar debes completar las actividades y evaluaciones programadas.",
     "duration": "150 horas | 5 meses",
-    "listingImage": {
-      "src": "/images/diplomado-masaje-energetico-1200.webp",
-      "srcset": "/images/diplomado-masaje-energetico-640.webp 640w, /images/diplomado-masaje-energetico-1200.webp 1200w, /images/diplomado-masaje-energetico-1600.webp 1600w, /images/diplomado-masaje-energetico.webp 2048w",
-      "sizes": "(max-width: 700px) 100vw, (max-width: 1100px) 36vw, 230px"
-    },
     "reserveText": "Reserva tu cupo para la admisión de agosto de 2026."
   },
   "5667": {
@@ -728,11 +573,6 @@
     "scheduleBody": "Inscripciones hasta el viernes 7 de agosto de 2026.",
     "planEstudiosBody": "El aprendizaje combina contenido teórico asincrónico en aula virtual con jornadas prácticas presenciales. Para aprobar debes completar las actividades y evaluaciones programadas.",
     "duration": "150 horas | 5 meses",
-    "listingImage": {
-      "src": "/images/diplomado-masoterapia-estetico-corporal-1200.webp",
-      "srcset": "/images/diplomado-masoterapia-estetico-corporal-640.webp 640w, /images/diplomado-masoterapia-estetico-corporal-1200.webp 1200w, /images/diplomado-masoterapia-estetico-corporal-1600.webp 1600w, /images/diplomado-masoterapia-estetico-corporal.webp 2048w",
-      "sizes": "(max-width: 700px) 100vw, (max-width: 1100px) 36vw, 230px"
-    },
     "reserveText": "Reserva tu cupo para la admisión de agosto de 2026."
   },
   "5691": {
@@ -750,12 +590,7 @@
     "scheduleTitle": "Inicio y acceso",
     "scheduleBody": "El acceso comienza con la activación del aula virtual. Podrás avanzar a tu propio ritmo mediante cápsulas de video, material de lectura y recursos descargables.",
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 10 horas y las actividades programadas.",
-    "duration": "10 horas",
-    "listingImage": {
-      "src": "/images/curso-online-anatomia-linfatica-1200.webp",
-      "srcset": "/images/curso-online-anatomia-linfatica-640.webp 640w, /images/curso-online-anatomia-linfatica-1200.webp 1200w, /images/curso-online-anatomia-linfatica-1600.webp 1600w, /images/curso-online-anatomia-linfatica.webp 2048w",
-      "sizes": "(max-width: 700px) 100vw, (max-width: 1100px) 36vw, 230px"
-    }
+    "duration": "10 horas"
   },
   "5692": {
     "slug": "online-anatomia-humana-muscular",
@@ -772,12 +607,7 @@
     "scheduleTitle": "Inicio y acceso",
     "scheduleBody": "El acceso comienza con la activación del aula virtual. Podrás avanzar a tu propio ritmo mediante cápsulas de video, material de lectura y recursos descargables.",
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 10 horas y las actividades programadas.",
-    "duration": "10 horas",
-    "listingImage": {
-      "src": "/images/curso-online-anatomia-humana-muscular-1200.webp",
-      "srcset": "/images/curso-online-anatomia-humana-muscular-640.webp 640w, /images/curso-online-anatomia-humana-muscular-1200.webp 1200w, /images/curso-online-anatomia-humana-muscular-1600.webp 1600w, /images/curso-online-anatomia-humana-muscular.webp 2048w",
-      "sizes": "(max-width: 700px) 100vw, (max-width: 1100px) 36vw, 230px"
-    }
+    "duration": "10 horas"
   },
   "5763": {
     "slug": "masaje-craneo-facial-shiro-champi",
@@ -794,12 +624,7 @@
     "scheduleTitle": "Fechas y horarios",
     "scheduleBody": "El programa comienza con una bienvenida online y continúa con prácticas presenciales. Al matricularte debes seleccionar una sola opción de horario.",
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 25 horas y las actividades programadas.",
-    "duration": "25 horas",
-    "listingImage": {
-      "src": "/images/curso-masaje-craneo-facial-shiro-champi-1200.webp",
-      "srcset": "/images/curso-masaje-craneo-facial-shiro-champi-640.webp 640w, /images/curso-masaje-craneo-facial-shiro-champi-1200.webp 1200w, /images/curso-masaje-craneo-facial-shiro-champi-1600.webp 1600w, /images/curso-masaje-craneo-facial-shiro-champi.webp 2048w",
-      "sizes": "(max-width: 700px) 100vw, (max-width: 1100px) 36vw, 230px"
-    }
+    "duration": "25 horas"
   },
   "5795": {
     "slug": "rotulacion-etiquetado-nutricional",
@@ -817,11 +642,6 @@
     "scheduleBody": "Participa en clases online en vivo, con acompañamiento docente y una programación definida para completar las actividades del curso.",
     "planEstudiosBody": "Las clases online en vivo combinan fundamentos normativos, aplicación de la legislación y ejercicios prácticos. Para obtener el certificado debes completar las 32 horas y las actividades programadas.",
     "duration": "32 horas",
-    "listingImage": {
-      "src": "/images/rotulacion-etiquetado-nutricional-1200.webp",
-      "srcset": "/images/rotulacion-etiquetado-nutricional-640.webp 640w, /images/rotulacion-etiquetado-nutricional-1200.webp 1200w, /images/rotulacion-etiquetado-nutricional-1600.webp 1600w, /images/rotulacion-etiquetado-nutricional.webp 2048w",
-      "sizes": "(max-width: 700px) 100vw, (max-width: 1100px) 36vw, 230px"
-    },
     "pdfHref": "https://cenakin.cl/cursos/curso-de-rotulacion-y-etiquetado-nutricional/"
   },
   "5824": {
@@ -839,11 +659,6 @@
     "scheduleTitle": "Inicio y acceso",
     "scheduleBody": "El acceso comienza con la activación del aula virtual. Podrás avanzar a tu propio ritmo mediante cápsulas de video, material de lectura y recursos descargables.",
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 20 horas y las actividades programadas.",
-    "duration": "20 horas",
-    "listingImage": {
-      "src": "/images/curso-online-drenaje-linfatico-manual.jpg",
-      "srcset": null,
-      "sizes": null
-    }
+    "duration": "20 horas"
   }
 }

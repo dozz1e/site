@@ -29,11 +29,7 @@ const curso = defineCollection({
     groupId: z.string(),
     diploma: z.boolean(),
     listing: z.object({
-      image: z.object({
-        src: z.string(),
-        srcset: z.string().nullable(),
-        sizes: z.string().nullable(),
-      }),
+      image: z.string(),
       badges: z.array(z.string()),
       modality: z.string(),
       longTitle: z.boolean(),

@@ -13,9 +13,7 @@ const { slug, listing } = course.data;
       loading="lazy"
       decoding="async"
       alt=""
-      src={listing.image.src}
-      srcset={listing.image.srcset || undefined}
-      sizes={listing.image.sizes || undefined}
+      src={listing.image}
     />
   </div>
   <div class="course-body">

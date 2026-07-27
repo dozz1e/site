@@ -44,11 +44,6 @@ const OVERRIDE: CourseOverride = {
   scheduleBody: 'Inscripciones hasta el viernes 7 de agosto de 2026.',
   planEstudiosBody: 'El aprendizaje combina contenido teórico asincrónico con jornadas prácticas.',
   duration: '150 horas | 5 meses',
-  listingImage: {
-    src: '/images/diplomado-masoterapia-deportiva-1200.webp',
-    srcset: '/images/diplomado-masoterapia-deportiva-640.webp 640w',
-    sizes: '(max-width: 700px) 100vw, (max-width: 1100px) 36vw, 230px',
-  },
   reserveText: 'Reserva tu cupo para la admisión de agosto de 2026.',
 };
 
@@ -65,6 +60,7 @@ test('transformProduct maps native, ACF, and override fields into the schema sha
   assert.equal(data.diploma, true);
   assert.equal(data.hero.title, 'Diplomado en Masoterapia Deportiva');
   assert.equal(data.hero.image, 'https://cenakin.cl/images/cursos/masoterapia-deportiva/1@3x.webp');
+  assert.equal(data.listing.image, 'https://cenakin.cl/images/cursos/masoterapia-deportiva/mini.webp');
   assert.deepEqual(data.hero.badges, ['DIPLOMADO CERTIFICADO', 'SEMIPRESENCIAL']);
   assert.equal(data.hero.pdfHref, 'https://cenakin.cl/pdfs/5571.pdf');
   assert.equal(data.facts.duration, '150 horas | 5 meses');
