@@ -36,6 +36,7 @@ const curso = defineCollection({
     }),
     hero: z.object({
       image: z.string(),
+      ogImage: z.string(),
       breadcrumbLabel: z.string(),
       badges: z.array(z.string()),
       title: z.string(),

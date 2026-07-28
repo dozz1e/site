@@ -18,7 +18,7 @@ interface Props {
 const { course, categoryTitle } = Astro.props;
 const { hero, facts, intro, schedule, teachers, includes, requirements, price, diploma } = course.data;
 ---
-<BaseLayout title={`Cenakin | ${hero.title}`} description={hero.subtitle} headerVariant="detail">
+<BaseLayout title={`Cenakin | ${hero.title}`} description={hero.subtitle} headerVariant="detail" image={hero.ogImage}>
   <main class={diploma ? 'detail-page diploma-detail' : 'detail-page'}>
     <section class="detail-hero">
       <img src={hero.image} alt={hero.title} />
