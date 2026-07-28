@@ -9,8 +9,32 @@ interface Props {
   title: string;
   description: string;
   headerVariant: 'home' | 'detail';
+  image?: string;
+  type?: 'website' | 'article';
 }
-const { title, description, headerVariant } = Astro.props;
+const { title, description, headerVariant, image = '/images/carrusel-cenakin-1-1200.webp', type = 'website' } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL(image, Astro.site);
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'EducationalOrganization',
+  name: 'Cenakin',
+  alternateName: 'OTEC Cenakin',
+  url: 'https://cenakin.cl',
+  logo: 'https://cenakin.cl/images/logo-cenakin.png',
+  image: ogImageURL.toString(),
+  telephone: '+56944871048',
+  email: 'info@cenakin.cl',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Calle Limache 1724, oficina 1102, Ed. Contemporáneo',
+    addressLocality: 'Viña del Mar',
+    addressCountry: 'CL',
+  },
+  sameAs: ['https://www.facebook.com/cenakinchile', 'https://www.instagram.com/cenakinchile'],
+};
 ---
 <html lang="es">
   <head>
@@ -18,7 +42,23 @@ const { title, description, headerVariant } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
     <link rel="icon" href="/favicon.svg" />
+
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content="Cenakin" />
+    <meta property="og:locale" content="es_CL" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={ogImageURL} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(organizationSchema)} />
   </head>
   <body>
     <Header variant={headerVariant}>
