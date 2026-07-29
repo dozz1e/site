@@ -75,7 +75,10 @@ const totalCourses = allCourses.length;
       let groupHasVisible = false;
 
       cards.forEach((card) => {
-        const matches = filter === 'todas' || card.dataset.modality === filter;
+        const matches =
+          filter === 'todas' ||
+          card.dataset.modality === filter ||
+          (filter === 'presencial' && card.dataset.modality === 'semipresencial');
         card.style.display = matches ? '' : 'none';
         if (matches) {
           groupHasVisible = true;
