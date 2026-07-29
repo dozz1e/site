@@ -15,7 +15,6 @@
     "scheduleBody": "El acceso comienza con la activación del aula virtual. Podrás avanzar a tu propio ritmo mediante cápsulas de video, material de lectura y recursos descargables.",
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las Plazo de 6 meses y las actividades programadas.",
     "duration": "Plazo de 6 meses",
-    "pdfHref": "https://cenakin.cl/cursos/diplomado-marketing-digital/",
     "listingBadges": [
       "♙ Curso certificado",
       "◉ Online"
@@ -131,7 +130,6 @@
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 20 horas y las actividades programadas.",
     "duration": "20 horas",
     "reserveText": "Reserva tu cupo y comienza tu camino en la masoterapia.",
-    "pdfHref": "#programa",
     "calloutLabel": "Da el primer paso"
   },
   "4284": {
@@ -641,8 +639,7 @@
     "scheduleTitle": "Fechas y horarios",
     "scheduleBody": "Participa en clases online en vivo, con acompañamiento docente y una programación definida para completar las actividades del curso.",
     "planEstudiosBody": "Las clases online en vivo combinan fundamentos normativos, aplicación de la legislación y ejercicios prácticos. Para obtener el certificado debes completar las 32 horas y las actividades programadas.",
-    "duration": "32 horas",
-    "pdfHref": "https://cenakin.cl/cursos/curso-de-rotulacion-y-etiquetado-nutricional/"
+    "duration": "32 horas"
   },
   "5824": {
     "slug": "online-drenaje-linfatico-manual",
