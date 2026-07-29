@@ -4,6 +4,23 @@ function cleanText(raw: string): string {
   return raw.replace(/\s+/g, ' ').trim();
 }
 
+function stripCuposSuffix(title: string): string {
+  return title.replace(/\s*cupos\s+disponibles\s*$/i, '').trim();
+}
+
+const SECTION_DIVIDER_HEADINGS = ['campo ocupacional', 'perfil egresado', 'perfil del egresado', 'malla curricular'];
+
+export function markSectionDividers(html: string): string {
+  const $ = load(`<div>${html}</div>`);
+  $('h2, h3').each((_, el) => {
+    const text = cleanText($(el).text()).replace(/:\s*$/, '').toLowerCase();
+    if (SECTION_DIVIDER_HEADINGS.includes(text)) {
+      $(el).addClass('section-divider');
+    }
+  });
+  return $('div').first().html() ?? html;
+}
+
 function leafListItems($: ReturnType<typeof load>, scope: string): string[] {
   return $(scope)
     .find('li')
@@ -34,7 +51,7 @@ function leafItemsOf($: ReturnType<typeof load>, ul: ReturnType<ReturnType<typeo
     .filter((_, li) => $(li).find('ul, ol').length === 0)
     .map((_, li) => cleanText($(li).text()))
     .get()
-    .filter((text) => text.length > 0);
+    .filter((text) => text.length > 0 && !/^cupos\s+disponibles$/i.test(text));
 }
 
 export function parseFormatoOptions(html: string): ScheduleOption[] {
@@ -53,7 +70,7 @@ export function parseFormatoOptions(html: string): ScheduleOption[] {
       .each((_, el) => {
         if (el.tagName === headingTag) {
           if (current) options.push(current);
-          current = { title: cleanText($(el).text()), items: [] };
+          current = { title: stripCuposSuffix(cleanText($(el).text())), items: [] };
           claimed = false;
         } else if (el.tagName === 'ul' && current && !claimed) {
           current.items = leafItemsOf($, $(el));

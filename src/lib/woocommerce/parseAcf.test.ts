@@ -101,6 +101,14 @@ const FORMATO_SINGLE_UNRELATED_H3_HTML = `<h2>Fechas y Horarios de clases</h2>
 </ul>
 `;
 
+const FORMATO_CUPOS_LI_HTML = `<h4>Jornada Diurna</h4>
+<ul>
+<li>Inicio: Lunes 03 de agosto 2026</li>
+<li>Cupos disponibles</li>
+<li>Fecha de inscripciones: hasta el lunes 10 de agosto de 2026 o hasta agotar cupos.</li>
+</ul>
+`;
+
 const PROFESORES_BLOCKS = [
   '<div><h4>Jorge Rojas</h4><ul><li>Licenciado en Kinesiología de la P.U.C.V.</li><li>Diplomado en pedagogía U mayor.</li><li>Certificado en masaje tailandés.</li></ul></div>',
   '<div><h4>Guillermo Leiva</h4><ul><li>Licenciado en Kinesiología UNAB.</li><li>Diplomado en masoterapia OTEC Cenakin.</li></ul></div>',
@@ -159,6 +167,13 @@ test('parseFormatoOptions ignores the leading h2/p and groups by h4', () => {
   assert.equal(options[2].items[1], 'Inicio prácticas presenciales: Miércoles 12 de agosto 2026');
 });
 
+test('parseFormatoOptions drops a standalone "Cupos disponibles" li but keeps "cupos" inside real sentences (real WooCommerce product id 4691)', () => {
+  const options = parseFormatoOptions(FORMATO_CUPOS_LI_HTML);
+  assert.equal(options[0].items.length, 2);
+  assert.ok(!options[0].items.some((item) => /^cupos disponibles$/i.test(item)));
+  assert.ok(options[0].items.some((item) => item.includes('hasta agotar cupos')));
+});
+
 test('parseFormatoOptions handles nested ul inside li (real WooCommerce product id 4149)', () => {
   const options = parseFormatoOptions(FORMATO_NESTED_LI_HTML);
   assert.equal(options.length, 2);
@@ -210,8 +225,8 @@ test('parseFormatoOptions treats a headingless top-level ul as a single option (
 test('parseFormatoOptions ignores an intro h3 and a trailing unclaimed ul when h4 options exist (real WooCommerce product id 3537)', () => {
   const options = parseFormatoOptions(FORMATO_INTRO_H3_AND_TRAILING_UL_HTML);
   assert.equal(options.length, 2);
-  assert.equal(options[0].title, 'Opción Miércoles Vespertino Cupos Disponibles');
-  assert.equal(options[1].title, 'Opción Jueves AM Cupos Disponibles');
+  assert.equal(options[0].title, 'Opción Miércoles Vespertino');
+  assert.equal(options[1].title, 'Opción Jueves AM');
   assert.equal(options[0].items.length, 2);
   assert.equal(options[1].items.length, 2);
   // The trailing "Fecha de inscripciones" ul belongs to no heading and must not leak into option 1.

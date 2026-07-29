@@ -1,5 +1,5 @@
 // src/lib/woocommerce/transform.ts
-import { parseIncludes, parseRequirements, parseFormatoOptions, parseProfesores } from './parseAcf.ts';
+import { parseIncludes, parseRequirements, parseFormatoOptions, parseProfesores, markSectionDividers } from './parseAcf.ts';
 import { formatCLP, formatSpanishDate } from './format.ts';
 import type { WooCommerceProduct } from './client.ts';
 
@@ -91,6 +91,7 @@ export function transformProduct(
       title: override.title,
       subtitle: override.introLead,
       pdfHref,
+      hasAvailability: product.stock_status === 'instock',
     },
     facts: {
       duration: override.duration,
@@ -117,7 +118,7 @@ export function transformProduct(
         eyebrow: 'CONTENIDOS',
         title: 'Plan de estudios',
         body: override.planEstudiosBody,
-        bodyHtml: product.acf.plan_estudios,
+        bodyHtml: markSectionDividers(product.acf.plan_estudios),
         pdfHref,
         options: [],
       },

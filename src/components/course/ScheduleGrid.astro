@@ -8,8 +8,9 @@ interface Props {
     pdfHref?: string;
     options: Array<{ title: string; items: string[] }>;
   }>;
+  hasAvailability: boolean;
 }
-const { schedule } = Astro.props;
+const { schedule, hasAvailability } = Astro.props;
 
 function splitLabel(item: string): { label: string | null; value: string } {
   const colonIndex = item.indexOf(':');
@@ -23,7 +24,7 @@ function splitLabel(item: string): { label: string | null; value: string } {
   <section class="detail-section">
     <p class="eyebrow">{block.eyebrow}</p>
     <h2>{block.title}</h2>
-    <p>{block.body}</p>
+    {block.title !== 'Plan de estudios' && <p>{block.body}</p>}
     {block.bodyHtml && <div class="rich-content" set:html={block.bodyHtml} />}
     {block.pdfHref && (
       <a class="plan-download-link" href={block.pdfHref} target="_blank" rel="noreferrer">
@@ -35,6 +36,7 @@ function splitLabel(item: string): { label: string | null; value: string } {
       <div class="schedule-grid">
         {block.options.map((option) => (
           <article>
+            <p class="availability-pill">{hasAvailability ? 'Cupos disponibles' : 'Sin cupos disponibles'}</p>
             <h3>
               <svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg>
               {option.title}

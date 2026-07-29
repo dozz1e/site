@@ -42,6 +42,7 @@ const curso = defineCollection({
       title: z.string(),
       subtitle: z.string(),
       pdfHref: z.string().nullable(),
+      hasAvailability: z.boolean(),
     }),
     facts: z.object({
       duration: z.string(),

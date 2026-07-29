@@ -6,6 +6,7 @@ export interface WooCommerceProduct {
   sale_price: string;
   on_sale: boolean;
   date_on_sale_to: string | null;
+  stock_status: 'instock' | 'outofstock' | 'onbackorder';
   acf: {
     horas: string;
     incluye: string;

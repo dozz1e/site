@@ -42,7 +42,7 @@ const { hero, facts, intro, schedule, teachers, includes, requirements, price, d
     <div class="detail-layout">
       <div class="detail-content">
         <IntroSection intro={intro} />
-        <ScheduleGrid schedule={schedule} />
+        <ScheduleGrid schedule={schedule} hasAvailability={hero.hasAvailability} />
         {teachers.map((teacher) => <TeacherCard teacher={teacher} />)}
         <IncludeSection includes={includes} requirements={requirements} />
         <Accreditation />
