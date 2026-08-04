@@ -40,6 +40,7 @@ const curso = defineCollection({
       breadcrumbLabel: z.string(),
       badges: z.array(z.string()),
       title: z.string(),
+      compactTitle: z.boolean(),
       subtitle: z.string(),
       pdfHref: z.string().nullable(),
       hasAvailability: z.boolean(),

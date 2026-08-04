@@ -1,5 +1,5 @@
 // src/lib/woocommerce/transform.ts
-import { parseIncludes, parseRequirements, parseFormatoOptions, parseProfesores, markSectionDividers } from './parseAcf.ts';
+import { parseIncludes, parseRequirements, parseFormatoOptions, parseProfesores, markSectionDividers, stripHtml } from './parseAcf.ts';
 import { formatCLP, formatSpanishDate } from './format.ts';
 import type { WooCommerceProduct } from './client.ts';
 
@@ -89,6 +89,7 @@ export function transformProduct(
       breadcrumbLabel: groupTitle,
       badges: [override.diploma ? 'DIPLOMADO CERTIFICADO' : 'CURSO CERTIFICADO', modality.toUpperCase()],
       title: override.title,
+      compactTitle: override.title.length > 60,
       subtitle: override.introLead,
       pdfHref,
       hasAvailability: product.stock_status === 'instock',
@@ -102,7 +103,7 @@ export function transformProduct(
     intro: {
       eyebrow: 'SOBRE ESTA FORMACIÓN',
       title: override.introTitle,
-      lead: override.introLead,
+      lead: stripHtml(product.short_description),
       body: product.acf.objetivo,
       calloutLabel,
       calloutText: override.calloutText,

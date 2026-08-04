@@ -9,6 +9,7 @@ const PRODUCT: WooCommerceProduct = {
   id: 5571,
   name: 'Diplomado en masoterapia deportiva',
   slug: 'masoterapia-deportiva',
+  short_description: '<p>Diplomado enfocado en técnicas de masoterapia deportiva aplicadas.</p>',
   regular_price: '950000',
   sale_price: '850000',
   on_sale: true,
@@ -66,6 +67,7 @@ test('transformProduct maps native, ACF, and override fields into the schema sha
   assert.equal(data.facts.duration, '150 horas | 5 meses');
   assert.equal(data.facts.modality, 'Semipresencial');
   assert.equal(data.intro.title, 'Diplomado intensivo en masoterapia deportiva');
+  assert.equal(data.intro.lead, 'Diplomado enfocado en técnicas de masoterapia deportiva aplicadas.');
   assert.equal(data.intro.body, PRODUCT.acf.objetivo);
   assert.equal(data.intro.calloutLabel, 'FORMACIÓN FLEXIBLE');
   assert.deepEqual(data.listing.badges, ['♙ Curso certificado', '◷ 150 horas', '◉ Semipresencial']);

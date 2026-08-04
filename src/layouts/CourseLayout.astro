@@ -19,7 +19,7 @@ const { course, categoryTitle } = Astro.props;
 const { hero, facts, intro, schedule, teachers, includes, requirements, price, diploma } = course.data;
 ---
 <BaseLayout title={`Cenakin | ${hero.title}`} description={hero.subtitle} headerVariant="detail" image={hero.ogImage}>
-  <main class={diploma ? 'detail-page diploma-detail' : 'detail-page'}>
+  <main class={`detail-page${diploma ? ' diploma-detail' : ''}${hero.compactTitle ? ' compact-course-title' : ''}`}>
     <section class="detail-hero">
       <img src={hero.image} alt={hero.title} />
       <div class="detail-hero-shade"></div>

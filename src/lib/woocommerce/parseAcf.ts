@@ -8,13 +8,20 @@ function stripCuposSuffix(title: string): string {
   return title.replace(/\s*cupos\s+disponibles\s*$/i, '').trim();
 }
 
+export function stripHtml(html: string): string {
+  return cleanText(load(`<div>${html}</div>`)('div').first().text());
+}
+
 const SECTION_DIVIDER_HEADINGS = ['campo ocupacional', 'perfil egresado', 'perfil del egresado', 'malla curricular'];
 
 export function markSectionDividers(html: string): string {
   const $ = load(`<div>${html}</div>`);
   $('h2, h3').each((_, el) => {
     const text = cleanText($(el).text()).replace(/:\s*$/, '').toLowerCase();
-    if (SECTION_DIVIDER_HEADINGS.includes(text)) {
+    const isFirstInBorderedWrapper =
+      ($(el).parent().hasClass('diploma-profile') || $(el).parent().hasClass('profile-block')) &&
+      $(el).is(':first-child');
+    if (SECTION_DIVIDER_HEADINGS.includes(text) && !isFirstInBorderedWrapper) {
       $(el).addClass('section-divider');
     }
   });
