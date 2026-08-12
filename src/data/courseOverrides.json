@@ -132,6 +132,24 @@
     "reserveText": "Reserva tu cupo y comienza tu camino en la masoterapia.",
     "calloutLabel": "Da el primer paso"
   },
+  "4149": {
+    "slug": "diplomado-masoterapia",
+    "groupId": "diplomados",
+    "modality": "Presencial",
+    "location": "Viña del Mar",
+    "nextStart": "6 de marzo de 2027",
+    "diploma": true,
+    "title": "Diplomado Anual en Masoterapia Profesional",
+    "introTitle": "Diplomado anual en masoterapia profesional",
+    "introLead": "Formación completa y progresiva para ejercer la masoterapia de manera segura y profesional.",
+    "calloutText": "Diez meses de formación con práctica supervisada en técnicas terapéuticas, estéticas y deportivas.",
+    "scheduleEyebrow": "ADMISIÓN 2027",
+    "scheduleTitle": "Fechas y horarios",
+    "scheduleBody": "Elige entre jornada vespertina, diurna o sábados, con inicio la primera semana de marzo de 2027.",
+    "planEstudiosBody": "Las clases se realizan presencialmente una vez por semana y combinan fundamentos teóricos, demostración docente, práctica supervisada, evaluaciones y apoyo mediante aula virtual. Para obtener la certificación debes completar las 150 horas y aprobar las actividades del programa.",
+    "duration": "150 horas",
+    "reserveText": "Reserva tu cupo para el diplomado anual en masoterapia."
+  },
   "4284": {
     "slug": "skin-care",
     "groupId": "salud",
