@@ -425,7 +425,8 @@
     "scheduleEyebrow": "AGENDA 2026",
     "scheduleTitle": "Fechas y horarios",
     "scheduleBody": "El programa comienza con una bienvenida online y continúa con prácticas presenciales. Al matricularte debes seleccionar una sola opción de horario.",
-    "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 40 horas y las actividades programadas."
+    "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 40 horas y las actividades programadas.",
+    "listingLongTitle": true
   },
   "5534": {
     "slug": "masaje-relajante-descontracturante-craneo-facial",

@@ -117,6 +117,11 @@ test('transformProduct falls back to formula defaults when optional overrides ar
   assert.equal(data.hero.pdfHref, 'https://cenakin.cl/pdfs/5571.pdf');
 });
 
+test('transformProduct honors override.listingLongTitle even when the title is short', () => {
+  const data = transformProduct(PRODUCT, '5571', { ...OVERRIDE, listingLongTitle: true }, TEACHERS, 'grupo');
+  assert.equal(data.listing.longTitle, true);
+});
+
 test('transformProduct handles off-sale (not discounted) product pricing', () => {
   const OFF_SALE_PRODUCT = {
     ...PRODUCT,

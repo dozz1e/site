@@ -22,6 +22,7 @@ export interface CourseOverride {
   pdfHref?: string;
   calloutLabel?: string;
   listingBadges?: string[];
+  listingLongTitle?: boolean;
 }
 
 export interface TeacherRegistryEntry {
@@ -101,7 +102,7 @@ export function transformProduct(
       image: `https://cenakin.cl/images/cursos/${product.slug}/mini.webp`,
       badges: listingBadges,
       modality,
-      longTitle: title.length > 70,
+      longTitle: override.listingLongTitle ?? title.length > 70,
     },
     hero: {
       image: `https://cenakin.cl/images/cursos/${product.slug}/1@3x.webp`,
