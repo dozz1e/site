@@ -1,6 +1,6 @@
 // src/lib/woocommerce/transform.ts
 import { parseIncludes, parseRequirements, parseFormatoOptions, parseProfesores, markSectionDividers, stripHtml } from './parseAcf.ts';
-import { formatCLP, formatSpanishDate } from './format.ts';
+import { formatCLP, formatSpanishDate, parseAcfDate } from './format.ts';
 import type { WooCommerceProduct } from './client.ts';
 
 export interface CourseOverride {
@@ -8,9 +8,8 @@ export interface CourseOverride {
   groupId: string;
   modality: string;
   location: string;
-  nextStart: string;
+  nextStart?: string;
   diploma: boolean;
-  title: string;
   introTitle: string;
   introLead: string;
   calloutText: string;
@@ -18,7 +17,7 @@ export interface CourseOverride {
   scheduleTitle: string;
   scheduleBody: string;
   planEstudiosBody: string;
-  duration: string;
+  duration?: string;
   reserveText?: string;
   pdfHref?: string;
   calloutLabel?: string;
@@ -33,6 +32,8 @@ export interface TeacherRegistryEntry {
 
 export type TeacherRegistry = Record<string, TeacherRegistryEntry>;
 
+const PURE_HORAS_PATTERN = /^\d+ horas$/;
+
 export function transformProduct(
   product: WooCommerceProduct,
   wcId: string,
@@ -42,6 +43,7 @@ export function transformProduct(
 ) {
   const modality = override.modality;
   const onSale = product.on_sale;
+  const title = product.name;
 
   const teachersData = parseProfesores(product.acf.profesores).map(({ name, credentials }) => {
     const registryEntry = teachers[name];
@@ -58,7 +60,7 @@ export function transformProduct(
   });
 
   const pdfHref = override.pdfHref ?? `https://cenakin.cl/pdfs/${wcId}.pdf`;
-  const reserveText = override.reserveText ?? `Reserva tu cupo para ${override.title}.`;
+  const reserveText = override.reserveText ?? `Reserva tu cupo para ${title}.`;
   const calloutLabel =
     override.calloutLabel ?? (override.diploma ? 'FORMACIÓN FLEXIBLE' : 'FORMACIÓN PRÁCTICA');
   const listingBadges = override.listingBadges ?? [
@@ -66,6 +68,24 @@ export function transformProduct(
     `◷ ${product.acf.horas} horas`,
     `◉ ${modality}`,
   ];
+
+  const nextStart = product.acf.fecha_inicio ? parseAcfDate(product.acf.fecha_inicio) : override.nextStart;
+  if (!nextStart) {
+    throw new Error(
+      `courseOverrides.json entry ${wcId} is missing nextStart (no acf.fecha_inicio and no override.nextStart)`,
+    );
+  }
+
+  const derivedDuration = product.acf.horas ? `${product.acf.horas} horas` : undefined;
+  const duration =
+    override.duration && !PURE_HORAS_PATTERN.test(override.duration)
+      ? override.duration
+      : (derivedDuration ?? override.duration);
+  if (!duration) {
+    throw new Error(
+      `courseOverrides.json entry ${wcId} is missing duration (no acf.horas and no override.duration)`,
+    );
+  }
 
   const priceRaw = onSale ? product.sale_price : product.regular_price;
   const discountText =
@@ -81,24 +101,24 @@ export function transformProduct(
       image: `https://cenakin.cl/images/cursos/${product.slug}/mini.webp`,
       badges: listingBadges,
       modality,
-      longTitle: override.title.length > 70,
+      longTitle: title.length > 70,
     },
     hero: {
       image: `https://cenakin.cl/images/cursos/${product.slug}/1@3x.webp`,
       ogImage: `https://cenakin.cl/images/cursos/${product.slug}/1.jpg`,
       breadcrumbLabel: groupTitle,
       badges: [override.diploma ? 'DIPLOMADO CERTIFICADO' : 'CURSO CERTIFICADO', modality.toUpperCase()],
-      title: override.title,
-      compactTitle: override.title.length > 60,
+      title,
+      compactTitle: title.length > 60,
       subtitle: override.introLead,
       pdfHref,
       hasAvailability: product.stock_status === 'instock',
     },
     facts: {
-      duration: override.duration,
+      duration,
       modality,
       location: override.location,
-      nextStart: override.nextStart,
+      nextStart,
     },
     intro: {
       eyebrow: 'SOBRE ESTA FORMACIÓN',

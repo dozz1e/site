@@ -16,6 +16,7 @@ const PRODUCT: WooCommerceProduct = {
   date_on_sale_to: '2026-07-31T23:59:59',
   acf: {
     horas: '150',
+    fecha_inicio: 'agosto 11, 2026',
     incluye: '<ul><li>Acceso a aula virtual.</li><li>Material de estudio digital.</li></ul>',
     dirigido: '<ul><li>Masoterapeuta certificado.</li></ul>',
     formato: '<h4>Opción 1</h4><ul><li>Miércoles 19:30 a 22:30.</li></ul>',
@@ -34,9 +35,8 @@ const OVERRIDE: CourseOverride = {
   groupId: 'especializaciones',
   modality: 'Semipresencial',
   location: 'Viña del Mar y aula virtual',
-  nextStart: '11 de agosto de 2026',
+  nextStart: '1 de enero de 2020',
   diploma: true,
-  title: 'Diplomado en Masoterapia Deportiva',
   introTitle: 'Diplomado intensivo en masoterapia deportiva',
   introLead: 'Aprende a acompañar a deportistas con técnicas seguras.',
   calloutText: 'Teoría online, práctica presencial y acompañamiento durante todo el proceso.',
@@ -59,12 +59,13 @@ test('transformProduct maps native, ACF, and override fields into the schema sha
   assert.equal(data.slug, 'diplomado-masoterapia-deportiva');
   assert.equal(data.groupId, 'especializaciones');
   assert.equal(data.diploma, true);
-  assert.equal(data.hero.title, 'Diplomado en Masoterapia Deportiva');
+  assert.equal(data.hero.title, 'Diplomado en masoterapia deportiva');
   assert.equal(data.hero.image, 'https://cenakin.cl/images/cursos/masoterapia-deportiva/1@3x.webp');
   assert.equal(data.listing.image, 'https://cenakin.cl/images/cursos/masoterapia-deportiva/mini.webp');
   assert.deepEqual(data.hero.badges, ['DIPLOMADO CERTIFICADO', 'SEMIPRESENCIAL']);
   assert.equal(data.hero.pdfHref, 'https://cenakin.cl/pdfs/5571.pdf');
   assert.equal(data.facts.duration, '150 horas | 5 meses');
+  assert.equal(data.facts.nextStart, '11 de agosto de 2026');
   assert.equal(data.facts.modality, 'Semipresencial');
   assert.equal(data.intro.title, 'Diplomado intensivo en masoterapia deportiva');
   assert.equal(data.intro.lead, 'Diplomado enfocado en técnicas de masoterapia deportiva aplicadas.');
@@ -110,7 +111,7 @@ test('transformProduct throws when a parsed teacher name has no registry entry',
 test('transformProduct falls back to formula defaults when optional overrides are absent', () => {
   const { reserveText, calloutLabel, listingBadges, pdfHref, ...overrideWithoutOptionals } = OVERRIDE;
   const data = transformProduct(PRODUCT, '5571', { ...overrideWithoutOptionals, diploma: false }, TEACHERS, 'grupo');
-  assert.equal(data.price.reserveText, 'Reserva tu cupo para Diplomado en Masoterapia Deportiva.');
+  assert.equal(data.price.reserveText, 'Reserva tu cupo para Diplomado en masoterapia deportiva.');
   assert.equal(data.intro.calloutLabel, 'FORMACIÓN PRÁCTICA');
   assert.deepEqual(data.listing.badges, ['♙ Curso certificado', '◷ 150 horas', '◉ Semipresencial']);
   assert.equal(data.hero.pdfHref, 'https://cenakin.cl/pdfs/5571.pdf');
@@ -131,4 +132,45 @@ test('transformProduct handles off-sale (not discounted) product pricing', () =>
   assert.equal(data.price.original, null);
   assert.equal(data.price.current, '$500.000');
   assert.equal(data.price.discountText, null);
+});
+
+test('transformProduct uses acf.fecha_inicio over a stale override.nextStart', () => {
+  const data = transformProduct(PRODUCT, '5571', OVERRIDE, TEACHERS, 'grupo');
+  assert.equal(data.facts.nextStart, '11 de agosto de 2026');
+});
+
+test('transformProduct falls back to override.nextStart when acf.fecha_inicio is empty', () => {
+  const productWithoutDate = { ...PRODUCT, acf: { ...PRODUCT.acf, fecha_inicio: '' } };
+  const data = transformProduct(productWithoutDate, '5571', OVERRIDE, TEACHERS, 'grupo');
+  assert.equal(data.facts.nextStart, '1 de enero de 2020');
+});
+
+test('transformProduct throws when nextStart has neither acf.fecha_inicio nor override.nextStart', () => {
+  const productWithoutDate = { ...PRODUCT, acf: { ...PRODUCT.acf, fecha_inicio: '' } };
+  const { nextStart, ...overrideWithoutNextStart } = OVERRIDE;
+  assert.throws(
+    () => transformProduct(productWithoutDate, '5571', overrideWithoutNextStart, TEACHERS, 'grupo'),
+    /entry 5571 is missing nextStart/,
+  );
+});
+
+test('transformProduct prefers acf.horas over a stale pure-hours override.duration', () => {
+  const productWithFewerHours = { ...PRODUCT, acf: { ...PRODUCT.acf, horas: '10' } };
+  const data = transformProduct(productWithFewerHours, '5571', { ...OVERRIDE, duration: '20 horas' }, TEACHERS, 'grupo');
+  assert.equal(data.facts.duration, '10 horas');
+});
+
+test('transformProduct falls back to a pure-hours override.duration when acf.horas is empty', () => {
+  const productWithoutHours = { ...PRODUCT, acf: { ...PRODUCT.acf, horas: '' } };
+  const data = transformProduct(productWithoutHours, '5571', { ...OVERRIDE, duration: '20 horas' }, TEACHERS, 'grupo');
+  assert.equal(data.facts.duration, '20 horas');
+});
+
+test('transformProduct throws when duration has neither acf.horas nor a usable override.duration', () => {
+  const productWithoutHours = { ...PRODUCT, acf: { ...PRODUCT.acf, horas: '' } };
+  const { duration, ...overrideWithoutDuration } = OVERRIDE;
+  assert.throws(
+    () => transformProduct(productWithoutHours, '5571', overrideWithoutDuration, TEACHERS, 'grupo'),
+    /entry 5571 is missing duration/,
+  );
 });

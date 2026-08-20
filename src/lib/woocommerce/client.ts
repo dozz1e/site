@@ -10,6 +10,7 @@ export interface WooCommerceProduct {
   stock_status: 'instock' | 'outofstock' | 'onbackorder';
   acf: {
     horas: string;
+    fecha_inicio: string;
     incluye: string;
     dirigido: string;
     formato: string;
