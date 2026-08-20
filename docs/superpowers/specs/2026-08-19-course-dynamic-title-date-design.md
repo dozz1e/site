@@ -26,6 +26,15 @@ spec anterior, `2026-07-23-woocommerce-course-source-design.md`, documentó que
 `acf.fecha_inicio` venía vacío en ese momento — desde entonces alguien lo empezó a
 llenar en WordPress para 28 de los 38 productos.)
 
+Al comparar en vivo los 38 productos se encontró que esto no es un caso aislado del
+diplomado mencionado: de los 28 cursos con `acf.fecha_inicio` poblado, **22 no
+coinciden** con el `nextStart` que hoy muestra el sitio (WordPress ya tiene fechas
+nuevas, ej. "13 de octubre de 2026", que nunca se copiaron a `courseOverrides.json`).
+También se confirmó que 28 de los 38 títulos difieren entre WordPress y el override
+(la mayoría solo en mayúsculas/minúsculas — WP usa case de oración, el sitio Title
+Case — y algunos con redacción distinta), y que el curso 4851 (masaje tailandés)
+muestra "20 horas" en el sitio mientras WordPress tiene `acf.horas = "10"`.
+
 Se revisó también si el copy editorial (`introTitle`, `calloutText`, `scheduleEyebrow`,
 `scheduleBody`, `reserveText`, `calloutLabel`, `planEstudiosBody`, `introLead`,
 `scheduleTitle`) tiene alguna fuente real en WordPress. Existen campos ACF
@@ -42,9 +51,9 @@ Dinámico desde WooCommerce (se borra el override correspondiente cuando aplica)
 
 | Campo | Fuente WooCommerce | Fallback a override |
 |---|---|---|
-| `hero.title` / `intro.title` (antes `override.title`) | `product.name` | Ninguno — `name` es obligatorio en WooCommerce, presente en 38/38 |
-| `facts.nextStart` | `acf.fecha_inicio`, formateado por `parseAcfDate()` | `override.nextStart`, solo para los cursos sin `fecha_inicio` (10/38 — cursos online/autoguiados sin fecha fija, ej. "Acceso inmediato") |
-| `facts.duration` | `acf.horas` → `` `${horas} horas` `` | `override.duration`, solo para los casos donde la duración no es solo horas (ej. "Plazo de 6 meses", "150 horas \| 5 meses") |
+| `hero.title` / `intro.title` (antes `override.title`) | `product.name` | Ninguno — `name` es obligatorio en WooCommerce, presente en 38/38. Se acepta el cambio visible de casing/redacción en 28 cursos: confirmado con el usuario. |
+| `facts.nextStart` | `acf.fecha_inicio`, formateado por `parseAcfDate()` | `override.nextStart`, solo para los cursos sin `fecha_inicio` (10/38 — cursos online/autoguiados sin fecha fija, ej. "Acceso inmediato"). Cuando `fecha_inicio` sí está poblado, gana siempre el valor derivado, aunque no coincida con lo que hoy dice el override — esa discrepancia **es** el bug que se está arreglando (confirmado en 22/28 casos). |
+| `facts.duration` | `acf.horas` → `` `${horas} horas` `` | `override.duration` gana solo cuando su texto **no** es puramente `` `${N} horas` `` (ej. "Plazo de 6 meses", "150 horas \| 5 meses" — información que WordPress no puede expresar). Si el override sí tiene la forma pura "N horas" y `acf.horas` está poblado, gana siempre el valor derivado de WordPress, aunque el número no coincida (mismo criterio que `nextStart` — confirmado con el usuario a partir del caso 4851, que hoy muestra "20 horas" con `acf.horas = "10"`). El override solo sobrevive sin condiciones cuando `acf.horas` está vacío en WordPress. |
 
 Se mantiene sin cambios (copy editorial, sin fuente en WordPress):
 `introTitle`, `introLead`, `calloutText`, `calloutLabel`, `scheduleEyebrow`,
@@ -70,11 +79,17 @@ poblado) al formato del sitio (`"8 de marzo de 2027"`). Reutiliza el arreglo
   en `hero.title`, `intro.title`, `listing.longTitle`, `hero.compactTitle`, y en la
   plantilla de `reserveText` por defecto (que ya usa `override.title` hoy — pasa a
   usar el `title` calculado).
-- `facts.nextStart` = `override.nextStart ?? parseAcfDate(product.acf.fecha_inicio)`.
-  Si no hay override y `fecha_inicio` viene vacío, el build falla explícito (ver
-  manejo de errores).
-- `facts.duration` = `override.duration ?? (product.acf.horas ? `${product.acf.horas} horas` : undefined)`.
-  Mismo criterio de build explícito si falta todo.
+- `facts.nextStart`: si `product.acf.fecha_inicio` no está vacío, siempre se usa
+  `parseAcfDate(product.acf.fecha_inicio)` — gana incluso si `override.nextStart`
+  está presente y no coincide (esa discrepancia es el bug). Solo se usa
+  `override.nextStart` cuando `fecha_inicio` viene vacío. Si ambos faltan, el build
+  falla explícito (ver manejo de errores).
+- `facts.duration`: si `override.duration` está presente y **no** matchea
+  `/^\d+ horas$/`, gana el override (es información que WordPress no puede
+  expresar, ej. "Plazo de 6 meses"). Si no hay override, o el override sí matchea
+  ese patrón puro, gana `` `${product.acf.horas} horas` `` cuando `acf.horas` no
+  está vacío. Si no hay ningún valor disponible (sin override utilizable y sin
+  `acf.horas`), el build falla explícito.
 
 **`src/lib/woocommerce/transform.ts` — `CourseOverride` interface**: `title` se
 elimina del tipo (ya no es un campo del override). `nextStart` y `duration` pasan de
@@ -87,18 +102,18 @@ con un script Node de un solo uso (vive en el scratchpad de la sesión, no se
 commitea al repo) que por cada entrada:
 
 1. Pide el producto real a WooCommerce.
-2. Borra la clave `title` siempre.
-3. Borra `nextStart` si `acf.fecha_inicio` no está vacío (y verifica que
-   `parseAcfDate(acf.fecha_inicio)` coincide con lo que hoy dice `override.nextStart`,
-   para detectar sorpresas antes de borrar — si no coincide, lo deja y lo reporta en
-   vez de borrarlo silenciosamente).
-4. Borra `duration` si es exactamente igual a `` `${acf.horas} horas` ``.
+2. Borra la clave `title` siempre (38/38).
+3. Borra `nextStart` si `acf.fecha_inicio` no está vacío (28/38) — sin importar si
+   coincide con el valor actual del override; el mismatch es justamente lo que se
+   está arreglando.
+4. Borra `duration` si matchea `/^\d+ horas$/` **y** `acf.horas` no está vacío —
+   sin importar si el número coincide (mismo criterio que el punto 3).
 5. Escribe el JSON resultante, preservando el orden de claves e indentado a 2
    espacios (mismo estilo que el archivo actual).
 
-El script imprime un resumen: cuántas entradas quedaron con `nextStart`/`duration`
-manual (las excepciones esperadas) y cualquier discrepancia que haya bloqueado un
-borrado automático, para revisión manual puntual.
+El script imprime un resumen con cada cambio: ID, campo borrado, valor viejo →
+valor nuevo derivado, para que quede como bitácora de la migración (no bloquea
+nada, es solo para revisión humana posterior).
 
 ## Manejo de errores en build
 
