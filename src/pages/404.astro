@@ -1,0 +1,168 @@
+---
+// Página "no encontrada". Astro la genera como dist/404.html; el servidor debe servirla
+// con estado 404 (ErrorDocument 404 /404.html en el .htaccess de SiteGround).
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import groups from '../data/categoryGroups.json';
+import '../styles/not-found.css';
+
+const MONTHS = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+
+// nextStart llega como "8 de marzo de 2027", o como texto libre ("Acceso inmediato", "Fecha a convenir").
+function parseStart(text: string): Date | null {
+  const match = text.match(/^(\d{1,2}) de ([a-záéíóú]+) de (\d{4})$/i);
+  if (!match) return null;
+  const month = MONTHS.indexOf(match[2].toLowerCase());
+  return month === -1 ? null : new Date(Number(match[3]), month, Number(match[1]));
+}
+
+const courses = await getCollection('curso');
+const today = new Date();
+today.setHours(0, 0, 0, 0);
+
+// Próximos inicios con fecha; si no alcanzan, se completa con cursos de acceso inmediato.
+// Se envían hasta seis: el script del final quita los que ya empezaron y la lista muestra tres.
+const dated = courses
+  .map((course) => ({ course, start: parseStart(course.data.facts.nextStart) }))
+  .filter((item): item is { course: (typeof courses)[number]; start: Date } => item.start !== null && item.start >= today)
+  .sort((a, b) => a.start.getTime() - b.start.getTime());
+const immediate = courses
+  .filter((course) => /inmediato/i.test(course.data.facts.nextStart))
+  .map((course) => ({ course, start: null }));
+const upcoming = [...dated, ...immediate].slice(0, 6);
+
+const isoDate = (date: Date) =>
+  `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+const shortDate = (date: Date) => `${date.getDate()} ${MONTHS[date.getMonth()].slice(0, 3)} ${date.getFullYear()}`;
+
+const coursesPerGroup = new Map<string, number>();
+for (const course of courses) {
+  coursesPerGroup.set(course.data.groupId, (coursesPerGroup.get(course.data.groupId) ?? 0) + 1);
+}
+// "Cursos de Masajes Deportivos" → "Masajes Deportivos": en una lista de áreas el prefijo sobra.
+const areaLabel = (title: string) => {
+  const label = title.replace(/^Cursos (de|para|y) /, '');
+  return label.charAt(0).toUpperCase() + label.slice(1);
+};
+const areas = groups
+  .map((group) => ({ ...group, label: areaLabel(group.title), count: coursesPerGroup.get(group.id) ?? 0 }))
+  .filter((group) => group.count > 0);
+
+const diploma = courses.find((course) => course.data.diploma);
+---
+<BaseLayout
+  title="Página no encontrada | Cenakin"
+  description="La página que buscas no existe o cambió de dirección. Encuentra tu próxima formación en Cenakin."
+  headerVariant="detail"
+  noindex
+>
+  <main class="nf-page">
+    <section class="nf-hero" aria-labelledby="nf-title">
+      <div class="nf-copy">
+        <p class="crumb"><a href="/">Inicio</a> <span>›</span> Página no encontrada</p>
+        <p class="eyebrow">ERROR 404</p>
+        <h1 id="nf-title">
+          Esta página
+          <span class="nf-knot">se contracturó.</span>
+        </h1>
+        <p class="nf-lead">
+          <span data-nf-path hidden>La dirección <code></code> no existe o cambió de lugar.</span>
+          <span data-nf-generic>La dirección que buscas no existe o cambió de lugar.</span>
+          Mientras la destrabamos, sigue por aquí: tenemos {courses.length} formaciones esperándote.
+        </p>
+        <div class="nf-actions">
+          <a class="nf-button" href="/categorias/">
+            Ver todos los cursos
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"></path></svg>
+          </a>
+          {diploma && (
+            <a class="nf-link" href={`/cursos/${diploma.data.slug}/`}>{diploma.data.hero.title}</a>
+          )}
+        </div>
+      </div>
+
+      {upcoming.length > 0 && (
+        <aside class="nf-rail" aria-labelledby="nf-rail-title">
+          <div class="nf-rail-head">
+            <h2 id="nf-rail-title">Empiezan pronto</h2>
+            <a href="/categorias/">Ver catálogo</a>
+          </div>
+          <ol class="nf-upcoming">
+            {upcoming.map(({ course, start }) => (
+              <li data-start={start ? isoDate(start) : undefined}>
+                <a href={`/cursos/${course.data.slug}/`}>
+                  <img src={course.data.listing.image} alt="" width="72" height="72" decoding="async" />
+                  <span class="nf-course">
+                    <span class="nf-when">
+                      {start ? <time datetime={isoDate(start)}>Inicio {shortDate(start)}</time> : 'Acceso inmediato'}
+                      <span aria-hidden="true">·</span> {course.data.listing.modality}
+                    </span>
+                    <strong>{course.data.hero.title}</strong>
+                  </span>
+                  <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"></path></svg>
+                </a>
+              </li>
+            ))}
+          </ol>
+        </aside>
+      )}
+    </section>
+
+    <section class="nf-areas" aria-labelledby="nf-areas-title">
+      <div class="nf-areas-head">
+        <h2 id="nf-areas-title">¿Qué te gustaría aprender?</h2>
+        <p>Explora nuestras {areas.length} áreas de formación, desde tu primer diplomado hasta especializaciones para profesionales de la salud.</p>
+      </div>
+      <ul class="nf-area-list">
+        {areas.map((area) => (
+          <li>
+            <a href={`/categorias/#${area.id}`}>
+              <span>{area.label}</span>
+              <small>{area.count} {area.count === 1 ? 'formación' : 'formaciones'}</small>
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"></path></svg>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="help nf-help" aria-label="Ayuda para encontrar un curso">
+      <div>
+        <h2>¿Buscabas un curso en particular?</h2>
+        <span>Dinos cuál y te enviamos la información por WhatsApp.</span>
+      </div>
+      <button type="button" onclick="window.dispatchEvent(new Event('cenakin:advisor'))">
+        Escríbenos
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"></path></svg>
+      </button>
+    </section>
+  </main>
+
+  <script>
+    // La dirección que el visitante intentó abrir (la página es estática y no la conoce al compilar).
+    // Una 404 recibe URLs mal escritas: si el escape es inválido, se muestra tal cual.
+    let path = window.location.pathname;
+    try {
+      path = decodeURI(path);
+    } catch {
+      // se mantiene la ruta sin decodificar
+    }
+    if (path && path !== '/404.html' && path !== '/404/') {
+      const specific = document.querySelector<HTMLElement>('[data-nf-path]');
+      const code = specific?.querySelector('code');
+      if (specific && code) {
+        code.textContent = path.length > 48 ? `${path.slice(0, 45)}…` : path;
+        specific.hidden = false;
+        document.querySelector<HTMLElement>('[data-nf-generic]')?.setAttribute('hidden', '');
+      }
+    }
+
+    // Quita los cursos que ya empezaron desde la última publicación; la lista muestra los tres primeros.
+    // Fecha local (no UTC): en Chile, de noche, UTC ya es el día siguiente.
+    const now = new Date();
+    const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+    document.querySelectorAll<HTMLElement>('.nf-upcoming li[data-start]').forEach((item) => {
+      if ((item.dataset.start ?? '') < today) item.remove();
+    });
+  </script>
+</BaseLayout>

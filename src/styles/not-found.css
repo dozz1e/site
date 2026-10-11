@@ -1,0 +1,356 @@
+/* Página 404 (src/pages/404.astro). Usa los tokens de global.css. */
+
+.nf-page {
+  background: #f6f9fc;
+  padding-bottom: 8px;
+}
+
+/* ---------- Primera pantalla: el error a la izquierda, el catálogo a la derecha ---------- */
+.nf-hero {
+  background: linear-gradient(105deg, #fff 38%, #eef9ff);
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr);
+  gap: clamp(36px, 5vw, 80px);
+  align-items: center;
+  max-width: 1500px;
+  margin: auto;
+  padding: 54px max(5vw, 30px) 72px;
+}
+.nf-copy .crumb a {
+  color: inherit;
+}
+.nf-copy .crumb a:hover {
+  color: var(--blue);
+}
+.nf-hero h1 {
+  color: var(--dark);
+  font-size: clamp(46px, 6.2vw, 88px);
+  font-weight: 300;
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  margin: 14px 0 22px;
+  text-wrap: balance;
+}
+.nf-knot {
+  display: block;
+  color: var(--blue);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  transform-origin: left center;
+}
+.nf-lead {
+  max-width: 56ch;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.7;
+  margin: 0;
+}
+.nf-lead code {
+  font: 500 0.9em ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: var(--dark);
+  background: #e8f4fd;
+  border-radius: 6px;
+  padding: 2px 7px;
+  overflow-wrap: anywhere;
+}
+.nf-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 26px;
+  margin-top: 34px;
+}
+.nf-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--blue);
+  color: #fff;
+  border-radius: 10px;
+  padding: 16px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  box-shadow: 0 8px 20px #0499ff33;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.nf-button:hover {
+  background: #0386e0;
+  box-shadow: 0 12px 26px #0499ff40;
+  transform: translateY(-2px);
+}
+.nf-link {
+  color: var(--dark);
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: #9fd3f5;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+  transition: color 0.2s, text-decoration-color 0.2s;
+}
+.nf-link:hover {
+  color: var(--blue);
+  text-decoration-color: var(--blue);
+}
+.nf-page svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Riel de cursos que empiezan pronto */
+.nf-rail {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 18px 44px #17365414;
+  padding: 26px 26px 12px;
+}
+.nf-rail-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+.nf-rail-head h2 {
+  color: var(--dark);
+  font-size: 19px;
+  font-weight: 500;
+  margin: 0;
+}
+.nf-rail-head a {
+  /* Texto chico: el azul de marca da 3:1 sobre blanco; este llega a 4.5:1. */
+  color: #0274c7;
+  font-size: 13px;
+  font-weight: 600;
+}
+.nf-rail-head a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.nf-upcoming {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nf-upcoming li + li {
+  border-top: 1px solid var(--line);
+}
+.nf-upcoming li:nth-child(n + 4) {
+  display: none;
+}
+.nf-upcoming a {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr) 18px;
+  gap: 16px;
+  align-items: center;
+  padding: 16px 0;
+  color: var(--dark);
+}
+.nf-upcoming img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 12px;
+  background: var(--pale);
+  transition: transform 0.3s;
+}
+.nf-course {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+}
+.nf-when {
+  color: #0274c7;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+.nf-course strong {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+.nf-upcoming svg {
+  color: #9aa9b8;
+  transition: color 0.2s, transform 0.2s;
+}
+.nf-upcoming a:hover strong {
+  color: var(--blue);
+}
+.nf-upcoming a:hover img {
+  transform: scale(1.04);
+}
+.nf-upcoming a:hover svg {
+  color: var(--blue);
+  transform: translateX(3px);
+}
+
+/* ---------- Áreas de formación ---------- */
+.nf-areas {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.6fr);
+  gap: clamp(30px, 5vw, 80px);
+  /* Mismo ancho y relleno que .nf-hero: todo empieza en el mismo borde izquierdo. */
+  max-width: 1500px;
+  margin: 76px auto 0;
+  padding: 0 max(5vw, 30px);
+}
+.nf-areas-head h2 {
+  color: var(--dark);
+  font-size: clamp(28px, 2.6vw, 36px);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin: 0 0 14px;
+}
+.nf-areas-head p {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0;
+}
+.nf-area-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 34px;
+}
+.nf-area-list li {
+  border-top: 1px solid #d9e5ee;
+}
+.nf-area-list a {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto 18px;
+  gap: 14px;
+  align-items: center;
+  padding: 17px 2px;
+  color: var(--dark);
+}
+.nf-area-list span {
+  font-size: 15px;
+  font-weight: 500;
+}
+.nf-area-list small {
+  color: var(--muted);
+  font-size: 12px;
+  white-space: nowrap;
+}
+.nf-area-list svg {
+  color: #9aa9b8;
+  transition: color 0.2s, transform 0.2s;
+}
+.nf-area-list a:hover span {
+  color: var(--blue);
+}
+.nf-area-list a:hover svg {
+  color: var(--blue);
+  transform: translateX(3px);
+}
+
+/* Franja de ayuda: reutiliza .help de global.css */
+.nf-help {
+  /* La franja se alinea con el contenido del hero (1500px centrados + su relleno lateral). */
+  max-width: none;
+  margin: 76px calc(max(0px, (100% - 1500px) / 2) + max(5vw, 30px)) 70px;
+}
+
+/* Foco visible en todos los enlaces y el botón de la página */
+.nf-page a:focus-visible,
+.nf-page button:focus-visible {
+  outline: 3px solid #0499ff;
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+/* ---------- Movimiento: la palabra se "descontractura" al cargar ----------
+   Solo transform y filter (sin animar letter-spacing, que recalcula el layout en cada cuadro). */
+@media (prefers-reduced-motion: no-preference) {
+  .nf-knot {
+    animation: nf-release 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
+  }
+  @keyframes nf-release {
+    from {
+      transform: scaleX(0.88);
+      filter: blur(1.5px);
+    }
+    to {
+      transform: none;
+      filter: none;
+    }
+  }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 980px) {
+  .nf-hero {
+    grid-template-columns: 1fr;
+    padding-bottom: 56px;
+  }
+  .nf-rail {
+    max-width: 640px;
+  }
+  .nf-areas {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    margin-top: 60px;
+  }
+}
+@media (max-width: 640px) {
+  .nf-hero {
+    padding: 34px 20px 44px;
+    gap: 34px;
+  }
+  .nf-copy .crumb {
+    margin-bottom: 24px;
+  }
+  .nf-hero h1 {
+    font-size: clamp(40px, 12vw, 54px);
+  }
+  .nf-lead {
+    font-size: 16px;
+  }
+  .nf-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .nf-button {
+    justify-content: center;
+  }
+  .nf-link {
+    text-align: center;
+  }
+  .nf-rail {
+    padding: 20px 18px 6px;
+    border-radius: 14px;
+  }
+  .nf-upcoming a {
+    grid-template-columns: 60px minmax(0, 1fr) 18px;
+    gap: 13px;
+  }
+  .nf-upcoming img {
+    width: 60px;
+    height: 60px;
+  }
+  .nf-areas {
+    padding: 0 20px;
+    margin-top: 48px;
+  }
+  .nf-area-list {
+    grid-template-columns: 1fr;
+  }
+  .nf-help {
+    margin: 48px 20px 50px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 26px 22px;
+  }
+}

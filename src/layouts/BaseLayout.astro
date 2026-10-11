@@ -13,8 +13,10 @@ interface Props {
   type?: 'website' | 'article';
   /** false: la página trae su propia cabecera y pie (p. ej. las páginas legales). */
   chrome?: boolean;
+  /** true: página que no debe indexarse ni declarar canonical (p. ej. la 404). */
+  noindex?: boolean;
 }
-const { title, description, headerVariant, image = '/images/carrusel-cenakin-1-1200.webp', type = 'website', chrome = true } = Astro.props;
+const { title, description, headerVariant, image = '/images/carrusel-cenakin-1-1200.webp', type = 'website', chrome = true, noindex = false } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImageURL = new URL(image, Astro.site);
@@ -44,7 +46,7 @@ const organizationSchema = {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonicalURL} />
+    {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonicalURL} />}
     <link rel="icon" href="/favicon.svg" />
 
     <meta property="og:type" content={type} />
