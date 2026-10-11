@@ -11,8 +11,10 @@ interface Props {
   headerVariant: 'home' | 'detail';
   image?: string;
   type?: 'website' | 'article';
+  /** false: la página trae su propia cabecera y pie (p. ej. las páginas legales). */
+  chrome?: boolean;
 }
-const { title, description, headerVariant, image = '/images/carrusel-cenakin-1-1200.webp', type = 'website' } = Astro.props;
+const { title, description, headerVariant, image = '/images/carrusel-cenakin-1-1200.webp', type = 'website', chrome = true } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImageURL = new URL(image, Astro.site);
@@ -95,12 +97,14 @@ const organizationSchema = {
     <!-- End Meta Pixel Code -->
   </head>
   <body>
-    <Header variant={headerVariant}>
-      <MobileMenu slot="mobile-menu" />
-    </Header>
+    {chrome && (
+      <Header variant={headerVariant}>
+        <MobileMenu slot="mobile-menu" />
+      </Header>
+    )}
     <slot />
-    <Footer />
-    <WhatsAppAdvisor />
+    {chrome && <Footer />}
+    {chrome && <WhatsAppAdvisor />}
     <script>
       if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         const sections = document.querySelectorAll<HTMLElement>('main section');

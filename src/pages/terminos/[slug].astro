@@ -1,0 +1,89 @@
+---
+// Páginas legales: /terminos/terminos-y-condiciones/, /terminos/politica-privacidad/, /terminos/politica-cookies/.
+// El contenido vive en src/data/legalDocuments.json (paquete "Cenakin_actualizacion" v159).
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import documents from '../../data/legalDocuments.json';
+import '../../styles/legal.css';
+
+export function getStaticPaths() {
+  return documents.map((doc) => ({ params: { slug: doc.slug }, props: { doc } }));
+}
+
+const { doc } = Astro.props;
+const number = (i: number) => String(i + 1).padStart(2, '0');
+---
+<BaseLayout title={`${doc.title} | Cenakin`} description={doc.description} headerVariant="detail" chrome={false}>
+  <div class="legal-page" id="inicio-documento">
+    <header class="legal-header">
+      <a href="/" class="logo-lockup" aria-label="Cenakin inicio">
+        <span class="header-logo otec">
+          <img src="/images/logo-otec-cenakin-hq-780.webp" alt="OTEC Cenakin" width="780" height="473" decoding="async" fetchpriority="high" />
+        </span>
+        <span class="logo-divider" aria-hidden="true"></span>
+        <span class="header-logo cenakin">
+          <img src="/images/logo-cenakin.png" alt="Cenakin" width="325" height="198" decoding="async" fetchpriority="high" />
+        </span>
+      </a>
+      <span>Formación práctica para transformar vidas</span>
+      <a href="/categorias/">Explorar formaciones <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main class="legal-main">
+      <div class="legal-hero">
+        <nav class="legal-breadcrumb" aria-label="Ruta de navegación">
+          <a href="/">Inicio</a><span aria-hidden="true">/</span><span>Información legal</span>
+        </nav>
+        <p class="legal-eyebrow">INFORMACIÓN Y TRANSPARENCIA</p>
+        <h1>{doc.title}</h1>
+        <p class="legal-intro">{doc.description}</p>
+        <div class="legal-owner"><span aria-hidden="true">✓</span> OTEC Cenakin® SpA</div>
+      </div>
+
+      <nav class="legal-tabs" aria-label="Documentos legales">
+        {documents.map((d) => (
+          <a href={`/terminos/${d.slug}/`} aria-current={d.slug === doc.slug ? 'page' : undefined}>
+            {d.title}<span aria-hidden="true">↗</span>
+          </a>
+        ))}
+      </nav>
+
+      <div class="legal-layout">
+        <aside class="legal-sidebar">
+          <nav aria-label="Índice del documento">
+            <p>EN ESTE DOCUMENTO</p>
+            <ol>
+              {doc.sections.map((s, i) => (
+                <li><a href={`#seccion-${i + 1}`}><span>{number(i)}</span>{s.title}</a></li>
+              ))}
+            </ol>
+          </nav>
+          <div class="legal-contact">
+            <strong>¿Tienes alguna duda?</strong>
+            <p>Conversa con nuestro equipo.</p>
+            <a href="https://wa.me/56944871048" target="_blank" rel="noopener noreferrer">Contáctanos por WhatsApp ↗</a>
+          </div>
+        </aside>
+
+        <article class="legal-document">
+          {doc.sections.map((s, i) => (
+            <section id={`seccion-${i + 1}`}>
+              <div class="legal-section-title">
+                <span aria-hidden="true">{number(i)}</span>
+                <h2>{s.title}</h2>
+              </div>
+              <div class="legal-copy" set:html={s.html} />
+            </section>
+          ))}
+          <a class="legal-top" href="#inicio-documento">Volver al inicio ↑</a>
+        </article>
+      </div>
+    </main>
+
+    <footer class="legal-footer">
+      <span>© Cenakin · Formación que transforma vidas</span>
+      <nav aria-label="Enlaces legales">
+        {documents.map((d) => <a href={`/terminos/${d.slug}/`}>{d.title}</a>)}
+      </nav>
+    </footer>
+  </div>
+</BaseLayout>
