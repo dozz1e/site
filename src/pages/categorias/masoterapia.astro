@@ -1,0 +1,299 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/masoterapia.css';
+
+const pageUrl = 'https://cenakin.cl/categorias/masoterapia/';
+const whatsappUrl = (text: string) => `https://wa.me/56944871048?text=${encodeURIComponent(text)}`;
+
+// Las URLs salen de WooCommerce (vía la colección de cursos), buscando cada curso por su ID de producto.
+const courseSlugById = Object.fromEntries((await getCollection('curso')).map((course) => [course.id, course.data.slug]));
+const courseCards = [
+  { productId: '4148', image: 'masaje-relajante', illustration: true, title: 'Masaje relajante y descontracturante', meta: '20 horas · Presencial', alt: 'Ilustración anatómica de los músculos de la espalda trabajados en el masaje relajante y descontracturante' },
+  { productId: '3537', image: 'masaje-deportivo', title: 'Masaje deportivo', meta: '20 horas · Semipresencial', alt: 'Técnica práctica del curso de masaje deportivo de Cenakin' },
+  { productId: '4004', image: 'drenaje-linfatico', title: 'Drenaje linfático manual', meta: '20 horas · Semipresencial', alt: 'Práctica del curso de drenaje linfático manual de Cenakin' },
+  { productId: '4642', image: 'reflexologia', title: 'Reflexología', meta: '20 horas · Semipresencial', alt: 'Práctica del curso de reflexología de Cenakin' },
+  { productId: '4478', image: 'masaje-reductivo', title: 'Masaje reductivo y anticelulítico', meta: '20 horas · Semipresencial', alt: 'Técnica del curso de masaje reductivo y anticelulítico de Cenakin' },
+  { productId: '4795', image: 'masaje-craneo-facial', title: 'Masaje cráneo facial', meta: '20 horas · Semipresencial', alt: 'Práctica del curso de masaje cráneo facial de Cenakin' },
+];
+
+const courses = courseCards
+  .filter((course) => courseSlugById[course.productId])
+  .map((course) => ({ ...course, slug: courseSlugById[course.productId] }));
+const courseHref = (productId: string) => `/cursos/${courseSlugById[productId]}/`;
+
+const guide = [
+  { title: 'Quiero comenzar desde cero', text: 'El curso de masaje relajante y descontracturante entrega una base práctica para iniciarte y conocer el trabajo manual.', href: courseHref('4148'), link: 'Ver curso inicial' },
+  { title: 'Quiero aprender una técnica específica', text: 'Puedes elegir masaje deportivo, drenaje linfático, reflexología, masaje reductivo o masaje cráneo facial según tu interés.', href: '#cursos', link: 'Comparar cursos' },
+  { title: 'Quiero formarme profesionalmente', text: 'El Diplomado en Masoterapia integra anatomía, práctica supervisada y múltiples técnicas en una ruta formativa de 150 horas.', href: courseHref('4149'), link: 'Ver diplomado' },
+];
+
+const faqs = [
+  ['¿Necesito experiencia previa para estudiar masoterapia?', 'No. Puedes elegir el Diplomado si buscas una formación profesional completa o comenzar con un curso específico para explorar tu interés y aprender una técnica.'],
+  ['¿Qué diferencia existe entre un curso y el diplomado?', 'El diplomado entrega una formación integral de 150 horas. Los cursos permiten aprender o profundizar una técnica específica en menos tiempo.'],
+  ['¿Dónde se realizan las clases?', 'Las prácticas presenciales se realizan en Cenakin, Viña del Mar. También existen alternativas semipresenciales y online.'],
+  ['¿Qué certificación recibiré?', 'Al aprobar la formación recibirás la certificación correspondiente emitida por OTEC Cenakin.'],
+  ['¿Cuánto duran los cursos de masaje?', 'La mayoría de los cursos certificados tiene una duración de 20 horas. La duración y distribución de las clases puede variar según la técnica y la modalidad elegida.'],
+  ['¿Hay cursos presenciales, semipresenciales y online?', 'Sí. La oferta incluye alternativas presenciales en Viña del Mar, semipresenciales y online. Cada página de formación informa su modalidad específica.'],
+];
+
+const proofs = ['Docentes del área de la salud', 'Práctica guiada', 'Certificación Cenakin'];
+const features = ['Formación progresiva', 'Práctica presencial guiada', 'Aula virtual y material digital', 'Herramientas para emprender'];
+const modes = [['Anual', '10 meses'], ['Intensivo', '5 meses'], ['Semipresencial', '10 meses']];
+const trust = [
+  { src: '/images/logo-otec-cenakin.webp', alt: 'OTEC Cenakin', title: 'OTEC Cenakin', detail: 'N.º 19606' },
+  { src: '/images/icontec-nch-2728.webp', alt: 'Certificación ICONTEC NCh 2728', title: 'OTEC certificada', detail: 'OC–CER726261' },
+  { src: '/images/wmf-oficial.webp', alt: 'Miembro oficial World Massage Federation', title: 'Miembro oficial', detail: 'World Massage Federation' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'EducationalOrganization',
+      '@id': 'https://cenakin.cl/#organization',
+      name: 'OTEC Cenakin',
+      url: 'https://cenakin.cl/',
+      telephone: '+56 9 4487 1048',
+      email: 'info@cenakin.cl',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Calle Limache 1724, oficina 1102',
+        addressLocality: 'Viña del Mar',
+        addressRegion: 'Valparaíso',
+        addressCountry: 'CL',
+      },
+    },
+    {
+      '@type': 'CollectionPage',
+      '@id': `${pageUrl}#webpage`,
+      url: pageUrl,
+      name: 'Cursos de masoterapia y masaje en Viña del Mar',
+      description: 'Cursos de masaje certificados y Diplomado en Masoterapia con formación práctica en Viña del Mar.',
+      inLanguage: 'es-CL',
+      publisher: { '@id': 'https://cenakin.cl/#organization' },
+      breadcrumb: { '@id': `${pageUrl}#breadcrumb` },
+      mainEntity: { '@id': `${pageUrl}#courses` },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${pageUrl}#breadcrumb`,
+      itemListElement: [
+        ['Inicio', 'https://cenakin.cl/'],
+        ['Cursos', 'https://cenakin.cl/categorias/'],
+        ['Masoterapia', pageUrl],
+      ].map(([name, item], i) => ({ '@type': 'ListItem', position: i + 1, name, item })),
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${pageUrl}#courses`,
+      name: 'Cursos de masoterapia de Cenakin',
+      itemListElement: courses.map((c, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: c.title,
+        url: `https://cenakin.cl/cursos/${c.slug}/`,
+      })),
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${pageUrl}#faq`,
+      mainEntity: faqs.map(([q, a]) => ({
+        '@type': 'Question',
+        name: q,
+        acceptedAnswer: { '@type': 'Answer', text: a },
+      })),
+    },
+  ],
+};
+---
+<BaseLayout
+  title="Cursos de masoterapia y masaje en Viña del Mar | Cenakin"
+  description="Estudia masoterapia en Viña del Mar. Conoce cursos de masaje certificados y el Diplomado en Masoterapia de Cenakin con práctica guiada."
+  headerVariant="home"
+  image="/images/hero-masoterapia.webp"
+>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
+  <main class="maso-page">
+    <section class="maso-hero">
+      <div class="maso-hero-copy">
+        <nav class="maso-crumb" aria-label="Migas de pan">
+          <a href="/">Inicio</a><span>›</span><a href="/categorias/">Cursos</a><span>›</span>Masoterapia
+        </nav>
+        <p class="eyebrow">FORMACIÓN EN VIÑA DEL MAR</p>
+        <h1>Curso de masoterapia:<br /><span>elige cómo quieres comenzar.</span></h1>
+        <p>Encuentra cursos de masaje certificados o fórmate profesionalmente con el Diplomado en Masoterapia de Cenakin. Aprende con docentes del área de la salud y práctica guiada en Viña del Mar.</p>
+        <div class="maso-hero-actions">
+          <a href="#formacion-completa">Quiero formarme profesionalmente <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" /></svg></a>
+          <a href="#cursos">Quiero comenzar con un curso</a>
+        </div>
+        <div class="maso-proof">
+          {proofs.map((text) => (
+            <span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6" /></svg> {text}</span>
+          ))}
+        </div>
+      </div>
+      <div class="maso-hero-image">
+        <img
+          src="/images/hero-masoterapia.webp"
+          alt="Estudiante de Cenakin realizando una técnica de masaje en una clase práctica"
+          width="1086"
+          height="1448"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />
+        <div class="maso-image-note">
+          <span>PRÁCTICA GUIADA</span><strong>Aprende haciendo, con acompañamiento profesional.</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="maso-paths" id="caminos">
+      <header class="maso-section-head">
+        <p class="eyebrow">ELIGE SEGÚN TU OBJETIVO</p>
+        <h2>Elige cómo quieres comenzar</h2>
+        <p>Decide entre una formación profesional completa o una experiencia más acotada para explorar tu interés.</p>
+      </header>
+      <div class="maso-path-grid">
+        <a href="#formacion-completa" class="maso-path-card primary">
+          <span class="maso-path-number">01</span>
+          <small>QUIERO PROYECTARME PROFESIONALMENTE</small>
+          <h3>Formarme profesionalmente</h3>
+          <p>Elige una formación completa para aprender distintas técnicas, desarrollar una base sólida y proyectarte laboralmente o emprender en masoterapia.</p>
+          <b>Ver formación profesional <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" /></svg></b>
+        </a>
+        <a href="#cursos" class="maso-path-card">
+          <span class="maso-path-number">02</span>
+          <small>PREFIERO COMENZAR PASO A PASO</small>
+          <h3>Comenzar con un curso</h3>
+          <p>Explora tu interés, aprende una técnica específica o disfruta una actividad personal con una inversión y un compromiso inicial menores.</p>
+          <b>Explorar cursos <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" /></svg></b>
+        </a>
+      </div>
+    </section>
+
+    <section class="maso-feature" id="formacion-completa">
+      <div class="maso-feature-image">
+        <img src="/images/diplomado-masoterapia.webp" alt="Estudiantes del Diplomado en Masoterapia Cenakin" width="1600" height="1066" loading="lazy" decoding="async" />
+        <span>FORMACIÓN COMPLETA</span>
+      </div>
+      <div class="maso-feature-copy">
+        <p class="eyebrow">PARA FORMARTE PROFESIONALMENTE</p>
+        <h2>Diplomado en Masoterapia</h2>
+        <p>Una ruta formativa de 150 horas que integra anatomía aplicada, práctica supervisada y 13 técnicas de masaje de alta demanda.</p>
+        <ul>
+          {features.map((text) => (
+            <li><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6" /></svg> {text}</li>
+          ))}
+        </ul>
+        <div class="maso-mode-list">
+          {modes.map(([name, duration]) => <span><b>{name}</b> {duration}</span>)}
+        </div>
+        <a href={courseHref('4149')} class="maso-primary-btn">Ver modalidades del diplomado <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" /></svg></a>
+      </div>
+    </section>
+
+    <section class="maso-courses" id="cursos">
+      <header class="maso-section-head split">
+        <div>
+          <p class="eyebrow">PARA COMENZAR CON UN CURSO</p>
+          <h2>Cursos de masoterapia y cursos de masaje</h2>
+        </div>
+        <p>Opciones prácticas para explorar tu interés, aprender una técnica concreta o ampliar tus conocimientos.</p>
+      </header>
+      <div class="maso-course-grid">
+        {courses.map((course) => (
+          <a href={`/cursos/${course.slug}/`} class="maso-course-card">
+            <div>
+              <img
+                src={`/images/${course.image}.webp`}
+                alt={course.alt}
+                class={course.illustration ? 'is-illustration' : undefined}
+                loading="lazy"
+                decoding="async"
+              />
+              <span>CURSO CERTIFICADO</span>
+            </div>
+            <section>
+              <small>{course.meta}</small>
+              <h3>{course.title}</h3>
+              <b>Ver formación <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" /></svg></b>
+            </section>
+          </a>
+        ))}
+      </div>
+      <a href="/categorias/" class="maso-all-link">Ver todos los cursos de Cenakin <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" /></svg></a>
+    </section>
+
+    <section class="maso-learning">
+      <div>
+        <p class="eyebrow">APRENDIZAJE PRÁCTICO</p>
+        <h2>¿Qué aprenderás en nuestros cursos de masaje?</h2>
+      </div>
+      <div>
+        <p>Los cursos de masaje de Cenakin combinan contenidos teóricos con práctica guiada para aprender técnicas de masoterapia de forma progresiva.</p>
+        <p>Puedes comenzar con masaje relajante y descontracturante, masaje deportivo, drenaje linfático manual, reflexología, masaje reductivo o masaje cráneo facial.</p>
+        <p>Las actividades presenciales se realizan en Viña del Mar, con alternativas semipresenciales y online según la formación seleccionada.</p>
+      </div>
+    </section>
+
+    <section class="maso-guide">
+      <header class="maso-section-head">
+        <p class="eyebrow">ENCUENTRA TU FORMACIÓN</p>
+        <h2>¿Qué curso de masoterapia elegir?</h2>
+        <p>La mejor alternativa depende de si quieres comenzar, aprender una técnica puntual o desarrollar una formación profesional completa.</p>
+      </header>
+      <div class="maso-guide-grid">
+        {guide.map((item, i) => (
+          <article>
+            <span>{String(i + 1).padStart(2, '0')}</span>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+            <a href={item.href}>{item.link} <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" /></svg></a>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="maso-trust">
+      <div>
+        <p class="eyebrow">FORMACIÓN RESPALDADA</p>
+        <h2>Aprende con una institución acreditada</h2>
+      </div>
+      {trust.map((item) => (
+        <article>
+          <img src={item.src} alt={item.alt} loading="lazy" decoding="async" />
+          <strong>{item.title}</strong><span>{item.detail}</span>
+        </article>
+      ))}
+    </section>
+
+    <section class="maso-faq" id="preguntas">
+      <div>
+        <p class="eyebrow">ANTES DE ELEGIR</p>
+        <h2>Resolvemos tus dudas</h2>
+        <p>Si aún no sabes cuál formación necesitas, estas respuestas te ayudarán a orientarte.</p>
+      </div>
+      <div>
+        {faqs.map(([question, answer], i) => (
+          <details open={i === 0}>
+            <summary>{question}</summary>
+            <p>{answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <section class="maso-final">
+      <div>
+        <p class="eyebrow">ORIENTACIÓN PERSONALIZADA</p>
+        <h2>¿Todavía no sabes qué camino elegir?</h2>
+        <p>Cuéntanos qué quieres lograr y te ayudaremos a identificar la formación más adecuada.</p>
+      </div>
+      <a href={whatsappUrl('Hola, necesito orientación para elegir una formación de masoterapia.')} target="_blank" rel="noopener">
+        Solicitar orientación <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" /></svg>
+      </a>
+    </section>
+  </main>
+</BaseLayout>

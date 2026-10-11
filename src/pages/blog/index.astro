@@ -1,0 +1,92 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import blogCategories from '../../data/blogCategories.json';
+import blogAuthors from '../../data/blogAuthors.json';
+import { getPublishedPosts, getCategoryLabel, formatDate, isoDate } from '../../lib/blog/posts';
+import '../../styles/blog.css';
+
+const posts = await getPublishedPosts();
+const authors = blogAuthors as Record<string, { name: string }>;
+---
+<BaseLayout
+  title="Blog de masoterapia y formación | Cenakin"
+  description="Guías para conocer la masoterapia y elegir tu formación en masajes. Resuelve tus dudas y explora cursos y diplomados de Cenakin."
+  headerVariant="home"
+  image={posts[0] ? `${posts[0].data.image}.jpg` : undefined}
+>
+  <div class="cenakin-blog">
+    <main id="blog-main" class="blog-index">
+      <div class="blog-container">
+        <nav class="blog-breadcrumb" aria-label="Migas de pan">
+          <a href="/">Inicio</a><span aria-hidden="true">/</span><span aria-current="page">Blog</span>
+        </nav>
+        <header class="blog-intro">
+          <p class="blog-kicker">BLOG CENAKIN</p>
+          <h1>Aprender comienza<br />con una <em>buena pregunta.</em></h1>
+          <p>Guías sobre masoterapia y formación en masajes para entender tus opciones y elegir tu próximo paso.</p>
+        </header>
+
+        <section aria-labelledby="blog-guides-title" class="blog-catalog" data-blog-catalog>
+          <div class="blog-catalog-toolbar">
+            <div>
+              <p class="blog-kicker">EXPLORA EL BLOG</p>
+              <h2 id="blog-guides-title">Encuentra tu área de interés.</h2>
+            </div>
+            <div class="blog-category-control">
+              <label for="blog-category">Categoría</label>
+              <div class="blog-select-wrap">
+                <select id="blog-category">
+                  <option value="all" selected>Todas las categorías</option>
+                  {blogCategories.map((category) => <option value={category.id}>{category.label}</option>)}
+                </select>
+                <span class="blog-select-indicator" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="blog-catalog-summary" aria-live="polite" aria-atomic="true">
+            <span>Todos los artículos</span><span>{posts.length} {posts.length === 1 ? 'artículo' : 'artículos'}</span>
+          </div>
+          <div class="blog-card-grid">
+            {posts.map((post) => (
+              <a href={`/blog/${post.id}/`} class="blog-feature" data-category={post.data.category}>
+                <div class="blog-feature-image">
+                  <img
+                    width="640"
+                    height="480"
+                    loading="lazy"
+                    decoding="async"
+                    alt={post.data.imageAlt}
+                    src={`${post.data.image}-640.webp`}
+                  />
+                </div>
+                <div class="blog-feature-copy">
+                  <p class="blog-category-label">{getCategoryLabel(post.data.category)}</p>
+                  <h3>{post.data.title}</h3>
+                  <p>{post.data.description}</p>
+                  <div class="blog-article-meta">
+                    <span>{authors[post.data.author].name}</span>
+                    <time datetime={isoDate(post.data.pubDate)}>{formatDate(post.data.pubDate)}</time>
+                  </div>
+                  <span class="blog-read-link">Leer artículo</span>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        <section class="blog-study-callout" aria-labelledby="blog-study-title">
+          <div>
+            <p class="blog-kicker">DE LA CURIOSIDAD A LA FORMACIÓN</p>
+            <h2 id="blog-study-title">Encuentra dónde comenzar.</h2>
+            <p>Explora las opciones de Cenakin y compara cursos y diplomados según tus objetivos.</p>
+          </div>
+          <a class="blog-button" href="/categorias/masoterapia/">Ver cursos de masoterapia</a>
+        </section>
+      </div>
+    </main>
+  </div>
+</BaseLayout>
+
+<script src="../../scripts/blogCatalog.js"></script>

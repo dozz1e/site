@@ -1,6 +1,8 @@
 {
   "3276": {
-    "slug": "marketing-digital",
+    "previousSlugs": [
+      "marketing-digital"
+    ],
     "groupId": "marketing",
     "modality": "Online",
     "location": "Online",
@@ -20,7 +22,9 @@
     ]
   },
   "3353": {
-    "slug": "puncion-seca-electropuncion",
+    "previousSlugs": [
+      "puncion-seca-electropuncion"
+    ],
     "groupId": "salud",
     "modality": "Semipresencial",
     "location": "Viña del Mar",
@@ -34,7 +38,6 @@
     "planEstudiosBody": "La formación integra fundamentos científicos, criterios de evaluación y seguridad con práctica supervisada de punción seca y electropunción en distintas regiones corporales."
   },
   "3438": {
-    "slug": "redes-sociales",
     "groupId": "marketing",
     "modality": "Online",
     "location": "Online",
@@ -54,7 +57,6 @@
     ]
   },
   "3461": {
-    "slug": "redes-sociales-google-ads",
     "groupId": "marketing",
     "modality": "Online",
     "location": "Online",
@@ -73,7 +75,9 @@
     ]
   },
   "3537": {
-    "slug": "masaje-deportivo",
+    "previousSlugs": [
+      "masaje-deportivo"
+    ],
     "groupId": "deportivos",
     "modality": "Semipresencial",
     "location": "Viña del Mar",
@@ -87,7 +91,10 @@
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 20 horas y las actividades programadas."
   },
   "4004": {
-    "slug": "drenaje-linfatico-manual",
+    "previousSlugs": [
+      "drenaje-linfatico-manual"
+    ],
+    "imageSlug": "drenaje-linfatico-manual",
     "groupId": "esteticos",
     "modality": "Semipresencial",
     "location": "Viña del Mar",
@@ -101,7 +108,6 @@
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 20 horas y las actividades programadas."
   },
   "4148": {
-    "slug": "masaje-relajante-descontracturante",
     "groupId": "masajes",
     "modality": "Presencial",
     "location": "Viña del Mar",
@@ -117,7 +123,6 @@
     "calloutLabel": "Da el primer paso"
   },
   "4149": {
-    "slug": "diplomado-masoterapia",
     "groupId": "diplomados",
     "modality": "Presencial",
     "location": "Viña del Mar",
@@ -132,7 +137,6 @@
     "reserveText": "Reserva tu cupo para el diplomado anual en masoterapia."
   },
   "4284": {
-    "slug": "skin-care",
     "groupId": "salud",
     "modality": "Semipresencial",
     "location": "Viña del Mar",
@@ -146,7 +150,6 @@
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 20 horas y las actividades programadas."
   },
   "4286": {
-    "slug": "masaje-craneal-champi",
     "groupId": "holisticos",
     "modality": "Presencial",
     "location": "Viña del Mar",
@@ -160,7 +163,9 @@
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 5 horas y las actividades programadas."
   },
   "4478": {
-    "slug": "masaje-reductivo-anticelulitico",
+    "previousSlugs": [
+      "masaje-reductivo-anticelulitico"
+    ],
     "groupId": "esteticos",
     "modality": "Semipresencial",
     "location": "Viña del Mar",
@@ -174,7 +179,9 @@
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 20 horas y las actividades programadas."
   },
   "4479": {
-    "slug": "diplomado-online-masoterapia",
+    "previousSlugs": [
+      "diplomado-online-masoterapia"
+    ],
     "groupId": "online",
     "modality": "Online",
     "location": "Online",
@@ -189,7 +196,6 @@
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 150 horas y las actividades programadas."
   },
   "4480": {
-    "slug": "diplomado-semipresencial",
     "groupId": "diplomados",
     "modality": "Semipresencial",
     "location": "Viña del Mar y aula virtual",
@@ -204,7 +210,6 @@
     "reserveText": "Reserva tu cupo para la admisión de marzo de 2027."
   },
   "4642": {
-    "slug": "reflexologia",
     "groupId": "holisticos",
     "modality": "Semipresencial",
     "location": "Viña del Mar",
@@ -218,7 +223,9 @@
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 20 horas y las actividades programadas."
   },
   "4647": {
-    "slug": "masaje-reductivo-anticelulitico-drenaje-linfatico",
+    "previousSlugs": [
+      "masaje-reductivo-anticelulitico-drenaje-linfatico"
+    ],
     "groupId": "esteticos",
     "modality": "Semipresencial",
     "location": "Viña del Mar",
@@ -232,7 +239,9 @@
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 40 horas y las actividades programadas."
   },
   "4649": {
-    "slug": "masaje-relajante-descontracturante-piedras-calientes",
+    "previousSlugs": [
+      "masaje-relajante-descontracturante-piedras-calientes"
+    ],
     "groupId": "masajes",
     "modality": "Semipresencial",
     "location": "Viña del Mar",
@@ -246,7 +255,9 @@
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 28 horas y las actividades programadas."
   },
   "4691": {
-    "slug": "diplomado-intensivo-masoterapia-2026",
+    "previousSlugs": [
+      "diplomado-intensivo-masoterapia-2026"
+    ],
     "groupId": "diplomados",
     "modality": "Presencial",
     "location": "Viña del Mar",
@@ -262,7 +273,6 @@
     "calloutLabel": "Formación práctica"
   },
   "4795": {
-    "slug": "masaje-craneo-facial",
     "groupId": "cabeza-cuello",
     "modality": "Semipresencial",
     "location": "Viña del Mar",
@@ -276,7 +286,6 @@
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 20 horas y las actividades programadas."
   },
   "4851": {
-    "slug": "masaje-tailandes",
     "groupId": "holisticos",
     "modality": "Semipresencial",
     "location": "Viña del Mar",
@@ -295,7 +304,9 @@
     ]
   },
   "4852": {
-    "slug": "masaje-relajante-descontracturante-silla",
+    "previousSlugs": [
+      "masaje-relajante-descontracturante-silla"
+    ],
     "groupId": "masajes",
     "modality": "Semipresencial",
     "location": "Viña del Mar",
@@ -309,7 +320,9 @@
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 28 horas y las actividades programadas."
   },
   "5057": {
-    "slug": "masaje-antiestres-descontracturante",
+    "previousSlugs": [
+      "masaje-antiestres-descontracturante"
+    ],
     "groupId": "masajes",
     "modality": "Semipresencial",
     "location": "Viña del Mar",
@@ -323,7 +336,9 @@
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 40 horas y las actividades programadas."
   },
   "5114": {
-    "slug": "masaje-deportivo-ventosas",
+    "previousSlugs": [
+      "masaje-deportivo-ventosas"
+    ],
     "groupId": "deportivos",
     "modality": "Semipresencial",
     "location": "Viña del Mar",
@@ -337,13 +352,16 @@
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 28 horas y las actividades programadas."
   },
   "5225": {
-    "slug": "online-masaje-relajante-descontracturante",
+    "previousSlugs": [
+      "online-masaje-relajante-descontracturante",
+      "online-masaje-relajante-y-descontracturante"
+    ],
     "groupId": "online",
     "modality": "Online",
     "location": "Online",
     "nextStart": "Acceso inmediato",
     "diploma": false,
-    "introTitle": "Curso de Curso Online Masaje Relajante y Descontracturante",
+    "introTitle": "Curso Online Masaje Relajante y Descontracturante",
     "introLead": "Desarrolla técnicas precisas para favorecer el bienestar de las personas.",
     "calloutText": "Aprende desde la primera sesión con acompañamiento docente.",
     "scheduleEyebrow": "ACCESO ONLINE",
@@ -352,7 +370,9 @@
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 20 horas y las actividades programadas."
   },
   "5242": {
-    "slug": "maderoterapia",
+    "previousSlugs": [
+      "maderoterapia"
+    ],
     "groupId": "esteticos",
     "modality": "Semipresencial",
     "location": "Viña del Mar",
@@ -366,7 +386,10 @@
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 20 horas y las actividades programadas."
   },
   "5324": {
-    "slug": "drenaje-linfatico-postoperatorio",
+    "previousSlugs": [
+      "drenaje-linfatico-postoperatorio"
+    ],
+    "imageSlug": "curso-de-drenaje-linfatico-manual",
     "groupId": "salud",
     "modality": "Semipresencial",
     "location": "Viña del Mar",
@@ -380,7 +403,9 @@
     "planEstudiosBody": "La formación combina fundamentos anatómicos y fisiológicos, evaluación profesional y práctica supervisada de protocolos de drenaje linfático manual postoperatorio."
   },
   "5490": {
-    "slug": "reanimacion-cardiopulmonar-dea",
+    "previousSlugs": [
+      "reanimacion-cardiopulmonar-dea"
+    ],
     "groupId": "salud",
     "modality": "Presencial",
     "location": "En la empresa o institución",
@@ -400,7 +425,9 @@
     ]
   },
   "5526": {
-    "slug": "masaje-deportivo-ventosas-tape",
+    "previousSlugs": [
+      "masaje-deportivo-ventosas-tape"
+    ],
     "groupId": "deportivos",
     "modality": "Semipresencial",
     "location": "Viña del Mar",
@@ -414,7 +441,9 @@
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 40 horas y las actividades programadas."
   },
   "5530": {
-    "slug": "masaje-relajante-descontracturante-drenaje-linfatico",
+    "previousSlugs": [
+      "masaje-relajante-descontracturante-drenaje-linfatico"
+    ],
     "groupId": "masajes",
     "modality": "Semipresencial",
     "location": "Viña del Mar",
@@ -429,7 +458,9 @@
     "listingLongTitle": true
   },
   "5534": {
-    "slug": "masaje-relajante-descontracturante-craneo-facial",
+    "previousSlugs": [
+      "masaje-relajante-descontracturante-craneo-facial"
+    ],
     "groupId": "masajes",
     "modality": "Semipresencial",
     "location": "Viña del Mar",
@@ -443,7 +474,9 @@
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 40 horas y las actividades programadas."
   },
   "5535": {
-    "slug": "masaje-estetico-integral",
+    "previousSlugs": [
+      "masaje-estetico-integral"
+    ],
     "groupId": "esteticos",
     "modality": "Semipresencial",
     "location": "Viña del Mar",
@@ -457,7 +490,9 @@
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 60 horas y las actividades programadas."
   },
   "5571": {
-    "slug": "diplomado-masoterapia-deportiva",
+    "previousSlugs": [
+      "diplomado-masoterapia-deportiva"
+    ],
     "groupId": "especializaciones",
     "modality": "Semipresencial",
     "location": "Viña del Mar y aula virtual",
@@ -473,7 +508,9 @@
     "reserveText": "Reserva tu cupo para la admisión de agosto de 2026."
   },
   "5666": {
-    "slug": "diplomado-masaje-energetico",
+    "previousSlugs": [
+      "diplomado-masaje-energetico"
+    ],
     "groupId": "especializaciones",
     "modality": "Semipresencial",
     "location": "Viña del Mar y aula virtual",
@@ -489,7 +526,9 @@
     "reserveText": "Reserva tu cupo para la admisión de agosto de 2026."
   },
   "5667": {
-    "slug": "diplomado-masoterapia-estetico-corporal",
+    "previousSlugs": [
+      "diplomado-masoterapia-estetico-corporal"
+    ],
     "groupId": "especializaciones",
     "modality": "Semipresencial",
     "location": "Viña del Mar y aula virtual",
@@ -506,13 +545,15 @@
     "reserveText": "Reserva tu cupo para la admisión de agosto de 2026."
   },
   "5691": {
-    "slug": "online-anatomia-linfatica",
+    "previousSlugs": [
+      "online-anatomia-linfatica"
+    ],
     "groupId": "online",
     "modality": "Online",
     "location": "Online",
     "nextStart": "Acceso inmediato",
     "diploma": false,
-    "introTitle": "Curso de Curso Online de Anatomía Linfática",
+    "introTitle": "Curso Online de Anatomía Linfática",
     "introLead": "Desarrolla técnicas precisas para favorecer el bienestar de las personas.",
     "calloutText": "Aprende desde la primera sesión con acompañamiento docente.",
     "scheduleEyebrow": "ACCESO ONLINE",
@@ -521,13 +562,15 @@
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 10 horas y las actividades programadas."
   },
   "5692": {
-    "slug": "online-anatomia-humana-muscular",
+    "previousSlugs": [
+      "online-anatomia-humana-muscular"
+    ],
     "groupId": "online",
     "modality": "Online",
     "location": "Online",
     "nextStart": "Acceso inmediato",
     "diploma": false,
-    "introTitle": "Curso de Curso Online de Anatomía Humana Muscular",
+    "introTitle": "Curso Online de Anatomía Humana Muscular",
     "introLead": "Desarrolla técnicas precisas para favorecer el bienestar de las personas.",
     "calloutText": "Aprende desde la primera sesión con acompañamiento docente.",
     "scheduleEyebrow": "ACCESO ONLINE",
@@ -536,7 +579,9 @@
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 10 horas y las actividades programadas."
   },
   "5763": {
-    "slug": "masaje-craneo-facial-shiro-champi",
+    "previousSlugs": [
+      "masaje-craneo-facial-shiro-champi"
+    ],
     "groupId": "cabeza-cuello",
     "modality": "Semipresencial",
     "location": "Viña del Mar",
@@ -550,7 +595,9 @@
     "planEstudiosBody": "Las clases presenciales combinan fundamentos teóricos, demostración docente y práctica supervisada. Para obtener el certificado debes completar las 25 horas y las actividades programadas."
   },
   "5795": {
-    "slug": "rotulacion-etiquetado-nutricional",
+    "previousSlugs": [
+      "rotulacion-etiquetado-nutricional"
+    ],
     "groupId": "salud",
     "modality": "Online",
     "location": "Online",
@@ -564,13 +611,15 @@
     "planEstudiosBody": "Las clases online en vivo combinan fundamentos normativos, aplicación de la legislación y ejercicios prácticos. Para obtener el certificado debes completar las 32 horas y las actividades programadas."
   },
   "5824": {
-    "slug": "online-drenaje-linfatico-manual",
+    "previousSlugs": [
+      "online-drenaje-linfatico-manual"
+    ],
     "groupId": "online",
     "modality": "Online",
     "location": "Online",
     "nextStart": "Acceso inmediato",
     "diploma": false,
-    "introTitle": "Curso de Curso Online en Drenaje Linfático Manual",
+    "introTitle": "Curso Online en Drenaje Linfático Manual",
     "introLead": "Desarrolla técnicas precisas para favorecer el bienestar de las personas.",
     "calloutText": "Aprende desde la primera sesión con acompañamiento docente.",
     "scheduleEyebrow": "ACCESO ONLINE",

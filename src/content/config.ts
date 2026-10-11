@@ -1,8 +1,11 @@
 import { defineCollection, z } from 'astro:content';
+import { glob } from 'astro/loaders';
+import blogCategories from '../data/blogCategories.json';
+import blogAuthors from '../data/blogAuthors.json';
 import overridesJson from '../data/courseOverrides.json';
 import teachersJson from '../data/teachers.json';
 import categoryGroups from '../data/categoryGroups.json';
-import { fetchProduct } from '../lib/woocommerce/client.ts';
+import { fetchProduct, isInCoursesCategory, COURSES_CATEGORY_ID } from '../lib/woocommerce/client.ts';
 import { transformProduct } from '../lib/woocommerce/transform.ts';
 import type { CourseOverride } from '../lib/woocommerce/transform.ts';
 
@@ -14,6 +17,10 @@ const curso = defineCollection({
     const entries = await Promise.all(
       Object.entries(overrides).map(async ([wcId, override]) => {
         const product = await fetchProduct(wcId);
+        if (!isInCoursesCategory(product)) {
+          console.warn(`[curso] ${wcId} "${product.name}" omitido: no tiene la categoría Cursos (${COURSES_CATEGORY_ID}) en WooCommerce`);
+          return null;
+        }
         const groupTitle = groupTitleById[override.groupId];
         if (!groupTitle) {
           throw new Error(`courseOverrides.json entry ${wcId} has unknown groupId "${override.groupId}"`);
@@ -22,10 +29,11 @@ const curso = defineCollection({
         return { id: wcId, ...data };
       }),
     );
-    return entries;
+    return entries.filter((entry) => entry !== null);
   },
   schema: z.object({
     slug: z.string(),
+    previousSlugs: z.array(z.string()).default([]),
     groupId: z.string(),
     diploma: z.boolean(),
     listing: z.object({
@@ -95,4 +103,33 @@ const curso = defineCollection({
   }),
 });
 
-export const collections = { curso };
+// Blog: un archivo Markdown por artículo en src/content/blog/. El nombre del archivo es la URL (/blog/<archivo>/).
+const blogCategoryIds = blogCategories.map((category) => category.id) as [string, ...string[]];
+const blogAuthorIds = Object.keys(blogAuthors) as [string, ...string[]];
+
+const blog = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
+  schema: z.object({
+    title: z.string(),
+    seoTitle: z.string(),
+    description: z.string(),
+    category: z.enum(blogCategoryIds),
+    kicker: z.string(),
+    lead: z.string(),
+    breadcrumb: z.string(),
+    schemaName: z.string(),
+    pubDate: z.coerce.date(),
+    updatedDate: z.coerce.date().optional(),
+    author: z.enum(blogAuthorIds),
+    // Ruta base sin extensión: se usan <image>.webp, <image>-640.webp y <image>.jpg
+    image: z.string(),
+    imageAlt: z.string(),
+    order: z.number().default(999),
+    toc: z.array(z.object({ id: z.string(), label: z.string() })).default([]),
+    related: z.array(z.string()).default([]),
+    sources: z.string().optional(),
+    draft: z.boolean().default(false),
+  }),
+});
+
+export const collections = { curso, blog };

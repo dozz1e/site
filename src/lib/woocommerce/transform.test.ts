@@ -31,7 +31,7 @@ const PRODUCT: WooCommerceProduct = {
 };
 
 const OVERRIDE: CourseOverride = {
-  slug: 'diplomado-masoterapia-deportiva',
+  previousSlugs: ['diplomado-masoterapia-deportiva'],
   groupId: 'especializaciones',
   modality: 'Semipresencial',
   location: 'Viña del Mar y aula virtual',
@@ -56,7 +56,8 @@ const TEACHERS = {
 test('transformProduct maps native, ACF, and override fields into the schema shape', () => {
   const data = transformProduct(PRODUCT, '5571', OVERRIDE, TEACHERS, 'Educación continua o especializaciones');
 
-  assert.equal(data.slug, 'diplomado-masoterapia-deportiva');
+  assert.equal(data.slug, 'masoterapia-deportiva');
+  assert.deepEqual(data.previousSlugs, ['diplomado-masoterapia-deportiva']);
   assert.equal(data.groupId, 'especializaciones');
   assert.equal(data.diploma, true);
   assert.equal(data.hero.title, 'Diplomado en masoterapia deportiva');
@@ -178,4 +179,18 @@ test('transformProduct throws when duration has neither acf.horas nor a usable o
     () => transformProduct(productWithoutHours, '5571', overrideWithoutDuration, TEACHERS, 'grupo'),
     /entry 5571 is missing duration/,
   );
+});
+
+test('transformProduct uses imageSlug for the image folder when the WooCommerce slug changed', () => {
+  const data = transformProduct(PRODUCT, '5571', { ...OVERRIDE, imageSlug: 'carpeta-anterior' }, TEACHERS, 'Educación continua o especializaciones');
+
+  assert.equal(data.slug, 'masoterapia-deportiva');
+  assert.equal(data.listing.image, 'https://cenakin.cl/images/cursos/carpeta-anterior/mini.webp');
+  assert.equal(data.hero.image, 'https://cenakin.cl/images/cursos/carpeta-anterior/1@3x.webp');
+});
+
+test('transformProduct drops a previous slug that equals the current WooCommerce slug', () => {
+  const data = transformProduct(PRODUCT, '5571', { ...OVERRIDE, previousSlugs: ['masoterapia-deportiva', 'viejo'] }, TEACHERS, 'Educación continua o especializaciones');
+
+  assert.deepEqual(data.previousSlugs, ['viejo']);
 });

@@ -1,0 +1,137 @@
+---
+import { render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import blogAuthors from '../../data/blogAuthors.json';
+import { getPublishedPosts, getCategoryLabel, formatDate, isoDate, type BlogPost } from '../../lib/blog/posts';
+import '../../styles/blog.css';
+
+export async function getStaticPaths() {
+  const posts = await getPublishedPosts();
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post, posts } }));
+}
+
+interface Props {
+  post: BlogPost;
+  posts: BlogPost[];
+}
+
+const { post, posts } = Astro.props;
+const { data } = post;
+const { Content } = await render(post);
+
+const author = (blogAuthors as Record<string, any>)[data.author];
+const pageUrl = `https://cenakin.cl/blog/${post.id}/`;
+const updated = data.updatedDate ?? data.pubDate;
+const related = data.related
+  .map((slug) => posts.find((other) => other.id === slug))
+  .filter((other): other is BlogPost => Boolean(other));
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BlogPosting',
+      headline: data.title,
+      description: data.description,
+      mainEntityOfPage: pageUrl,
+      inLanguage: 'es-CL',
+      image: `https://cenakin.cl${data.image}.jpg`,
+      articleSection: getCategoryLabel(data.category),
+      datePublished: isoDate(data.pubDate),
+      dateModified: isoDate(updated),
+      author: {
+        '@type': 'Person',
+        name: author.name,
+        url: `${pageUrl}#autor`,
+        jobTitle: author.jobTitle,
+        description: `${author.specialty}. ${author.registry.label} N° ${author.registry.number}. ${author.certification.label} N° ${author.certification.number}.`,
+      },
+      publisher: { '@type': 'Organization', name: 'OTEC Cenakin', url: 'https://cenakin.cl/' },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        ['Inicio', 'https://cenakin.cl/'],
+        ['Blog', 'https://cenakin.cl/blog/'],
+        [data.schemaName, pageUrl],
+      ].map(([name, item], i) => ({ '@type': 'ListItem', position: i + 1, name, item })),
+    },
+  ],
+};
+---
+<BaseLayout
+  title={data.seoTitle}
+  description={data.description}
+  headerVariant="home"
+  image={`${data.image}.jpg`}
+  type="article"
+>
+  <div class="cenakin-blog">
+    <main id="blog-main" class="blog-article-page">
+      <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
+      <div class="blog-container">
+        <nav class="blog-breadcrumb" aria-label="Migas de pan">
+          <a href="/">Inicio</a><span aria-hidden="true">/</span><a href="/blog/">Blog</a><span aria-hidden="true">/</span><span aria-current="page">{data.breadcrumb}</span>
+        </nav>
+
+        <header class="blog-article-heading">
+          <p class="blog-kicker">{data.kicker}</p>
+          <h1>{data.title}</h1>
+          <p>{data.lead}</p>
+          <div class="blog-article-meta">
+            <a href="#autor" rel="author">Por {author.name}</a>
+            <time datetime={isoDate(data.pubDate)}>{formatDate(data.pubDate)}</time>
+          </div>
+        </header>
+
+        <figure class="blog-article-cover">
+          <img width="1200" height="900" fetchpriority="high" decoding="async" alt={data.imageAlt} src={`${data.image}.webp`} />
+        </figure>
+
+        <div class="blog-reading-layout">
+          {data.toc.length > 0 && (
+            <aside class="blog-toc">
+              <nav aria-label="Contenido del artículo">
+                <p>EN ESTA GUÍA</p>
+                <ol>
+                  {data.toc.map((item) => <li><a href={`#${item.id}`}>{item.label}</a></li>)}
+                </ol>
+              </nav>
+            </aside>
+          )}
+
+          <article class="blog-prose">
+            <Content />
+
+            <section id="autor" class="blog-author" aria-labelledby="blog-author-title">
+              <p class="blog-kicker">SOBRE EL AUTOR</p>
+              <h2 id="blog-author-title">{author.name}</h2>
+              <p><strong>{author.jobTitle}</strong>. {author.specialty}.</p>
+              <p>{author.registry.label} N° <a href={author.registry.url}>{author.registry.number}</a>.</p>
+              <p>{author.certification.label} N° <strong>{author.certification.number}</strong>.</p>
+              <p class="blog-author-registry-note">{author.registryNote}</p>
+            </section>
+
+            {data.sources && (
+              <section class="blog-sources" aria-labelledby="blog-sources-title">
+                <h2 id="blog-sources-title">Fuentes y lectura complementaria</h2>
+                <Fragment set:html={data.sources} />
+              </section>
+            )}
+
+            {related.length > 0 && (
+              <section>
+                <h2>Sigue explorando</h2>
+                <div class="blog-related">
+                  {related.map((other) => <a href={`/blog/${other.id}/`}>{other.data.title} →</a>)}
+                </div>
+              </section>
+            )}
+
+            <a href="/blog/" class="blog-back">Volver al blog de Cenakin</a>
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+</BaseLayout>

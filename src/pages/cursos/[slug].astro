@@ -1,16 +1,34 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
 import CourseLayout from '../../layouts/CourseLayout.astro';
 
+// La URL de cada curso es su slug en WooCommerce. Las URLs anteriores (previousSlugs en
+// courseOverrides.json) se publican como redirecciones, salvo que hoy sean la URL de otro curso.
 export async function getStaticPaths() {
   const courses = await getCollection('curso');
-  return courses.map((course) => ({
+  const currentSlugs = new Set(courses.map((course) => course.data.slug));
+
+  const pages = courses.map((course) => ({
     params: { slug: course.data.slug },
     props: { course },
   }));
+
+  const redirects = courses.flatMap((course) =>
+    course.data.previousSlugs
+      .filter((previous) => !currentSlugs.has(previous))
+      .map((previous) => ({
+        params: { slug: previous },
+        props: { redirectTo: `/cursos/${course.data.slug}/` },
+      })),
+  );
+
+  return [...pages, ...redirects];
 }
 
-const { course } = Astro.props;
+type Props = { course: CollectionEntry<'curso'>; redirectTo?: undefined } | { course?: undefined; redirectTo: string };
+
+const { course, redirectTo } = Astro.props;
+if (redirectTo) return Astro.redirect(redirectTo, 301);
 const categoryTitle = course.data.hero.breadcrumbLabel;
 ---
 <CourseLayout course={course} categoryTitle={categoryTitle} />

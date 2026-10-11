@@ -1,0 +1,30 @@
+[
+  {
+    "id": "diplomado",
+    "label": "Masoterapeuta profesional"
+  },
+  {
+    "id": "deportivo",
+    "label": "Área de masaje deportivo"
+  },
+  {
+    "id": "estetico",
+    "label": "Área de masaje estético corporal"
+  },
+  {
+    "id": "relajante",
+    "label": "Área de masaje relajante y descontracturante"
+  },
+  {
+    "id": "craneo-facial",
+    "label": "Área de masaje craneal"
+  },
+  {
+    "id": "kinesiologos",
+    "label": "Formación para Kinesiólogos"
+  },
+  {
+    "id": "salud",
+    "label": "Formación para Profesionales de la Salud"
+  }
+]

@@ -4,7 +4,11 @@ import { formatCLP, formatSpanishDate, parseAcfDate } from './format.ts';
 import type { WooCommerceProduct } from './client.ts';
 
 export interface CourseOverride {
-  slug: string;
+  // La URL del curso es el slug del producto en WooCommerce. Aquí van las URLs anteriores,
+  // que se publican como redirecciones hacia la actual.
+  previousSlugs?: string[];
+  // Carpeta de imágenes en cenakin.cl/images/cursos/ cuando no coincide con el slug de WooCommerce.
+  imageSlug?: string;
   groupId: string;
   modality: string;
   location: string;
@@ -94,19 +98,22 @@ export function transformProduct(
       ? `${override.diploma ? 'Válido' : 'Descuento válido'} hasta el ${formatSpanishDate(product.date_on_sale_to)}`
       : null;
 
+  const imageSlug = override.imageSlug ?? product.slug;
+
   return {
-    slug: override.slug,
+    slug: product.slug,
+    previousSlugs: (override.previousSlugs ?? []).filter((previous) => previous !== product.slug),
     groupId: override.groupId,
     diploma: override.diploma,
     listing: {
-      image: `https://cenakin.cl/images/cursos/${product.slug}/mini.webp`,
+      image: `https://cenakin.cl/images/cursos/${imageSlug}/mini.webp`,
       badges: listingBadges,
       modality,
       longTitle: override.listingLongTitle ?? title.length > 70,
     },
     hero: {
-      image: `https://cenakin.cl/images/cursos/${product.slug}/1@3x.webp`,
-      ogImage: `https://cenakin.cl/images/cursos/${product.slug}/1.jpg`,
+      image: `https://cenakin.cl/images/cursos/${imageSlug}/1@3x.webp`,
+      ogImage: `https://cenakin.cl/images/cursos/${imageSlug}/1.jpg`,
       breadcrumbLabel: groupTitle,
       badges: [override.diploma ? 'DIPLOMADO CERTIFICADO' : 'CURSO CERTIFICADO', modality.toUpperCase()],
       title,

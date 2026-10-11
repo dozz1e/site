@@ -1,22 +1,32 @@
 ---
-import { getCollection } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import CourseCard from '../../components/CourseCard.astro';
-import groups from '../../data/categoryGroups.json';
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CourseCard from "../../components/CourseCard.astro";
+import groups from "../../data/categoryGroups.json";
 
-const allCourses = await getCollection('curso');
+const allCourses = await getCollection("curso");
 const totalCourses = allCourses.length;
 ---
-<BaseLayout title="Cenakin | Nuestros Cursos" description="Encuentra la formación que necesitas para comenzar, especializarte o ampliar tus oportunidades profesionales." headerVariant="detail">
+
+<BaseLayout
+  title="Cenakin | Nuestros Cursos"
+  description="Encuentra la formación que necesitas para comenzar, especializarte o ampliar tus oportunidades profesionales."
+  headerVariant="detail"
+>
   <main class="categorias-page">
     <section class="catalog-hero">
       <div>
         <p class="crumb">Inicio <span>›</span> Nuestros cursos</p>
         <p class="eyebrow">FORMACIÓN CONTINUA CENAKIN</p>
         <h1>Nuestros Cursos</h1>
-        <p class="intro">Encuentra la formación que necesitas para comenzar, especializarte o ampliar tus oportunidades profesionales.</p>
+        <p class="intro">
+          Encuentra la formación que necesitas para comenzar, especializarte o
+          ampliar tus oportunidades profesionales.
+        </p>
       </div>
-      <div class="catalog-stat"><strong>{groups.length}</strong><span>áreas de<br />formación</span></div>
+      <div class="catalog-stat">
+        <strong>{groups.length}</strong><span>áreas de<br />formación</span>
+      </div>
     </section>
 
     <section class="filterbar" id="catalogo">
@@ -29,64 +39,129 @@ const totalCourses = allCourses.length;
       <span id="filter-count">{totalCourses} formaciones disponibles</span>
     </section>
 
-    <section class="help help-top" aria-label="Orientación para elegir un curso">
-      <div><p class="eyebrow">ORIENTACIÓN PERSONALIZADA</p><h2>¿No sabes qué curso elegir?</h2><span>Cuéntanos qué quieres lograr y te ayudaremos a encontrar la formación más adecuada.</span></div>
-      <button type="button" onclick="window.dispatchEvent(new Event('cenakin:advisor'))">Solicitar orientación <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"></path></svg></button>
+    <section
+      class="help help-top"
+      aria-label="Orientación para elegir un curso"
+    >
+      <div>
+        <p class="eyebrow">ORIENTACIÓN PERSONALIZADA</p><h2>
+          ¿No sabes qué curso elegir?
+        </h2><span
+          >Cuéntanos qué quieres lograr y te ayudaremos a encontrar la formación
+          más adecuada.</span
+        >
+      </div>
+      <button
+        type="button"
+        onclick="window.dispatchEvent(new Event('cenakin:advisor'))"
+        >Solicitar orientación <svg aria-hidden="true" viewBox="0 0 24 24"
+          ><path d="M5 12h13M13 6l6 6-6 6"></path></svg
+        ></button
+      >
     </section>
 
     <div class="catalog">
-      {groups.map((group) => {
-        const coursesInGroup = allCourses.filter((course) => course.data.groupId === group.id);
-        return (
-          <section class="course-group" id={group.id}>
-            <div class="group-head">
-              <div>
-                <p>ÁREA DE FORMACIÓN</p>
-                <h2>{group.title}</h2>
-                <span>{group.description}</span>
+      {
+        groups.map((group) => {
+          const coursesInGroup = allCourses.filter(
+            (course) => course.data.groupId === group.id,
+          );
+          return (
+            <section class="course-group" id={group.id}>
+              <div class="group-head">
+                <div>
+                  <p>ÁREA DE FORMACIÓN</p>
+                  <h2>{group.title}</h2>
+                  <span>{group.description}</span>
+                </div>
+                <a href="#contacto">
+                  Ver orientación{" "}
+                  <svg aria-hidden="true" viewBox="0 0 24 24">
+                    <path d="M5 12h13M13 6l6 6-6 6" />
+                  </svg>
+                </a>
               </div>
-              <a href="#contacto">Ver orientación <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"></path></svg></a>
-            </div>
-            <div class="course-grid">
-              {coursesInGroup.map((course) => <CourseCard course={course} />)}
-            </div>
-          </section>
-        );
-      })}
+              <div class="course-grid">
+                {coursesInGroup.map((course) => (
+                  <CourseCard course={course} />
+                ))}
+              </div>
+            </section>
+          );
+        })
+      }
     </div>
 
+    <a
+      class="cenakin-masoterapia-card"
+      href="https://cenakin.cl/categorias/masoterapia/"
+      aria-label="Ver cursos de masoterapia"
+    >
+      <div class="cenakin-masoterapia-card__image">
+        <img
+          src="https://cenakin.cl/images/masoterapia.webp"
+          alt="Cursos de masoterapia en Cenakin"
+        />
+      </div>
+      <div class="cenakin-masoterapia-card__content">
+        <p class="cenakin-eyebrow">ÁREA DE FORMACIÓN</p>
+        <h2>Masoterapia</h2>
+        <p>
+          Explora diplomados y cursos certificados de masaje para comenzar,
+          especializarte o ampliar tus servicios profesionales.
+        </p>
+        <span>Ver cursos de masoterapia →</span>
+      </div>
+    </a>
+
     <section class="help" id="contacto">
-      <div><p class="eyebrow">ORIENTACIÓN PERSONALIZADA</p><h2>¿No sabes qué curso elegir?</h2><span>Cuéntanos qué quieres lograr y te ayudaremos a encontrar la formación más adecuada.</span></div>
-      <button type="button" onclick="window.dispatchEvent(new Event('cenakin:advisor'))">Solicitar orientación <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"></path></svg></button>
+      <div>
+        <p class="eyebrow">ORIENTACIÓN PERSONALIZADA</p><h2>
+          ¿No sabes qué curso elegir?
+        </h2><span
+          >Cuéntanos qué quieres lograr y te ayudaremos a encontrar la formación
+          más adecuada.</span
+        >
+      </div>
+      <button
+        type="button"
+        onclick="window.dispatchEvent(new Event('cenakin:advisor'))"
+        >Solicitar orientación <svg aria-hidden="true" viewBox="0 0 24 24"
+          ><path d="M5 12h13M13 6l6 6-6 6"></path></svg
+        ></button
+      >
     </section>
   </main>
 </BaseLayout>
 
 <script>
-  const filterButtons = document.querySelectorAll<HTMLButtonElement>('.filters button[data-filter]');
-  const groups = document.querySelectorAll<HTMLElement>('.course-group');
-  const countLabel = document.getElementById('filter-count');
+  const filterButtons = document.querySelectorAll<HTMLButtonElement>(
+    ".filters button[data-filter]",
+  );
+  const groups = document.querySelectorAll<HTMLElement>(".course-group");
+  const countLabel = document.getElementById("filter-count");
 
   function applyFilter(filter: string) {
     let visibleCount = 0;
 
     groups.forEach((group) => {
-      const cards = group.querySelectorAll<HTMLElement>('.course-card');
+      const cards = group.querySelectorAll<HTMLElement>(".course-card");
       let groupHasVisible = false;
 
       cards.forEach((card) => {
         const matches =
-          filter === 'todas' ||
+          filter === "todas" ||
           card.dataset.modality === filter ||
-          (filter === 'presencial' && card.dataset.modality === 'semipresencial');
-        card.style.display = matches ? '' : 'none';
+          (filter === "presencial" &&
+            card.dataset.modality === "semipresencial");
+        card.style.display = matches ? "" : "none";
         if (matches) {
           groupHasVisible = true;
           visibleCount += 1;
         }
       });
 
-      group.style.display = groupHasVisible ? '' : 'none';
+      group.style.display = groupHasVisible ? "" : "none";
     });
 
     if (countLabel) {
@@ -95,10 +170,10 @@ const totalCourses = allCourses.length;
   }
 
   filterButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      filterButtons.forEach((btn) => btn.classList.remove('active'));
-      button.classList.add('active');
-      applyFilter(button.dataset.filter ?? 'todas');
+    button.addEventListener("click", () => {
+      filterButtons.forEach((btn) => btn.classList.remove("active"));
+      button.classList.add("active");
+      applyFilter(button.dataset.filter ?? "todas");
     });
   });
 </script>

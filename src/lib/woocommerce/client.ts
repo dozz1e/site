@@ -8,6 +8,7 @@ export interface WooCommerceProduct {
   on_sale: boolean;
   date_on_sale_to: string | null;
   stock_status: 'instock' | 'outofstock' | 'onbackorder';
+  categories: { id: number; name: string; slug: string }[];
   acf: {
     horas: string;
     fecha_inicio: string;
@@ -18,6 +19,13 @@ export interface WooCommerceProduct {
     objetivo: string;
     plan_estudios: string;
   };
+}
+
+// Categoría "Cursos" de WooCommerce: solo los productos que la tienen se publican en el sitio.
+export const COURSES_CATEGORY_ID = 22;
+
+export function isInCoursesCategory(product: Pick<WooCommerceProduct, 'categories'>): boolean {
+  return (product.categories ?? []).some((category) => category.id === COURSES_CATEGORY_ID);
 }
 
 export async function fetchProduct(id: string): Promise<WooCommerceProduct> {

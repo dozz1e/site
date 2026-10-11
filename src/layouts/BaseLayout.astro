@@ -117,7 +117,9 @@ const organizationSchema = {
               }
             }
           },
-          { threshold: 0.15 }
+          // Se muestra en cuanto la sección entra a la pantalla (sin exigir un % de su alto):
+          // con un umbral porcentual, las secciones muy altas en mobile nunca llegaban a aparecer.
+          { threshold: 0, rootMargin: '0px 0px -8% 0px' }
         );
         sections.forEach((section) => {
           section.classList.add('reveal-init');
