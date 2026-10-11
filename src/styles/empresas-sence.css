@@ -42,3 +42,31 @@ header{height:82px;box-shadow:0 3px 7px #11263d12;border-bottom-color:#dce3e9}na
 @media(max-width:1100px){.enterprise-layout{grid-template-columns:minmax(0,1fr) 350px;gap:30px}.catalog-cards{grid-template-columns:1fr}.company-page>.wrap .hero{gap:30px}.hero h1{font-size:42px}}
 @media(max-width:850px){.company-page>.wrap .hero{grid-template-columns:1fr;padding:40px 0;gap:28px}.company-page>.wrap .hero-img img{height:390px!important}.enterprise-layout{display:flex;flex-direction:column;width:90%;gap:0}.enterprise-sidebar{order:-1;position:static;max-height:none;overflow:visible;margin:36px 0 0;width:100%}.enterprise-content{width:100%}.enterprise-content .section{padding:48px 0}.enterprise-content .dark,.enterprise-content .pale{padding:30px 24px}.enterprise-content .catalog-cards{grid-template-columns:1fr}.enterprise-content h2{font-size:30px}}
 @media(max-width:480px){.enterprise-sidebar .form-grid{grid-template-columns:1fr}.enterprise-sidebar .company-form-card{padding:26px 22px}.company-page>.wrap .hero-img img{height:330px!important}.hero h1{font-size:36px}.steps{grid-template-columns:1fr}}
+
+/* ---------- Formulario lateral sin scroll interno (escritorio) ----------
+   La maqueta limitaba el panel al alto de la pantalla con overflow:auto, lo que mostraba una barra
+   de scroll dentro del formulario. Aquí el formulario es más compacto y siempre se ve completo. */
+@media (min-width: 851px) {
+  .enterprise-sidebar { max-height: none; overflow: visible; }
+  .enterprise-layout { grid-template-columns: minmax(0, 1fr) 420px; }
+  .enterprise-sidebar h2 { letter-spacing: -0.4px; }
+  .enterprise-sidebar .company-form-card { padding: 22px; }
+  .enterprise-sidebar .form-badge { margin-bottom: 14px; padding: 8px 11px; }
+  .enterprise-sidebar h2 { font-size: 24px; line-height: 1.25; margin-bottom: 8px; }
+  .enterprise-sidebar .company-form-card > p { font-size: 12px; line-height: 1.55; margin: 0; }
+  .enterprise-sidebar .form-grid { gap: 10px; margin: 16px 0; }
+  .enterprise-sidebar .form-grid label { gap: 4px; line-height: 1.35; }
+  .enterprise-sidebar .form-grid input,
+  .enterprise-sidebar .form-grid select,
+  .enterprise-sidebar .form-grid textarea { padding: 8px 10px; }
+  .enterprise-sidebar .form-grid textarea { height: 56px; }
+  .enterprise-sidebar button { padding: 13px 10px; }
+  .enterprise-sidebar .form-note { margin-top: 10px; line-height: 1.5; }
+  .enterprise-sidebar .form-contact { margin-top: 14px; padding-top: 12px; gap: 4px; }
+}
+
+/* Solo queda fijo al hacer scroll si cabe completo bajo la cabecera (82px + márgenes);
+   en pantallas más bajas acompaña al contenido y se ve entero, sin barra interna. */
+@media (min-width: 851px) and (max-height: 999px) {
+  .enterprise-sidebar { position: static; }
+}
