@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import MobileMenu from '../components/MobileMenu.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppAdvisor from '../components/WhatsAppAdvisor.astro';
+import SiteHead from '../components/SiteHead.astro';
 
 interface Props {
   title: string;
@@ -16,87 +17,11 @@ interface Props {
   /** true: página que no debe indexarse ni declarar canonical (p. ej. la 404). */
   noindex?: boolean;
 }
-const { title, description, headerVariant, image = '/images/carrusel-cenakin-1-1200.webp', type = 'website', chrome = true, noindex = false } = Astro.props;
-
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const ogImageURL = new URL(image, Astro.site);
-
-const organizationSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'EducationalOrganization',
-  name: 'Cenakin',
-  alternateName: 'OTEC Cenakin',
-  url: 'https://cenakin.cl',
-  logo: 'https://cenakin.cl/images/logo-cenakin.png',
-  image: ogImageURL.toString(),
-  telephone: '+56944871048',
-  email: 'info@cenakin.cl',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'Calle Limache 1724, oficina 1102, Ed. Contemporáneo',
-    addressLocality: 'Viña del Mar',
-    addressCountry: 'CL',
-  },
-  sameAs: ['https://www.facebook.com/cenakinchile', 'https://www.instagram.com/cenakinchile'],
-};
+const { title, description, headerVariant, image, type, chrome = true, noindex = false } = Astro.props;
 ---
 <html lang="es">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonicalURL} />}
-    <link rel="icon" href="/favicon.svg" />
-
-    <meta property="og:type" content={type} />
-    <meta property="og:site_name" content="Cenakin" />
-    <meta property="og:locale" content="es_CL" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:url" content={canonicalURL} />
-    <meta property="og:image" content={ogImageURL} />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={ogImageURL} />
-
-    <script type="application/ld+json" is:inline set:html={JSON.stringify(organizationSchema)} />
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYY8B92XC9"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-DYY8B92XC9');
-    </script>
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-K9Q9ZD7');
-    </script>
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K9Q9ZD7"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- Meta Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1078650119240088');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1078650119240088&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
+    <SiteHead title={title} description={description} image={image} type={type} noindex={noindex} />
   </head>
   <body>
     {chrome && (
